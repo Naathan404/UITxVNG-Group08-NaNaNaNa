@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b6disc3c0ovat" path="res://assets/sprites/characters/Idle (32x32).png" id="1_8afob"]
 [ext_resource type="Texture2D" uid="uid://c4i0e3evrgsin" path="res://assets/sprites/characters/Fall (32x32).png" id="1_lvxji"]
+[ext_resource type="Script" uid="uid://dpp2la5wwgjvu" path="res://scripts/player.gd" id="1_p47bc"]
 [ext_resource type="Texture2D" uid="uid://b6ov48mv4f7te" path="res://assets/sprites/characters/Jump (32x32).png" id="3_p47bc"]
 [ext_resource type="Texture2D" uid="uid://j0uh3qywmc03" path="res://assets/sprites/characters/Run (32x32).png" id="4_75vfm"]
 
@@ -203,9 +204,18 @@ animations = [{
 "speed": 20.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p47bc"]
+size = Vector2(14, 21)
+
 [node name="Player" type="CharacterBody2D" unique_id=65356844]
+script = ExtResource("1_p47bc")
+move_speed = 136.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=886391024]
 sprite_frames = SubResource("SpriteFrames_x7p2l")
-animation = &"run"
-frame_progress = 0.071541384
+animation = &"jump"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1145219900]
+position = Vector2(1, 4.5)
+shape = SubResource("RectangleShape2D_p47bc")
