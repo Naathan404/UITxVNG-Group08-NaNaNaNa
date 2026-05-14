@@ -3,8 +3,13 @@ extends CharacterBody2D
 
 @export var move_speed: float = 200.0
 @export var jump_force: float = -300.0
+@export var dash_force: float = 500.0
 var isFacingRight = true
 
+
+func _ready() -> void:
+	self_modulate = Color.AQUA
+	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -21,9 +26,14 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * move_speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, move_speed)
+		
+	if Input.is_action_just_pressed("dash"):
+		velocity.x = direction * dash_force;
+		
 
 	move_and_slide()
 	_render(direction)
+	
 
 
 ##### ============= RENDER player on screen ==========
