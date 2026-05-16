@@ -29,8 +29,10 @@ func control_moving() -> bool:
 #Control jumping
 #Return true if jumping
 func control_jump() -> bool:
-	if Input.is_action_just_pressed("jump"):
+	if obj.jump_buffer_timer > 0.0 and obj.coyote_timer > 0.0:
 		obj.jump()
+		obj.jump_buffer_timer = 0.0
+		obj.coyote_timer = 0.0
 		change_state(fsm.states.jump)
 		return true
 	return false

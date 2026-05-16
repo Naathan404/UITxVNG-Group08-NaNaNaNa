@@ -647,13 +647,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p47bc"]
-size = Vector2(12, 20)
+size = Vector2(14, 20)
 
 [node name="Player" type="CharacterBody2D" unique_id=65356844]
 script = ExtResource("1_p47bc")
 dash_force = 500.0
 dash_duration = 0.15
-mask_type = 2
+mask_type = 1
 
 [node name="Direction2D" type="Node2D" parent="." unique_id=1585420157]
 
@@ -684,3 +684,11 @@ script = ExtResource("9_fm80t")
 script = ExtResource("10_h17s1")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2031410575]
+
+[node name="RightRay" type="RayCast2D" parent="." unique_id=1184261151]
+position = Vector2(5, 0)
+target_position = Vector2(0, -12)
+
+[node name="LeftRay" type="RayCast2D" parent="." unique_id=990434894]
+position = Vector2(-5, 0)
+target_position = Vector2(0, -12)
