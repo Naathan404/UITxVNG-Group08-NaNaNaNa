@@ -7,6 +7,9 @@ func _enter() -> void:
 		obj.change_animation("run_red")
 	else:
 		obj.change_animation("run_blue")
+		
+	# run particles
+	obj.get_node("RunParticles").emitting = true
 
 func _update(delta: float):
 	if control_dash(): return
@@ -20,3 +23,5 @@ func _update(delta: float):
 	# Nếu không ở trên sàn -> Chuyển sang Fall
 	if not obj.is_on_floor():
 		change_state(fsm.states.fall)
+func _exit() -> void:
+	obj.get_node("RunParticles").emitting = false

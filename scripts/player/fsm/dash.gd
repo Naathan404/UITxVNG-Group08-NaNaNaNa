@@ -16,6 +16,8 @@ func _enter() -> void:
 		obj.change_animation("dash_red")
 	else:
 		obj.change_animation("dash_blue")
+	
+	obj.get_node("DashParticles").emitting = true
 		
 	obj.can_dash = false;
 	obj.ignore_gravity = true;
@@ -49,6 +51,7 @@ func _update(delta: float) -> void:
 	
 # Called when the node enters the scene tree for the first time.
 func _exit() -> void:
+	obj.get_node("DashParticles").emitting = false
 	obj.ignore_gravity = false
 	obj.velocity.x *= 0.5
 

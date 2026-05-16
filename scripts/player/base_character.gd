@@ -16,9 +16,17 @@ extends CharacterBody2D
 var ignore_gravity: bool = false
 var can_dash: bool = true
 
-### Mask
-enum MaskType { NONE, RED, BLUE }
-@export var mask_type: MaskType = MaskType.NONE
+### Buffer jump & Coyote time
+@export var coyote_time: float = 0.2      
+@export var jump_buffer_time: float = 0.2
+var coyote_timer: float = 0.0
+var jump_buffer_timer: float = 0.0
+
+### Ray cast
+@onready var left_raycast: RayCast2D = $LeftRay
+@onready var right_raycast: RayCast2D = $RightRay
+@export var corner_correction_speed: float = 6.0	# tốc độ đẩy ra khi trúng góc
+
 
 var fsm: FSM = null
 var current_animation = null
@@ -30,10 +38,24 @@ var _next_animated_sprite: AnimatedSprite2D = null
 
 func _ready() -> void:
 	set_animated_sprite($Direction2D/AnimatedSprite2D)
+	get_node("RunParticles").emitting = false
+	get_node("DashParticles").emitting = false
 
 func _physics_process(delta: float) -> void:
 	# Animation
 	_check_changed_animation()
+	
+	# Check coyote time
+	if is_on_floor():
+		coyote_timer = coyote_time
+	else:
+		coyote_timer -= delta
+	
+	#Check buffer jump
+	if Input.is_action_just_pressed("jump"):
+		jump_buffer_timer = jump_buffer_time
+	else:
+		jump_buffer_timer -= delta
 
 	if fsm != null:
 		fsm._update(delta)
@@ -52,6 +74,10 @@ func _update_movement(delta: float) -> void:
 	if is_on_floor():
 		can_dash = true
 		
+	# thực hiện chỉnh góc khi người chơi ở trên không
+	if velocity.y < 0:
+		_apply_corner_correction()
+	
 	# di chuyển
 	move_and_slide()
 	pass
@@ -120,6 +146,14 @@ func _check_changed_direction() -> void:
 			$Direction2D.scale.x = -1
 		if direction == 1:
 			$Direction2D.scale.x = 1
+			
+# Hàm dùng để check góc và hiệu chỉnh góc va chạm phía trên
+func _apply_corner_correction() -> void:
+	if left_raycast.is_colliding() and not right_raycast.is_colliding():
+		position.x += corner_correction_speed
+	if right_raycast.is_colliding() and not left_raycast.is_colliding():
+		position.x -= corner_correction_speed
+	pass
 
 # On changed direction
 func _on_changed_direction() -> void:
