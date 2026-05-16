@@ -3,7 +3,12 @@ extends PlayerState
 ## Idle state for player character
 
 func _enter() -> void:
-	obj.change_animation("idle")
+	if obj.mask_type == obj.MaskType.NONE:
+		obj.change_animation("idle")
+	elif obj.mask_type == obj.MaskType.RED:
+		obj.change_animation("idle_red")
+	else:
+		obj.change_animation("idle_blue")
 
 func _update(_delta: float) -> void:
 	#Control dash

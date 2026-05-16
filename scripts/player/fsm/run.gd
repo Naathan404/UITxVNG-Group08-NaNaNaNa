@@ -1,7 +1,12 @@
 extends PlayerState
 
 func _enter() -> void:
-	obj.change_animation("run")
+	if obj.mask_type == obj.MaskType.NONE:
+		obj.change_animation("run")
+	elif obj.mask_type == obj.MaskType.RED:
+		obj.change_animation("run_red")
+	else:
+		obj.change_animation("run_blue")
 
 func _update(delta: float):
 	if control_dash(): return

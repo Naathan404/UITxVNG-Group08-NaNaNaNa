@@ -10,7 +10,13 @@ var dash_direction: int = 1
 
 
 func _enter() -> void:
-	obj.change_animation("dash")
+	if obj.mask_type == obj.MaskType.NONE:
+		obj.change_animation("dash")
+	elif obj.mask_type == obj.MaskType.RED:
+		obj.change_animation("dash_red")
+	else:
+		obj.change_animation("dash_blue")
+		
 	obj.can_dash = false;
 	obj.ignore_gravity = true;
 	dash_direction = obj.direction

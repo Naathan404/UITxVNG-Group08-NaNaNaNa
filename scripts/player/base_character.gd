@@ -16,6 +16,10 @@ extends CharacterBody2D
 var ignore_gravity: bool = false
 var can_dash: bool = true
 
+### Mask
+enum MaskType { NONE, RED, BLUE }
+@export var mask_type: MaskType = MaskType.NONE
+
 var fsm: FSM = null
 var current_animation = null
 var animated_sprite: AnimatedSprite2D = null
