@@ -2,9 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://b6disc3c0ovat" path="res://assets/sprites/characters/Idle (32x32).png" id="1_8afob"]
 [ext_resource type="Texture2D" uid="uid://c4i0e3evrgsin" path="res://assets/sprites/characters/Fall (32x32).png" id="1_lvxji"]
-[ext_resource type="Script" uid="uid://dpp2la5wwgjvu" path="res://scripts/player.gd" id="1_p47bc"]
+[ext_resource type="Script" uid="uid://dpp2la5wwgjvu" path="res://scripts/player/player.gd" id="1_p47bc"]
 [ext_resource type="Texture2D" uid="uid://b6ov48mv4f7te" path="res://assets/sprites/characters/Jump (32x32).png" id="3_p47bc"]
 [ext_resource type="Texture2D" uid="uid://j0uh3qywmc03" path="res://assets/sprites/characters/Run (32x32).png" id="4_75vfm"]
+[ext_resource type="Script" uid="uid://cnybuxdpx625h" path="res://scripts/player/fsm/idle.gd" id="6_5gtgg"]
+[ext_resource type="Script" uid="uid://dauqtx36780vy" path="res://scripts/player/fsm/run.gd" id="7_h17s1"]
+[ext_resource type="Script" uid="uid://chqygj285kn4c" path="res://scripts/player/fsm/jump.gd" id="8_je7p5"]
+[ext_resource type="Script" uid="uid://cvo8pnyn6q86h" path="res://scripts/player/fsm/fall.gd" id="9_fm80t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gx1jg"]
 atlas = ExtResource("1_lvxji")
@@ -112,7 +116,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gx1jg")
 }],
-"loop": true,
+"loop": false,
 "name": &"fall",
 "speed": 5.0
 }, {
@@ -158,7 +162,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ugbui")
 }],
-"loop": true,
+"loop": false,
 "name": &"jump",
 "speed": 5.0
 }, {
@@ -209,13 +213,30 @@ size = Vector2(14, 21)
 
 [node name="Player" type="CharacterBody2D" unique_id=65356844]
 script = ExtResource("1_p47bc")
-move_speed = 136.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=886391024]
+[node name="Direction2D" type="Node2D" parent="." unique_id=1585420157]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction2D" unique_id=886391024]
 sprite_frames = SubResource("SpriteFrames_x7p2l")
-animation = &"jump"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1145219900]
 position = Vector2(1, 4.5)
 shape = SubResource("RectangleShape2D_p47bc")
+
+[node name="States" type="Node" parent="." unique_id=598055427]
+
+[node name="Idle" type="Node" parent="States" unique_id=1598861757]
+script = ExtResource("6_5gtgg")
+
+[node name="Run" type="Node" parent="States" unique_id=310310380]
+script = ExtResource("7_h17s1")
+
+[node name="Jump" type="Node" parent="States" unique_id=1079961952]
+script = ExtResource("8_je7p5")
+
+[node name="Fall" type="Node" parent="States" unique_id=1078826624]
+script = ExtResource("9_fm80t")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2031410575]
