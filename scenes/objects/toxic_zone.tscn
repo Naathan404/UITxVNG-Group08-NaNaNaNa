@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ophrrmb07f7b"]
+
+[ext_resource type="Script" uid="uid://brr3b7rht7lyu" path="res://scripts/objects/toxic_zone.gd" id="1_xufbp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xufbp"]
+size = Vector2(0.79999995, 0.39581126)
+
+[node name="toxic_zone" type="Area2D" unique_id=1843443206]
+scale = Vector2(1, 1.0105826)
+script = ExtResource("1_xufbp")
+toxic_zone_color = "Blue"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=869898291]
+offset_right = 80.0
+offset_bottom = 40.0
+color = Color(0, 0.5, 1, 0.6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=623178767]
+position = Vector2(39.999996, 19.790564)
+scale = Vector2(100, 100)
+shape = SubResource("RectangleShape2D_xufbp")
+debug_color = Color(0.725949, 0.45651698, 0.37869567, 0.41960785)
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

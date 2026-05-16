@@ -4,6 +4,7 @@ extends BaseCharacter
 @export var max_oxygen: float = 100.0
 @export var decrease_oxygen_rate: float = 5.0
 var current_oxygen: float = 100.0
+var multiplier: float = 1.0
 
 ### Mask
 enum MaskType { NONE, RED, BLUE }
@@ -26,7 +27,7 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if mask_type != MaskType.NONE:
-		var multiplier: float = 1.0
+		# multiplier = 1.0
 		current_oxygen -= decrease_oxygen_rate * multiplier * delta
 		current_oxygen = clamp(current_oxygen, 0.0, max_oxygen)
 			
