@@ -27,9 +27,6 @@ var jump_buffer_timer: float = 0.0
 @onready var right_raycast: RayCast2D = $RightRay
 @export var corner_correction_speed: float = 6.0	# tốc độ đẩy ra khi trúng góc
 
-### Mask
-enum MaskType { NONE, RED, BLUE }
-@export var mask_type: MaskType = MaskType.NONE
 
 var fsm: FSM = null
 var current_animation = null
@@ -41,6 +38,8 @@ var _next_animated_sprite: AnimatedSprite2D = null
 
 func _ready() -> void:
 	set_animated_sprite($Direction2D/AnimatedSprite2D)
+	get_node("RunParticles").emitting = false
+	get_node("DashParticles").emitting = false
 
 func _physics_process(delta: float) -> void:
 	# Animation
