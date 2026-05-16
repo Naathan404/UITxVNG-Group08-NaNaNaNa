@@ -34,3 +34,11 @@ func control_jump() -> bool:
 		change_state(fsm.states.jump)
 		return true
 	return false
+
+
+func control_dash() -> bool:
+	if Input.is_action_just_pressed("dash") and obj.can_dash:
+		obj.can_dash = false 
+		change_state(fsm.states.dash)
+		return true
+	return false

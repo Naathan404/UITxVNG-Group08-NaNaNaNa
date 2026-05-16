@@ -4,6 +4,7 @@ func _enter() -> void:
 	obj.change_animation("jump")
 
 func _update(_delta: float):
+	if control_dash(): return
 	# Trên không trung thì xử lý cho người chơi đi trái phải
 	var dir: float = Input.get_action_strength("right") - Input.get_action_strength("left")
 	obj.velocity.x = obj.movement_speed * dir

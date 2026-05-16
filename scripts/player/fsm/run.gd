@@ -4,6 +4,7 @@ func _enter() -> void:
 	obj.change_animation("run")
 
 func _update(delta: float):
+	if control_dash(): return
 	if control_jump(): return
 	
 	# Nếu không bấm nút di chuyển nữa -> Quay về Idle

@@ -4,6 +4,7 @@ func _enter() -> void:
 	obj.change_animation("fall")
 
 func _update(_delta: float) -> void:
+	if control_dash(): return
 	var dir: float = Input.get_action_strength("right") - Input.get_action_strength("left")
 	obj.velocity.x = obj.movement_speed * dir
 	if abs(dir) > 0.1:

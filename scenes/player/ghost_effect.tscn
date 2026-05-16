@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dibnpntaqj83i"]
+
+[ext_resource type="Texture2D" uid="uid://bnk00rorodena" path="res://assets/sprites/characters/Dash.png" id="1_jcmi5"]
+[ext_resource type="Script" uid="uid://chx6nbfmnaq1o" path="res://scripts/player/ghost_effect.gd" id="2_r41sw"]
+
+[node name="GhostEffect" type="Sprite2D" unique_id=1110531684]
+self_modulate = Color(0.7660696, 0.7660696, 0.7660696, 0.54901963)
+show_behind_parent = true
+texture = ExtResource("1_jcmi5")
+script = ExtResource("2_r41sw")

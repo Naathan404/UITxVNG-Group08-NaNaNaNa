@@ -2,12 +2,20 @@ class_name BaseCharacter
 extends CharacterBody2D
 
 ## Base character class that provides common functionality for all characters
-
+### Basic movement variables
 @export var movement_speed: float = 200.0
+@export var jump_force: float = 350.0
+
+### Gravity and Direction
 @export var gravity: float = 1000.0
 @export var direction: int = 1
 
-var jump_speed: float = 350.0
+### Dash Setting
+@export var dash_force: float = 600.0
+@export var dash_duration: float = 0.2
+var ignore_gravity: bool = false
+var can_dash: bool = true
+
 var fsm: FSM = null
 var current_animation = null
 var animated_sprite: AnimatedSprite2D = null
@@ -32,8 +40,13 @@ func _physics_process(delta: float) -> void:
 
 
 func _update_movement(delta: float) -> void:
-	if not is_on_floor():
+	### xử lý rơi
+	if not is_on_floor() and not ignore_gravity:
 		velocity.y += gravity * delta
+	
+	### nếu đang đứng trên đất thì có thể dash
+	if is_on_floor():
+		can_dash = true
 		
 	# di chuyển
 	move_and_slide()
@@ -57,7 +70,7 @@ func turn_right() -> void:
 	_next_direction = 1
 
 func jump() -> void:
-	velocity.y = -jump_speed
+	velocity.y = -jump_force
 
 func stop_move() -> void:
 	velocity.x = 0
