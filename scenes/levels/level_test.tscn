@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dohtaysxdi21h" path="res://assets/sprites/envir/spritesheet_default.png" id="1_h0hot"]
 [ext_resource type="PackedScene" uid="uid://bi5f8r44l8v7e" path="res://scenes/player/player.tscn" id="2_yluh8"]
 [ext_resource type="PackedScene" uid="uid://ophrrmb07f7b" path="res://scenes/objects/toxic_zone.tscn" id="3_jp5fc"]
+[ext_resource type="PackedScene" uid="uid://bxfwohumvbatw" path="res://scenes/objects/jump_pad.tscn" id="3_ycf23"]
 [ext_resource type="PackedScene" uid="uid://dqbm53diyvkac" path="res://scenes/objects/spike.tscn" id="4_4ptlp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yluh8"]
@@ -1384,6 +1385,9 @@ spike_color = "Blue"
 position = Vector2(419, 181.00002)
 scale = Vector2(1.7467537, 3.591138)
 spike_color = "Red"
+
+[node name="JumpPad" parent="." unique_id=684038686 instance=ExtResource("3_ycf23")]
+position = Vector2(75, 186)
 
 [node name="World" type="Node2D" parent="." unique_id=1866520884]
 

@@ -91,3 +91,7 @@ func _on_oxygen_ran_out() -> void:
 	print("Hết oxy! Game Over!")
 	# Tạm thời reset lại màn 
 	get_tree().reload_current_scene()
+func force_jump_state():
+# Ví dụ: Nếu bạn có một biến chứa State hiện tại hoặc hàm gọi State chuyển đổi
+# $States.change_state("Jump")
+	fsm.change_state($States/Jump)
