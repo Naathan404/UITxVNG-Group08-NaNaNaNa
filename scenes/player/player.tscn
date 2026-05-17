@@ -654,7 +654,7 @@ size = Vector2(14, 20)
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.8146893, 0.61979115), -2.5671694, -2.5671694, 0, 0, Vector2(1, 0.0094558), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[node name="Player" type="CharacterBody2D" unique_id=65356844]
+[node name="Player" type="CharacterBody2D" unique_id=65356844 groups=["player"]]
 script = ExtResource("1_p47bc")
 decrease_oxygen_rate = 10.0
 dash_force = 500.0
