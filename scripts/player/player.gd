@@ -75,6 +75,9 @@ func _on_mask_change(mask: MaskType) -> bool:
 	
 	if fsm and fsm.current_state:
 		fsm.current_state._enter()
+	
+	get_tree().call_group("spikes", "update_spike_state", mask_type)
+	
 	return true
 
 # Hàm hồi Oxy khi nhặt được bình

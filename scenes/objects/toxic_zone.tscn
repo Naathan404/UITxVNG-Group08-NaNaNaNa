@@ -9,6 +9,9 @@ size = Vector2(0.79999995, 0.39581126)
 scale = Vector2(1, 1.0105826)
 script = ExtResource("1_xufbp")
 toxic_zone_color = "Blue"
+is_change_color = null
+min_time = null
+max_time = null
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=869898291]
 offset_right = 80.0
