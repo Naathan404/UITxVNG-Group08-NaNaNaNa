@@ -1,19 +1,18 @@
 [gd_scene format=3 uid="uid://dqbm53diyvkac"]
 
 [ext_resource type="Script" uid="uid://dbqn8r4hml57h" path="res://scripts/objects/spike.gd" id="1_ctypd"]
-[ext_resource type="Texture2D" uid="uid://skth0ardjynf" path="res://icon.svg" id="1_htn6p"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ctypd"]
-size = Vector2(84, 52)
+[ext_resource type="Texture2D" uid="uid://c6jikwu4sc8gi" path="res://assets/sprites/envir/spike.png" id="2_ctypd"]
 
 [node name="spike" type="Area2D" unique_id=922398961]
 script = ExtResource("1_ctypd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1324901480]
 scale = Vector2(0.6523437, 0.40820313)
-texture = ExtResource("1_htn6p")
+texture = ExtResource("2_ctypd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1861902190]
-shape = SubResource("RectangleShape2D_ctypd")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=763204105]
+position = Vector2(-0.2000001, 0.26079535)
+scale = Vector2(0.9934211, 0.9829545)
+polygon = PackedVector2Array(-10, 1, -19, 12, 1, 12, 19, 12, 10, 1, 2, 11)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

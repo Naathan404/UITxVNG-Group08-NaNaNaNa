@@ -22,17 +22,10 @@ func _process(delta: float) -> void:
 	var bodies = get_overlapping_bodies()
 	for body in bodies:
 		if body.is_in_group("player"):
-			var check_mask = false
-			if toxic_zone_color == "Red" and body.mask_type == body.MaskType.RED:
-				check_mask = true
-			elif toxic_zone_color == "Blue" and body.mask_type == body.MaskType.BLUE:
-				check_mask = true
-			if check_mask:
-				body.multiplier = 1.0
-			else:
-				body.multiplier = 5.0
+			body.current_toxic_zone = toxic_zone_color
+			
 
 
 func _on_body_exited(body: Node2D) -> void:
-	if (body.is_in_group("player")):
-		body.multiplier = 1.0
+	if body.is_in_group("player"):
+		body.current_toxic_zone = ""

@@ -5,6 +5,7 @@ extends BaseCharacter
 @export var decrease_oxygen_rate: float = 5.0
 var current_oxygen: float = 100.0
 var multiplier: float = 1.0
+var current_toxic_zone: String = ""
 
 ### Mask
 enum MaskType { NONE, RED, BLUE }
@@ -26,14 +27,23 @@ func _ready() -> void:
 	super._ready()
 	
 func _process(delta: float) -> void:
-	if mask_type != MaskType.NONE:
-		# multiplier = 1.0
-		current_oxygen -= decrease_oxygen_rate * multiplier * delta
-		current_oxygen = clamp(current_oxygen, 0.0, max_oxygen)
-			
-		if current_oxygen <= 0.0: 
-			_on_oxygen_ran_out()
-
+	if current_toxic_zone != "":
+		if mask_type == MaskType.NONE:
+			multiplier = 3.0
+		elif (current_toxic_zone == "Red" and mask_type == MaskType.RED) or (current_toxic_zone == "Blue" and mask_type == MaskType.BLUE):
+			multiplier = 1.0
+		else:
+			multiplier = 2.0
+	else:
+		if mask_type == MaskType.NONE:
+			multiplier = 0.0
+		else:
+			multiplier = 1.0
+		
+	current_oxygen -= decrease_oxygen_rate * multiplier * delta
+	current_oxygen = clamp(current_oxygen, 0.0, max_oxygen)
+	if current_oxygen <= 0.0: 
+		_on_oxygen_ran_out()
 	# gọi game_ui cập nhật giao diện liên tục
 	if game_ui:
 		game_ui.update_ui(current_oxygen, max_oxygen, mask_type)

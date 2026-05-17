@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dohtaysxdi21h" path="res://assets/sprites/envir/spritesheet_default.png" id="1_h0hot"]
 [ext_resource type="PackedScene" uid="uid://bi5f8r44l8v7e" path="res://scenes/player/player.tscn" id="2_yluh8"]
 [ext_resource type="PackedScene" uid="uid://ophrrmb07f7b" path="res://scenes/objects/toxic_zone.tscn" id="3_jp5fc"]
+[ext_resource type="PackedScene" uid="uid://dqbm53diyvkac" path="res://scenes/objects/spike.tscn" id="4_4ptlp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yluh8"]
 texture = ExtResource("1_h0hot")
@@ -1355,6 +1356,10 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_yluh8")
 
 [node name="Stage" type="Node2D" unique_id=1588916387]
+
+[node name="spike" parent="." unique_id=922398961 instance=ExtResource("4_4ptlp")]
+position = Vector2(0, 94)
+scale = Vector2(1.4958341, 1.6082536)
 
 [node name="toxic_zone2" parent="." unique_id=934666335 instance=ExtResource("3_jp5fc")]
 position = Vector2(-128, 184)
