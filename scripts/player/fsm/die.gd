@@ -23,5 +23,12 @@ func _play_death_sequence() -> void:
 	
 	if obj.game_ui:
 		await obj.game_ui._play_death_transition()
-	
-	obj.get_tree().reload_current_scene()
+		
+	# logic trừ mạng và set_checkpoint
+	GameManager.current_lives -= 1
+	if GameManager.current_lives > 0:
+		obj.get_tree().reload_current_scene()
+		print("[Die State] Hồi sinh tại checkpoint -> Còn " + str(GameManager.current_lives) + " mạng")
+	else:
+		GameManager._reset_checkpoint()
+		obj.get_tree().reload_current_scene()

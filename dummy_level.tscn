@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dohtaysxdi21h" path="res://assets/sprites/envir/spritesheet_default.png" id="1_d66et"]
 [ext_resource type="PackedScene" uid="uid://bi5f8r44l8v7e" path="res://scenes/player/player.tscn" id="2_iuwya"]
 [ext_resource type="PackedScene" uid="uid://dqbm53diyvkac" path="res://scenes/objects/spike.tscn" id="2_rnqs5"]
+[ext_resource type="PackedScene" uid="uid://dhygepi2jq0ek" path="res://scenes/objects/checkpoint.tscn" id="3_rnqs5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d66et"]
 texture = ExtResource("1_d66et")
@@ -1366,7 +1367,6 @@ tile_set = SubResource("TileSet_iuwya")
 
 [node name="spike" parent="World" unique_id=922398961 instance=ExtResource("2_rnqs5")]
 position = Vector2(234, 85)
-spike_color = "Red"
 
 [node name="spike2" parent="World" unique_id=1666128235 instance=ExtResource("2_rnqs5")]
 position = Vector2(337, 85)
@@ -1374,22 +1374,21 @@ spike_color = "Blue"
 
 [node name="spike3" parent="World" unique_id=1302131069 instance=ExtResource("2_rnqs5")]
 position = Vector2(566, 85)
-spike_color = "Red"
 
 [node name="spike4" parent="World" unique_id=2007166864 instance=ExtResource("2_rnqs5")]
 position = Vector2(586, 85)
-spike_color = "Red"
 
 [node name="spike6" parent="World" unique_id=1778549118 instance=ExtResource("2_rnqs5")]
 position = Vector2(805, 85)
-spike_color = "Red"
 
 [node name="spike7" parent="World" unique_id=1732459921 instance=ExtResource("2_rnqs5")]
 position = Vector2(847, 85)
-spike_color = "Red"
 
 [node name="spike5" parent="World" unique_id=842992542 instance=ExtResource("2_rnqs5")]
 position = Vector2(679, 53)
 spike_color = "Blue"
+
+[node name="Checkpoint" parent="World" unique_id=2081086830 instance=ExtResource("3_rnqs5")]
+position = Vector2(470, 34)
 
 [node name="Player" parent="." unique_id=65356844 instance=ExtResource("2_iuwya")]
