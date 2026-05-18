@@ -66,6 +66,7 @@ func _input(event: InputEvent) -> void:
 		return
 	# đổi sang mặt nạ đỏ
 	if event.is_action_pressed("mask_scroll_up"):
+		if game_ui: game_ui._play_hint_bounce(true)
 		if(mask_type == MaskType.NONE):
 			_on_mask_change(MaskType.RED)
 		elif(mask_type == MaskType.RED):
@@ -75,6 +76,8 @@ func _input(event: InputEvent) -> void:
 		return
 		
 	if event.is_action_pressed("mask_scroll_down"):
+		if game_ui: game_ui._play_hint_bounce(false)
+		
 		if(mask_type == MaskType.NONE):
 			_on_mask_change(MaskType.BLUE)
 		elif(mask_type == MaskType.BLUE):
@@ -83,21 +86,9 @@ func _input(event: InputEvent) -> void:
 			_on_mask_change(MaskType.NONE)
 		return
 		
-	if event.is_action_pressed("quit"):
-		get_tree().quit
-	
-	pass
-		
-	#if event.is_action_pressed("mask_red"):
-		#_on_mask_change(MaskType.RED)
-		#return
-	## mặt nạ xanh	
-	#elif event.is_action_pressed("mask_blue"):
-		#_on_mask_change(MaskType.BLUE)
-		#return
-	#elif event.is_action_pressed("unmask"):
-		#_on_mask_change(MaskType.NONE)
-		#return
+	#if event.is_action_pressed("quit"):
+		#get_tree().quit
+
 		
 # Hàm đổi mặt nạ
 func _on_mask_change(mask: MaskType) -> bool:
@@ -131,5 +122,7 @@ func _on_oxygen_ran_out() -> void:
 	
 func _on_death() -> void:
 	is_dead = true
+	multiplier = 0.0
+	if game_ui: game_ui.update_ui(current_oxygen, max_oxygen, mask_type, is_oxygen_decreased)
 	print("Người chơi đã die -> Reset màn chơi")
 	fsm.change_state(fsm.states.die)

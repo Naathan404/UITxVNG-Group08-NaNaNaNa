@@ -1,15 +1,23 @@
 extends CanvasLayer
 class_name GameUI
 
-@onready var oxygen_bar: ProgressBar = $OxygenBar
+# get nodes
+# main progress ui
+@onready var oxygen_bar: TextureProgressBar = $OxygenBar
 @onready var avatar_react: TextureRect = $AvatarReact
 @onready var oxygen_particle: CPUParticles2D = $OxygenBar/OxygenRanOutParticles
+# hints
+@onready var hint_up: TextureRect = $HintUp
+@onready var hint_down: TextureRect = $HintDown
+# over render on screen
 @onready var death_screen: ColorRect = $DeathScreen
-
 
 const AVATAR_NONE = preload("res://assets/sprites/ui/avatar_react/none_mask.png")
 const AVATAR_RED = preload("res://assets/sprites/ui/avatar_react/mask_red.png")
 const AVATAR_BLUE = preload("res://assets/sprites/ui/avatar_react/mask_blue.png")
+
+# particle settings
+@export var oxygen_bar_radius: float = 24.0
 
 # avatar shake setting
 @export var shake_strenght: float = 2.0
@@ -26,19 +34,12 @@ func _save_original_position() -> void:
 func update_ui(current_oxygen: float, max_oxygen: float, mask_type: int, is_oxygen_decreased: bool) -> void:
 	oxygen_bar.max_value = max_oxygen
 	oxygen_bar.value = current_oxygen
-	
 	if mask_type != 0 or is_oxygen_decreased: # != MaskType.NONE
-		
-		# particle cho oxygen
-		oxygen_particle.emitting = true
-		var ratio = current_oxygen / max_oxygen
-		var bar_height = oxygen_bar.size.y
-
-		oxygen_particle.position.y = bar_height - bar_height * ratio
-		oxygen_particle.position.x = oxygen_bar.size.x / 2
+		_handle_oxygen_particle(current_oxygen, max_oxygen)
 	else:
 		oxygen_particle.emitting = false	
 	
+	_handle_hint_buttons(mask_type)
 	
 	### Xử lý thanh oxygen và avatar
 	# nếu oxy tuột dưới 25% thì báo đỏ
@@ -55,7 +56,30 @@ func update_ui(current_oxygen: float, max_oxygen: float, mask_type: int, is_oxyg
 		avatar_react.position = avatar_original_position
 	
 		
+func _handle_oxygen_particle(current_oxygen: float, max_oxygen: float) -> void:
+	# particle cho oxygen
+	oxygen_particle.emitting = true
+	
+	var ratio = current_oxygen / max_oxygen
+	var bar_center = oxygen_bar.size / 2.0
+	var angle = PI / 2.0 - ratio * PI
+	
+	oxygen_particle.position.x = round(bar_center.x + cos(angle) * oxygen_bar_radius)
+	oxygen_particle.position.y = round(bar_center.y + sin(angle) * oxygen_bar_radius)
 
+	pass
+	
+func _handle_hint_buttons(mask_type: int) -> void:
+	if mask_type == 0:
+		hint_up.self_modulate = Color.CRIMSON
+		hint_down.self_modulate = Color.ROYAL_BLUE
+	elif mask_type == 1:
+		hint_up.self_modulate = Color.ROYAL_BLUE
+		hint_down.self_modulate = Color.WHITE
+	elif mask_type == 2:
+		hint_up.self_modulate = Color.WHITE
+		hint_down.self_modulate = Color.CRIMSON
+	pass
 
 # Hàm đổi avatar rect
 func update_avatar_texture(mask_type: int) -> void:
@@ -70,7 +94,7 @@ func _shake_avatar() -> void:
 	# Cộng dồn độ lệch ngẫu nhiên vào vị trí gốc
 	avatar_react.position = avatar_original_position + Vector2(random_x, random_y)
 	
-func play_death_transition() -> Signal:
+func _play_death_transition() -> Signal:
 	death_screen.color = Color(0, 0, 0, 0.0) 
 	
 	var tween = create_tween()
@@ -78,4 +102,19 @@ func play_death_transition() -> Signal:
 	
 	return tween.finished
 	
+func _play_hint_bounce(is_scroll_up: bool) -> void:
+	var tween = create_tween()
+	if(is_scroll_up):
+		tween.tween_property(hint_up, "scale", Vector2(1.3, 1.3), 0.1).set_trans(Tween.TRANS_SINE)
+		tween.tween_property(hint_up, "scale", Vector2(1.0, 1.0), 0.1).set_trans(Tween.TRANS_BOUNCE)
+		hint_up.modulate = Color(1.5, 1.5, 1.5)
+		tween.parallel().tween_property(hint_up, "modulate", Color(1.0, 1.0, 1.0), 0.2)
+	else:
+		tween.tween_property(hint_down, "scale", Vector2(1.3, 1.3), 0.1).set_trans(Tween.TRANS_SINE)
+		tween.tween_property(hint_down, "scale", Vector2(1.0, 1.0), 0.1).set_trans(Tween.TRANS_BOUNCE)
+		hint_down.modulate = Color(1.5, 1.5, 1.5)
+		tween.parallel().tween_property(hint_down, "modulate", Color(1.0, 1.0, 1.0), 0.2)
 	
+	tween.parallel().tween_property(avatar_react, "scale", Vector2(1.1, 1.1), 0.1).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(avatar_react, "scale", Vector2(1.0, 1.0), 0.1).set_trans(Tween.TRANS_BOUNCE)
+	pass
