@@ -4,6 +4,8 @@ class_name GameUI
 @onready var oxygen_bar: ProgressBar = $OxygenBar
 @onready var avatar_react: TextureRect = $AvatarReact
 @onready var oxygen_particle: CPUParticles2D = $OxygenBar/OxygenRanOutParticles
+@onready var death_screen: ColorRect = $DeathScreen
+
 
 const AVATAR_NONE = preload("res://assets/sprites/ui/avatar_react/none_mask.png")
 const AVATAR_RED = preload("res://assets/sprites/ui/avatar_react/mask_red.png")
@@ -67,3 +69,13 @@ func _shake_avatar() -> void:
 	var random_y = randf_range(-shake_strenght, shake_strenght)
 	# Cộng dồn độ lệch ngẫu nhiên vào vị trí gốc
 	avatar_react.position = avatar_original_position + Vector2(random_x, random_y)
+	
+func play_death_transition() -> Signal:
+	death_screen.color = Color(0, 0, 0, 0.0) 
+	
+	var tween = create_tween()
+	tween.tween_property(death_screen, "color:a", 1.0, 0.5)
+	
+	return tween.finished
+	
+	

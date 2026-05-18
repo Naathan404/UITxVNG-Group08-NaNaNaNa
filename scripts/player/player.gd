@@ -7,6 +7,7 @@ var current_oxygen: float = 100.0
 var multiplier: float = 1.0
 var current_toxic_zone: String = ""
 var is_oxygen_decreased: bool = false
+var is_dead: bool = false
 
 ### Mask
 enum MaskType { NONE, RED, BLUE }
@@ -55,12 +56,14 @@ func _process(delta: float) -> void:
 		game_ui.update_ui(current_oxygen, max_oxygen, mask_type, is_oxygen_decreased)
 		
 	# rơi xuống thì chết
-	if position.y > 500:
+	if position.y > 500 and not is_dead:
 		print("Té chết")
-		get_tree().reload_current_scene()
+		_on_death()
 
 ### Hàm xử lý input
 func _input(event: InputEvent) -> void:
+	if fsm.current_state == fsm.states.die:
+		return
 	# đổi sang mặt nạ đỏ
 	if event.is_action_pressed("mask_scroll_up"):
 		if(mask_type == MaskType.NONE):
@@ -79,6 +82,9 @@ func _input(event: InputEvent) -> void:
 		elif(mask_type == MaskType.RED):
 			_on_mask_change(MaskType.NONE)
 		return
+		
+	if event.is_action_pressed("quit"):
+		get_tree().quit
 	
 	pass
 		
@@ -120,5 +126,10 @@ func _refill_oxygen(amount: float) -> void:
 # Xử lý khi hết sạch oxy
 func _on_oxygen_ran_out() -> void:
 	print("Hết oxy! Game Over!")
-	# Tạm thời reset lại màn 
-	get_tree().reload_current_scene()
+	# Tạm thời reset lại màn
+	_on_death()
+	
+func _on_death() -> void:
+	is_dead = true
+	print("Người chơi đã die -> Reset màn chơi")
+	fsm.change_state(fsm.states.die)

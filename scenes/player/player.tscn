@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://divq7u6lrbfaw" path="res://assets/sprites/characters/Dash_Red.png" id="3_myrg7"]
 [ext_resource type="Texture2D" uid="uid://b6ov48mv4f7te" path="res://assets/sprites/characters/Jump (32x32).png" id="3_p47bc"]
 [ext_resource type="Texture2D" uid="uid://j0uh3qywmc03" path="res://assets/sprites/characters/Run (32x32).png" id="4_75vfm"]
+[ext_resource type="Texture2D" uid="uid://202anas5dlb4" path="res://assets/sprites/characters/Hit (32x32).png" id="5_ioxgp"]
 [ext_resource type="Texture2D" uid="uid://br43drd3vnlbi" path="res://assets/sprites/characters/Fall_Red.png" id="5_kvlxm"]
 [ext_resource type="Script" uid="uid://cnybuxdpx625h" path="res://scripts/player/fsm/idle.gd" id="6_5gtgg"]
 [ext_resource type="Texture2D" uid="uid://b6goo2dami48" path="res://assets/sprites/characters/Fall_Blue.png" id="6_yj68g"]
@@ -22,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://fykkxy5k8w36" path="res://assets/sprites/characters/Run_Blue.png" id="12_8ydkj"]
 [ext_resource type="Texture2D" uid="uid://larvvjwy1qvq" path="res://assets/sprites/characters/Jump_Blue.png" id="12_ioxgp"]
 [ext_resource type="PackedScene" uid="uid://kojv1ur7jv44" path="res://scenes/player/game_ui.tscn" id="22_yj68g"]
+[ext_resource type="Script" uid="uid://bjtaj5xxefbf4" path="res://scripts/player/fsm/die.gd" id="23_cnsyf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j4nxn"]
 atlas = ExtResource("2_je7p5")
@@ -34,6 +36,34 @@ region = Rect2(0, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_28m0y"]
 atlas = ExtResource("3_myrg7")
 region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4sw5w"]
+atlas = ExtResource("5_ioxgp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4k4a"]
+atlas = ExtResource("5_ioxgp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vkc6f"]
+atlas = ExtResource("5_ioxgp")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21yht"]
+atlas = ExtResource("5_ioxgp")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_trum3"]
+atlas = ExtResource("5_ioxgp")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4b1ex"]
+atlas = ExtResource("5_ioxgp")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8cnd"]
+atlas = ExtResource("5_ioxgp")
+region = Rect2(192, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gx1jg"]
 atlas = ExtResource("1_lvxji")
@@ -363,6 +393,32 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_4sw5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4k4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vkc6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21yht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_trum3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4b1ex")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8cnd")
+}],
+"loop": false,
+"name": &"die",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_gx1jg")
 }],
 "loop": false,
@@ -663,9 +719,12 @@ dash_duration = 0.15
 [node name="Direction2D" type="Node2D" parent="." unique_id=1585420157]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Direction2D" unique_id=886391024]
+z_index = 1
 sprite_frames = SubResource("SpriteFrames_x7p2l")
-animation = &"dash_blue"
+animation = &"die"
 autoplay = "idle"
+frame = 6
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1145219900]
 position = Vector2(0, 5)
@@ -687,6 +746,9 @@ script = ExtResource("9_fm80t")
 
 [node name="Dash" type="Node" parent="States" unique_id=910515495]
 script = ExtResource("10_h17s1")
+
+[node name="Die" type="Node" parent="States" unique_id=1483757351]
+script = ExtResource("23_cnsyf")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2031410575]
 offset = Vector2(0, -50)
