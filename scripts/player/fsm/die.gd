@@ -5,10 +5,12 @@ extends PlayerState
 func _enter() -> void:
 	obj.change_animation("die")
 	obj.velocity = Vector2.ZERO
+	obj.velocity.y = -200
+	#obj.velocity.x = -100 * obj.direction
 	_play_death_sequence()
 	
 func _update(_delta: float) -> void:
-	obj.velocity = Vector2.ZERO
+	#obj.velocity = Vector2.ZERO
 	pass
 	
 func _exit() -> void:

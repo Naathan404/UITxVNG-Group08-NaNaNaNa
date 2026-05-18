@@ -116,11 +116,13 @@ func _refill_oxygen(amount: float) -> void:
 
 # Xử lý khi hết sạch oxy
 func _on_oxygen_ran_out() -> void:
+	if is_dead: return
 	print("Hết oxy! Game Over!")
 	# Tạm thời reset lại màn
 	_on_death()
 	
 func _on_death() -> void:
+	if is_dead: return
 	is_dead = true
 	multiplier = 0.0
 	if game_ui: game_ui.update_ui(current_oxygen, max_oxygen, mask_type, is_oxygen_decreased)
