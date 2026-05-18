@@ -53,20 +53,45 @@ func _process(delta: float) -> void:
 	# gọi game_ui cập nhật giao diện liên tục
 	if game_ui:
 		game_ui.update_ui(current_oxygen, max_oxygen, mask_type, is_oxygen_decreased)
+		
+	# rơi xuống thì chết
+	if position.y > 500:
+		print("Té chết")
+		get_tree().reload_current_scene()
 
 ### Hàm xử lý input
 func _input(event: InputEvent) -> void:
 	# đổi sang mặt nạ đỏ
-	if event.is_action_pressed("mask_red"):
-		_on_mask_change(MaskType.RED)
+	if event.is_action_pressed("mask_scroll_up"):
+		if(mask_type == MaskType.NONE):
+			_on_mask_change(MaskType.RED)
+		elif(mask_type == MaskType.RED):
+			_on_mask_change(MaskType.BLUE)
+		elif(mask_type == MaskType.BLUE):
+			_on_mask_change(MaskType.NONE)
 		return
-	# mặt nạ xanh	
-	elif event.is_action_pressed("mask_blue"):
-		_on_mask_change(MaskType.BLUE)
+		
+	if event.is_action_pressed("mask_scroll_down"):
+		if(mask_type == MaskType.NONE):
+			_on_mask_change(MaskType.BLUE)
+		elif(mask_type == MaskType.BLUE):
+			_on_mask_change(MaskType.RED)
+		elif(mask_type == MaskType.RED):
+			_on_mask_change(MaskType.NONE)
 		return
-	elif event.is_action_pressed("unmask"):
-		_on_mask_change(MaskType.NONE)
-		return
+	
+	pass
+		
+	#if event.is_action_pressed("mask_red"):
+		#_on_mask_change(MaskType.RED)
+		#return
+	## mặt nạ xanh	
+	#elif event.is_action_pressed("mask_blue"):
+		#_on_mask_change(MaskType.BLUE)
+		#return
+	#elif event.is_action_pressed("unmask"):
+		#_on_mask_change(MaskType.NONE)
+		#return
 		
 # Hàm đổi mặt nạ
 func _on_mask_change(mask: MaskType) -> bool:
