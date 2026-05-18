@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bi5f8r44l8v7e" path="res://scenes/player/player.tscn" id="2_iuwya"]
 [ext_resource type="PackedScene" uid="uid://dqbm53diyvkac" path="res://scenes/objects/spike.tscn" id="2_rnqs5"]
 [ext_resource type="PackedScene" uid="uid://dhygepi2jq0ek" path="res://scenes/objects/checkpoint.tscn" id="3_rnqs5"]
+[ext_resource type="PackedScene" uid="uid://o2swfy8nb5vw" path="res://scenes/objects/start_point.tscn" id="4_ijhar"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d66et"]
 texture = ExtResource("1_d66et")
@@ -1390,5 +1391,8 @@ spike_color = "Blue"
 
 [node name="Checkpoint" parent="World" unique_id=2081086830 instance=ExtResource("3_rnqs5")]
 position = Vector2(470, 34)
+
+[node name="StartPoint" parent="World" unique_id=1018394759 instance=ExtResource("4_ijhar")]
+position = Vector2(-10, 65)
 
 [node name="Player" parent="." unique_id=65356844 instance=ExtResource("2_iuwya")]
