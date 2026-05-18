@@ -20,6 +20,6 @@ func _play_death_sequence() -> void:
 	await anim_sprite.animation_finished
 	
 	if obj.game_ui:
-		await obj.game_ui.play_death_transition()
+		await obj.game_ui._play_death_transition()
 	
 	obj.get_tree().reload_current_scene()

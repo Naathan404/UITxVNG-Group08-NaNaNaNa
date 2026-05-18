@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://daeksf1du5ct8" path="res://scripts/ui/game_ui.gd" id="1_cgn3u"]
 [ext_resource type="Texture2D" uid="uid://1axhrtb88p5n" path="res://assets/sprites/ui/avatar_react/none_mask.png" id="1_pnnm1"]
+[ext_resource type="Texture2D" uid="uid://bbmav0iebex4j" path="res://assets/sprites/ui/ui_hint_up_button.png" id="3_hmndv"]
+[ext_resource type="Texture2D" uid="uid://btlea3bdo46r2" path="res://assets/sprites/ui/ui_hint_down_button.png" id="4_p4jm6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3j4b4"]
 bg_color = Color(1.353256, 1.353256, 1.353256, 1)
@@ -25,10 +27,10 @@ corner_detail = 1
 script = ExtResource("1_cgn3u")
 
 [node name="OxygenBar" type="ProgressBar" parent="." unique_id=1043581057]
-offset_left = 13.0
-offset_top = 174.0
-offset_right = 25.0
-offset_bottom = 234.0
+offset_left = 53.0
+offset_top = 204.0
+offset_right = 65.0
+offset_bottom = 264.0
 theme_override_styles/background = SubResource("StyleBoxFlat_3j4b4")
 theme_override_styles/fill = SubResource("StyleBoxFlat_yj68g")
 step = 1.0
@@ -49,13 +51,6 @@ gravity = Vector2(0, -50)
 initial_velocity_max = 20.0
 color = Color(0.17254902, 0.67058825, 0.74509805, 1)
 
-[node name="AvatarReact" type="TextureRect" parent="." unique_id=18979545]
-offset_left = -7.0
-offset_top = 211.0
-offset_right = 53.0
-offset_bottom = 271.0
-texture = ExtResource("1_pnnm1")
-
 [node name="DeathScreen" type="ColorRect" parent="." unique_id=558221118]
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,3 +58,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0)
+
+[node name="AvatarReact" type="TextureRect" parent="." unique_id=18979545]
+offset_left = -7.0
+offset_top = 209.0
+offset_right = 53.0
+offset_bottom = 269.0
+texture = ExtResource("1_pnnm1")
+
+[node name="HintUp" type="TextureRect" parent="." unique_id=764313852]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -235.0
+offset_top = 62.0
+offset_right = -195.0
+offset_bottom = 102.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("3_hmndv")
+
+[node name="HintDown" type="TextureRect" parent="." unique_id=1660936313]
+offset_left = 5.0
+offset_top = 239.0
+offset_right = 45.0
+offset_bottom = 279.0
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("4_p4jm6")

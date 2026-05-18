@@ -1,10 +1,13 @@
 extends CanvasLayer
 class_name GameUI
 
+# get nodes
 @onready var oxygen_bar: ProgressBar = $OxygenBar
 @onready var avatar_react: TextureRect = $AvatarReact
 @onready var oxygen_particle: CPUParticles2D = $OxygenBar/OxygenRanOutParticles
 @onready var death_screen: ColorRect = $DeathScreen
+@onready var hint_up: TextureRect = $HintUp
+@onready var hint_down: TextureRect = $HintDown
 
 
 const AVATAR_NONE = preload("res://assets/sprites/ui/avatar_react/none_mask.png")
@@ -70,7 +73,7 @@ func _shake_avatar() -> void:
 	# Cộng dồn độ lệch ngẫu nhiên vào vị trí gốc
 	avatar_react.position = avatar_original_position + Vector2(random_x, random_y)
 	
-func play_death_transition() -> Signal:
+func _play_death_transition() -> Signal:
 	death_screen.color = Color(0, 0, 0, 0.0) 
 	
 	var tween = create_tween()
@@ -78,4 +81,18 @@ func play_death_transition() -> Signal:
 	
 	return tween.finished
 	
+func _play_hint_bounce(is_scroll_up: bool) -> void:
+	var tween = create_tween()
+	if(is_scroll_up):
+		tween.tween_property(hint_up, "scale", Vector2(1.3, 1.3), 0.1).set_trans(Tween.TRANS_SINE)
+		tween.tween_property(hint_up, "scale", Vector2(1.0, 1.0), 0.1).set_trans(Tween.TRANS_BOUNCE)
+		hint_up.modulate = Color(1.5, 1.5, 1.5)
+		tween.parallel().tween_property(hint_up, "modulate", Color(1.0, 1.0, 1.0), 0.2)
+	else:
+		tween.tween_property(hint_down, "scale", Vector2(1.3, 1.3), 0.1).set_trans(Tween.TRANS_SINE)
+		tween.tween_property(hint_down, "scale", Vector2(1.0, 1.0), 0.1).set_trans(Tween.TRANS_BOUNCE)
+		hint_down.modulate = Color(1.5, 1.5, 1.5)
+		tween.parallel().tween_property(hint_down, "modulate", Color(1.0, 1.0, 1.0), 0.2)
 	
+	
+	pass
