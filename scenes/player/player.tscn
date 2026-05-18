@@ -689,6 +689,7 @@ script = ExtResource("9_fm80t")
 script = ExtResource("10_h17s1")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2031410575]
+offset = Vector2(0, -50)
 
 [node name="RightRay" type="RayCast2D" parent="." unique_id=1184261151]
 position = Vector2(5, 0)
