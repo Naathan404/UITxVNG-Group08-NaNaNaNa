@@ -6,6 +6,7 @@ extends BaseCharacter
 var current_oxygen: float = 100.0
 var multiplier: float = 1.0
 var current_toxic_zone: String = ""
+var is_oxygen_decreased: bool = false
 
 ### Mask
 enum MaskType { NONE, RED, BLUE }
@@ -39,6 +40,11 @@ func _process(delta: float) -> void:
 			multiplier = 0.0
 		else:
 			multiplier = 1.0
+			
+	if multiplier == 0:
+		is_oxygen_decreased = false
+	else:
+		is_oxygen_decreased = true
 		
 	current_oxygen -= decrease_oxygen_rate * multiplier * delta
 	current_oxygen = clamp(current_oxygen, 0.0, max_oxygen)
@@ -46,7 +52,7 @@ func _process(delta: float) -> void:
 		_on_oxygen_ran_out()
 	# gọi game_ui cập nhật giao diện liên tục
 	if game_ui:
-		game_ui.update_ui(current_oxygen, max_oxygen, mask_type)
+		game_ui.update_ui(current_oxygen, max_oxygen, mask_type, is_oxygen_decreased)
 
 ### Hàm xử lý input
 func _input(event: InputEvent) -> void:
@@ -81,7 +87,7 @@ func _on_mask_change(mask: MaskType) -> bool:
 	return true
 
 # Hàm hồi Oxy khi nhặt được bình
-func refill_oxygen(amount: float) -> void:
+func _refill_oxygen(amount: float) -> void:
 	current_oxygen += amount
 	current_oxygen = clamp(current_oxygen, 0.0, max_oxygen)
 	print("Đã hồi ", amount, " oxy!")
