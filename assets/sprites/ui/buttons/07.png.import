@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cff75qmf43rd1"
-path="res://.godot/imported/oxygen_bar_progress.png-0d356d1ad26c794fa9efe27224516d76.ctex"
+uid="uid://dygfo12rrqng8"
+path="res://.godot/imported/07.png-74c76d860ef00b309d0605c304debae6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ui/oxygen_bar_progress.png"
-dest_files=["res://.godot/imported/oxygen_bar_progress.png-0d356d1ad26c794fa9efe27224516d76.ctex"]
+source_file="res://assets/sprites/ui/buttons/07.png"
+dest_files=["res://.godot/imported/07.png-74c76d860ef00b309d0605c304debae6.ctex"]
 
 [params]
 
