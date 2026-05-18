@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3ncv814de8hv"
-path="res://.godot/imported/oxygen_bar_cover.png-ac55b0288799ecce4f00aaf58f54eba4.ctex"
+uid="uid://cqlstgf1rm5rm"
+path="res://.godot/imported/Jump (28x28).png-6b4d51f98a874419913f4d15495d30f5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ui/oxygen_bar_cover.png"
-dest_files=["res://.godot/imported/oxygen_bar_cover.png-ac55b0288799ecce4f00aaf58f54eba4.ctex"]
+source_file="res://assets/sprites/envir/Jump (28x28).png"
+dest_files=["res://.godot/imported/Jump (28x28).png-6b4d51f98a874419913f4d15495d30f5.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btlea3bdo46r2"
-path="res://.godot/imported/ui_hint_down_button.png-2f09029e760528e8b22ce02284c729b6.ctex"
+uid="uid://cqcdrx84wkjty"
+path="res://.godot/imported/01.png-49ec96afe36755b5a83b40a21b93ca75.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ui/ui_hint_down_button.png"
-dest_files=["res://.godot/imported/ui_hint_down_button.png-2f09029e760528e8b22ce02284c729b6.ctex"]
+source_file="res://assets/sprites/ui/buttons/01.png"
+dest_files=["res://.godot/imported/01.png-49ec96afe36755b5a83b40a21b93ca75.ctex"]
 
 [params]
 

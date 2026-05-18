@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://daeksf1du5ct8" path="res://scripts/ui/game_ui.gd" id="1_cgn3u"]
 [ext_resource type="Texture2D" uid="uid://1axhrtb88p5n" path="res://assets/sprites/ui/avatar_react/none_mask.png" id="1_pnnm1"]
-[ext_resource type="Texture2D" uid="uid://bbmav0iebex4j" path="res://assets/sprites/ui/ui_hint_up_button.png" id="3_hmndv"]
-[ext_resource type="Texture2D" uid="uid://btlea3bdo46r2" path="res://assets/sprites/ui/ui_hint_down_button.png" id="4_p4jm6"]
-[ext_resource type="Texture2D" uid="uid://bwrcr6nggqclp" path="res://assets/sprites/ui/oxygen_bar_under.png" id="5_gf7m8"]
-[ext_resource type="Texture2D" uid="uid://cff75qmf43rd1" path="res://assets/sprites/ui/oxygen_bar_progress.png" id="6_kjpqb"]
-[ext_resource type="Texture2D" uid="uid://b3ncv814de8hv" path="res://assets/sprites/ui/oxygen_bar_cover.png" id="7_kjpqb"]
+[ext_resource type="Texture2D" uid="uid://bbmav0iebex4j" path="res://assets/sprites/ui/ingame_ui/ui_hint_up_button.png" id="3_hmndv"]
+[ext_resource type="Texture2D" uid="uid://btlea3bdo46r2" path="res://assets/sprites/ui/ingame_ui/ui_hint_down_button.png" id="4_p4jm6"]
+[ext_resource type="Texture2D" uid="uid://bwrcr6nggqclp" path="res://assets/sprites/ui/ingame_ui/oxygen_bar_under.png" id="5_gf7m8"]
+[ext_resource type="Texture2D" uid="uid://cff75qmf43rd1" path="res://assets/sprites/ui/ingame_ui/oxygen_bar_progress.png" id="6_kjpqb"]
+[ext_resource type="Texture2D" uid="uid://b3ncv814de8hv" path="res://assets/sprites/ui/ingame_ui/oxygen_bar_cover.png" id="7_kjpqb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3j4b4"]
 bg_color = Color(1.353256, 1.353256, 1.353256, 1)

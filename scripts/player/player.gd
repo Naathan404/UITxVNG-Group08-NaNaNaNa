@@ -26,7 +26,13 @@ func _ready() -> void:
 	if game_ui:
 		game_ui.update_avatar_texture(mask_type)
 	
+	position = GameManager.last_checkpoint_position
+	
 	super._ready()
+	
+	if GameManager.last_checkpoint_position != Vector2.ZERO:
+		global_position = GameManager.last_checkpoint_position
+		print("[Player] Player hồi sinh tại Checkpoint!")
 	
 func _process(delta: float) -> void:
 	if current_toxic_zone != "":
@@ -99,7 +105,7 @@ func _on_mask_change(mask: MaskType) -> bool:
 	if game_ui:
 		game_ui.update_avatar_texture(mask_type)
 		
-	print("Đổi sang mặt nạ ", mask_type)
+	print("[Player] Đổi sang mặt nạ ", mask_type)
 	
 	if fsm and fsm.current_state:
 		fsm.current_state._enter()
@@ -112,19 +118,22 @@ func _on_mask_change(mask: MaskType) -> bool:
 func _refill_oxygen(amount: float) -> void:
 	current_oxygen += amount
 	current_oxygen = clamp(current_oxygen, 0.0, max_oxygen)
-	print("Đã hồi ", amount, " oxy!")
+	print("[Player] Đã hồi ", amount, " oxy!")
 
 # Xử lý khi hết sạch oxy
 func _on_oxygen_ran_out() -> void:
 	if is_dead: return
-	print("Hết oxy! Game Over!")
+	print("[Player] Hết oxy! Game Over!")
 	# Tạm thời reset lại màn
 	_on_death()
-	
+
+# hàm gọi xử lý chuỗi sự kiện chết
 func _on_death() -> void:
 	if is_dead: return
+	# set flags
 	is_dead = true
 	multiplier = 0.0
+	# cập nhật gioa diẹne
 	if game_ui: game_ui.update_ui(current_oxygen, max_oxygen, mask_type, is_oxygen_decreased)
-	print("Người chơi đã die -> Reset màn chơi")
+	print("[Player] Người chơi đã die -> Reset màn chơi")
 	fsm.change_state(fsm.states.die)
