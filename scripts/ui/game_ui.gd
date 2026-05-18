@@ -21,11 +21,11 @@ func _save_original_position() -> void:
 	avatar_original_position = avatar_react.position
 
 #  Player gọi hàm này liên tục mỗi khung hình
-func update_ui(current_oxygen: float, max_oxygen: float, mask_type: int) -> void:
+func update_ui(current_oxygen: float, max_oxygen: float, mask_type: int, is_oxygen_decreased: bool) -> void:
 	oxygen_bar.max_value = max_oxygen
 	oxygen_bar.value = current_oxygen
 	
-	if mask_type != 0: # != MaskType.NONE
+	if mask_type != 0 or is_oxygen_decreased: # != MaskType.NONE
 		
 		# particle cho oxygen
 		oxygen_particle.emitting = true
