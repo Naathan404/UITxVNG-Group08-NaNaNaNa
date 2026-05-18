@@ -32,4 +32,5 @@ func update_spike_state(player_mask: int) -> void:
 		
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		get_tree().reload_current_scene()
+		if body.has_method("_on_death"):
+			body._on_death()

@@ -6,6 +6,8 @@ extends BaseCharacter
 var current_oxygen: float = 100.0
 var multiplier: float = 1.0
 var current_toxic_zone: String = ""
+var is_oxygen_decreased: bool = false
+var is_dead: bool = false
 
 ### Mask
 enum MaskType { NONE, RED, BLUE }
@@ -24,7 +26,13 @@ func _ready() -> void:
 	if game_ui:
 		game_ui.update_avatar_texture(mask_type)
 	
+	position = GameManager.last_checkpoint_position
+	
 	super._ready()
+	
+	if GameManager.last_checkpoint_position != Vector2.ZERO:
+		global_position = GameManager.last_checkpoint_position
+		print("[Player] Player hồi sinh tại Checkpoint!")
 	
 func _process(delta: float) -> void:
 	if current_toxic_zone != "":
@@ -39,6 +47,11 @@ func _process(delta: float) -> void:
 			multiplier = 0.0
 		else:
 			multiplier = 1.0
+			
+	if multiplier == 0:
+		is_oxygen_decreased = false
+	else:
+		is_oxygen_decreased = true
 		
 	current_oxygen -= decrease_oxygen_rate * multiplier * delta
 	current_oxygen = clamp(current_oxygen, 0.0, max_oxygen)
@@ -46,21 +59,42 @@ func _process(delta: float) -> void:
 		_on_oxygen_ran_out()
 	# gọi game_ui cập nhật giao diện liên tục
 	if game_ui:
-		game_ui.update_ui(current_oxygen, max_oxygen, mask_type)
+		game_ui.update_ui(current_oxygen, max_oxygen, mask_type, is_oxygen_decreased)
+		
+	# rơi xuống thì chết
+	if position.y > 500 and not is_dead:
+		print("Té chết")
+		_on_death()
 
 ### Hàm xử lý input
 func _input(event: InputEvent) -> void:
+	if fsm.current_state == fsm.states.die:
+		return
 	# đổi sang mặt nạ đỏ
-	if event.is_action_pressed("mask_red"):
-		_on_mask_change(MaskType.RED)
+	if event.is_action_pressed("mask_scroll_up"):
+		if game_ui: game_ui._play_hint_bounce(true)
+		if(mask_type == MaskType.NONE):
+			_on_mask_change(MaskType.RED)
+		elif(mask_type == MaskType.RED):
+			_on_mask_change(MaskType.BLUE)
+		elif(mask_type == MaskType.BLUE):
+			_on_mask_change(MaskType.NONE)
 		return
-	# mặt nạ xanh	
-	elif event.is_action_pressed("mask_blue"):
-		_on_mask_change(MaskType.BLUE)
+		
+	if event.is_action_pressed("mask_scroll_down"):
+		if game_ui: game_ui._play_hint_bounce(false)
+		
+		if(mask_type == MaskType.NONE):
+			_on_mask_change(MaskType.BLUE)
+		elif(mask_type == MaskType.BLUE):
+			_on_mask_change(MaskType.RED)
+		elif(mask_type == MaskType.RED):
+			_on_mask_change(MaskType.NONE)
 		return
-	elif event.is_action_pressed("unmask"):
-		_on_mask_change(MaskType.NONE)
-		return
+		
+	#if event.is_action_pressed("quit"):
+		#get_tree().quit
+
 		
 # Hàm đổi mặt nạ
 func _on_mask_change(mask: MaskType) -> bool:
@@ -71,7 +105,7 @@ func _on_mask_change(mask: MaskType) -> bool:
 	if game_ui:
 		game_ui.update_avatar_texture(mask_type)
 		
-	print("Đổi sang mặt nạ ", mask_type)
+	print("[Player] Đổi sang mặt nạ ", mask_type)
 	
 	if fsm and fsm.current_state:
 		fsm.current_state._enter()
@@ -81,10 +115,10 @@ func _on_mask_change(mask: MaskType) -> bool:
 	return true
 
 # Hàm hồi Oxy khi nhặt được bình
-func refill_oxygen(amount: float) -> void:
+func _refill_oxygen(amount: float) -> void:
 	current_oxygen += amount
 	current_oxygen = clamp(current_oxygen, 0.0, max_oxygen)
-	print("Đã hồi ", amount, " oxy!")
+	print("[Player] Đã hồi ", amount, " oxy!")
 
 # Xử lý khi hết sạch oxy
 func _on_oxygen_ran_out() -> void:
@@ -95,3 +129,18 @@ func force_jump_state():
 # Ví dụ: Nếu bạn có một biến chứa State hiện tại hoặc hàm gọi State chuyển đổi
 # $States.change_state("Jump")
 	fsm.change_state($States/Jump)
+	if is_dead: return
+	print("[Player] Hết oxy! Game Over!")
+	# Tạm thời reset lại màn
+	_on_death()
+
+# hàm gọi xử lý chuỗi sự kiện chết
+func _on_death() -> void:
+	if is_dead: return
+	# set flags
+	is_dead = true
+	multiplier = 0.0
+	# cập nhật gioa diẹne
+	if game_ui: game_ui.update_ui(current_oxygen, max_oxygen, mask_type, is_oxygen_decreased)
+	print("[Player] Người chơi đã die -> Reset màn chơi")
+	fsm.change_state(fsm.states.die)
