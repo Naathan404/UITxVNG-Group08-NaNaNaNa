@@ -112,6 +112,7 @@ func _on_mask_change(mask: MaskType) -> bool:
 	
 	get_tree().call_group("spikes", "update_spike_state", mask_type)
 	
+	get_tree().call_group("platforms", "update_platform_state", mask_type)
 	return true
 
 # Hàm hồi Oxy khi nhặt được bình
