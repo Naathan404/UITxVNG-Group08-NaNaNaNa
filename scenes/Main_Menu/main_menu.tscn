@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://lxi4g2w17lwj"]
+
+[ext_resource type="Texture2D" uid="uid://bpb44vctugvk3" path="res://assets/sprites/ui/button_ui.png" id="1_1nw7i"]
+[ext_resource type="Script" uid="uid://uvjvyjw06dtf" path="res://scripts/Main_Menu/main_menu.gd" id="1_b3l1k"]
+[ext_resource type="Texture2D" uid="uid://skth0ardjynf" path="res://icon.svg" id="2_dcss6"]
+[ext_resource type="FontFile" uid="uid://jsdttnado6ve" path="res://font/King Jack Style_Shadow.ttf" id="4_dcss6"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dcss6"]
+texture = ExtResource("2_dcss6")
+modulate_color = Color(0.46618086, 0.4661808, 0.4661808, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3l1k"]
+atlas = ExtResource("1_1nw7i")
+region = Rect2(95.971176, 96.15756, 30.924713, 15.949867)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xld3r"]
+atlas = ExtResource("1_1nw7i")
+region = Rect2(127.68713, 97.423805, 31.216217, 14.110832)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcss6"]
+atlas = ExtResource("1_1nw7i")
+region = Rect2(176.18794, 79.40732, 30.791855, 16.834793)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nw7i"]
+atlas = ExtResource("1_1nw7i")
+region = Rect2(208.70972, 80.87811, 29.496872, 14.100937)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eecad"]
+atlas = ExtResource("1_1nw7i")
+region = Rect2(99.6489, 128.37357, 23.586449, 14.060226)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hii1o"]
+atlas = ExtResource("1_1nw7i")
+region = Rect2(131.98727, 130.28247, 23.22908, 10.899796)
+
+[node name="main_menu" type="Control" unique_id=970508628]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -50.5
+offset_right = 48.0
+offset_bottom = 82.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b3l1k")
+
+[node name="Panel" type="Panel" parent="." unique_id=702577803]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -82.5
+offset_right = 191.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dcss6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1047607300]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -50.5
+offset_right = 48.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="start" type="TextureButton" parent="VBoxContainer" unique_id=906006390]
+custom_minimum_size = Vector2(80, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_b3l1k")
+texture_pressed = SubResource("AtlasTexture_xld3r")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="setting" type="TextureButton" parent="VBoxContainer" unique_id=320766089]
+custom_minimum_size = Vector2(80, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_dcss6")
+texture_pressed = SubResource("AtlasTexture_1nw7i")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="quit" type="TextureButton" parent="VBoxContainer" unique_id=364277520]
+custom_minimum_size = Vector2(70, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = SubResource("AtlasTexture_eecad")
+texture_pressed = SubResource("AtlasTexture_hii1o")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="." unique_id=1171121101]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -123.0
+offset_right = 19.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_dcss6")
+theme_override_font_sizes/font_size = 25
+text = "SWAP MASKS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/setting" to="." method="_on_setting_pressed"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
