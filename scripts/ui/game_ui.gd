@@ -80,9 +80,8 @@ func update_ui(current_oxygen: float, max_oxygen: float, mask_type: int, is_oxyg
 	else:
 		avatar_react.modulate = Color(1.0, 1.0, 1.0)
 		avatar_react.position = avatar_original_position
-	
-	#await get_tree().create_timer(0.15).timeout
-	#flash_bar.value = current_oxygen
+	await get_tree().create_timer(0.15).timeout
+	flash_bar.value = current_oxygen
 	
 func _update_oxygen_bar_regen(current_oxygen: float, flash_oxygen: float, max_oxygen: float, mask_type: int, is_oxygen_regen: bool) -> void:
 	is_regen = true

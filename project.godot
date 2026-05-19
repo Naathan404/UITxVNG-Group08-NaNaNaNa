@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="UITxVNG-Group08"
-run/main_scene="uid://b0d180ux05a2s"
+run/main_scene="uid://lxi4g2w17lwj"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://1axhrtb88p5n"
 
