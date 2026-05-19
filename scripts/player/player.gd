@@ -8,6 +8,7 @@ var multiplier: float = 1.0
 var current_toxic_zone: String = ""
 var is_oxygen_decreased: bool = false
 var is_dead: bool = false
+var is_oxygen_decreased_by_other_source: bool = false
 
 ### Mask
 enum MaskType { NONE, RED, BLUE }
@@ -48,7 +49,7 @@ func _process(delta: float) -> void:
 		else:
 			multiplier = 1.0
 			
-	if multiplier == 0:
+	if multiplier == 0 and not is_oxygen_decreased_by_other_source:
 		is_oxygen_decreased = false
 	else:
 		is_oxygen_decreased = true

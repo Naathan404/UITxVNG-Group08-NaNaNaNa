@@ -4,6 +4,7 @@ class_name GameUI
 # get nodes
 # main progress ui
 @onready var oxygen_bar: TextureProgressBar = $OxygenBar
+@onready var flash_bar: TextureProgressBar = $OxygenBar/FlashBar
 @onready var avatar_react: TextureRect = $AvatarReact
 @onready var oxygen_particle: CPUParticles2D = $OxygenBar/OxygenRanOutParticles
 # hints
@@ -11,6 +12,8 @@ class_name GameUI
 @onready var hint_down: TextureRect = $HintDown
 # over render on screen
 @onready var death_screen: ColorRect = $DeathScreen
+
+var is_oxygen_bar_blocked: bool = false
 
 const AVATAR_NONE = preload("res://assets/sprites/ui/avatar_react/none_mask.png")
 const AVATAR_RED = preload("res://assets/sprites/ui/avatar_react/mask_red.png")
@@ -33,9 +36,13 @@ func _save_original_position() -> void:
 #  Player gọi hàm này liên tục mỗi khung hình
 func update_ui(current_oxygen: float, max_oxygen: float, mask_type: int, is_oxygen_decreased: bool) -> void:
 	oxygen_bar.max_value = max_oxygen
+	flash_bar.max_value = max_oxygen
 	oxygen_bar.value = current_oxygen
 	oxygen_bar.tint_progress = Color(0.181, 0.956, 1.0)
 	oxygen_particle.color = Color(0.181, 0.956, 1.0)
+	
+	
+		
 	if mask_type != 0 or is_oxygen_decreased: # != MaskType.NONE
 		_handle_oxygen_particle(current_oxygen, max_oxygen)
 	else:
@@ -59,6 +66,8 @@ func update_ui(current_oxygen: float, max_oxygen: float, mask_type: int, is_oxyg
 		avatar_react.modulate = Color(1.0, 1.0, 1.0)
 		avatar_react.position = avatar_original_position
 	
+	await get_tree().create_timer(0.15).timeout
+	flash_bar.value = current_oxygen
 		
 func _handle_oxygen_particle(current_oxygen: float, max_oxygen: float) -> void:
 	# particle cho oxygen
