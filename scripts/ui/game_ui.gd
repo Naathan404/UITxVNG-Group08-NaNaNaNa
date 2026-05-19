@@ -34,6 +34,8 @@ func _save_original_position() -> void:
 func update_ui(current_oxygen: float, max_oxygen: float, mask_type: int, is_oxygen_decreased: bool) -> void:
 	oxygen_bar.max_value = max_oxygen
 	oxygen_bar.value = current_oxygen
+	oxygen_bar.tint_progress = Color(0.181, 0.956, 1.0)
+	oxygen_particle.color = Color(0.181, 0.956, 1.0)
 	if mask_type != 0 or is_oxygen_decreased: # != MaskType.NONE
 		_handle_oxygen_particle(current_oxygen, max_oxygen)
 	else:
@@ -44,6 +46,8 @@ func update_ui(current_oxygen: float, max_oxygen: float, mask_type: int, is_oxyg
 	### Xử lý thanh oxygen và avatar
 	# nếu oxy tuột dưới 25% thì báo đỏ
 	if current_oxygen < max_oxygen * 0.25:
+		oxygen_bar.tint_progress = Color(1.0, 0.6, 0.6)
+		oxygen_particle.color = Color(1.0, 0.6, 0.6)
 		if(mask_type == 1): # MaskType.RED
 			avatar_react.modulate = Color(2.0, 0.5, 0.5)
 		elif(mask_type == 2): # MaskType.BLUE
