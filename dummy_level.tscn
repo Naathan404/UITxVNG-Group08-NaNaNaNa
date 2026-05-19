@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dqbm53diyvkac" path="res://scenes/objects/spike.tscn" id="2_rnqs5"]
 [ext_resource type="PackedScene" uid="uid://dhygepi2jq0ek" path="res://scenes/objects/checkpoint.tscn" id="3_rnqs5"]
 [ext_resource type="PackedScene" uid="uid://o2swfy8nb5vw" path="res://scenes/objects/start_point.tscn" id="4_ijhar"]
+[ext_resource type="PackedScene" uid="uid://ho26j06i70e2" path="res://scenes/objects/oxygen_tank.tscn" id="5_m1u62"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d66et"]
 texture = ExtResource("1_d66et")
@@ -1394,5 +1395,14 @@ position = Vector2(470, 34)
 
 [node name="StartPoint" parent="World" unique_id=1018394759 instance=ExtResource("4_ijhar")]
 position = Vector2(-10, 65)
+
+[node name="OxygenTank" parent="World" unique_id=1122601783 instance=ExtResource("5_m1u62")]
+position = Vector2(170, 65)
+
+[node name="OxygenTank3" parent="World" unique_id=1177612532 instance=ExtResource("5_m1u62")]
+position = Vector2(380, 76)
+
+[node name="OxygenTank2" parent="World" unique_id=54982460 instance=ExtResource("5_m1u62")]
+position = Vector2(901, 72)
 
 [node name="Player" parent="." unique_id=65356844 instance=ExtResource("2_iuwya")]

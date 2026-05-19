@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://ho26j06i70e2"]
+
+[ext_resource type="Texture2D" uid="uid://8c20tvkgpjjk" path="res://assets/sprites/items/oxygen_tank_spritesheet.png" id="1_jc6jx"]
+[ext_resource type="Script" uid="uid://7ke8hc5em2cv" path="res://scripts/objects/oxygen_tank.gd" id="1_njnhp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_njnhp"]
+radius = 17.5
+height = 51.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbipx"]
+atlas = ExtResource("1_jc6jx")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kkmc3"]
+atlas = ExtResource("1_jc6jx")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hti3s"]
+atlas = ExtResource("1_jc6jx")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdb88"]
+atlas = ExtResource("1_jc6jx")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1lc3u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbipx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kkmc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hti3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdb88")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="Curve" id="Curve_njnhp"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5131086, 0.7206446), -1.6515878, -1.6515878, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="OxygenTank" type="Area2D" unique_id=1122601783]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_njnhp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1063310815]
+position = Vector2(0, 7)
+shape = SubResource("CapsuleShape2D_njnhp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=446662195]
+sprite_frames = SubResource("SpriteFrames_1lc3u")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.9454932
+
+[node name="Particle" type="CPUParticles2D" parent="." unique_id=437837414]
+modulate = Color(0.7839622, 1, 1, 1)
+position = Vector2(0, 8)
+emitting = false
+amount = 100
+lifetime = 0.33
+one_shot = true
+speed_scale = 0.95
+explosiveness = 1.0
+randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(15, 15)
+spread = 180.0
+gravity = Vector2(0, 100)
+initial_velocity_min = 0.45
+initial_velocity_max = 152.17
+scale_amount_curve = SubResource("Curve_njnhp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

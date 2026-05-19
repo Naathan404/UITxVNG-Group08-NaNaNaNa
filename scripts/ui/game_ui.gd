@@ -68,6 +68,40 @@ func update_ui(current_oxygen: float, max_oxygen: float, mask_type: int, is_oxyg
 	
 	await get_tree().create_timer(0.15).timeout
 	flash_bar.value = current_oxygen
+	
+func _update_oxygen_bar_regen(current_oxygen: float, flash_oxygen: float, max_oxygen: float, mask_type: int, is_oxygen_regen: bool) -> void:
+	oxygen_bar.max_value = max_oxygen
+	flash_bar.max_value = max_oxygen
+	flash_bar.value = flash_oxygen
+	oxygen_bar.value = current_oxygen
+	
+	if is_oxygen_regen: # != MaskType.NONE
+		_handle_oxygen_particle(current_oxygen, max_oxygen)
+	else:
+		oxygen_particle.emitting = false	
+	
+	
+	_handle_hint_buttons(mask_type)
+	
+	### Xử lý thanh oxygen và avatar
+	# nếu oxy tuột dưới 25% thì báo đỏ
+	if current_oxygen < max_oxygen * 0.25:
+		oxygen_bar.tint_progress = Color(1.0, 0.6, 0.6)
+		oxygen_particle.color = Color(1.0, 0.6, 0.6)
+		if(mask_type == 1): # MaskType.RED
+			avatar_react.modulate = Color(2.0, 0.5, 0.5)
+		elif(mask_type == 2): # MaskType.BLUE
+			avatar_react.modulate = Color(0.5, 0.5, 2.0)
+		elif(mask_type == 0):
+			avatar_react.modulate = Color(1.0, 1.0, 1.0)
+		_shake_avatar()
+	else:
+		avatar_react.modulate = Color(1.0, 1.0, 1.0)
+		oxygen_bar.tint_progress = Color(0.181, 0.956, 1.0)
+		oxygen_particle.color = Color(0.181, 0.956, 1.0)
+		avatar_react.position = avatar_original_position
+
+	pass
 		
 func _handle_oxygen_particle(current_oxygen: float, max_oxygen: float) -> void:
 	# particle cho oxygen
