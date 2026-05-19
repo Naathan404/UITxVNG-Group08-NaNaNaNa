@@ -1,6 +1,6 @@
 @tool
 extends Area2D
-@export_enum("Red", "Blue") var spike_color: String = "Red":
+@export_enum("NONE", "Red", "Blue") var spike_color: String = "NONE":
 	set(value):
 		spike_color = value
 		_update_visual()
@@ -13,8 +13,10 @@ func _update_visual():
 	if sprite:
 		if spike_color == "Red":
 			sprite.modulate = Color(1, 0, 0, 1)
-		else:
+		elif spike_color == "Blue":
 			sprite.modulate = Color(0, 0.5, 1, 1)
+		else:
+			sprite.modulate = Color(1, 1, 1, 1)
 func update_spike_state(player_mask: int) -> void:
 	var is_hide = false
 	if spike_color == "Red" and player_mask == MaskType.BLUE:
