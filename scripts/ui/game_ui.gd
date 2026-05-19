@@ -73,9 +73,10 @@ func _update_oxygen_bar_regen(current_oxygen: float, flash_oxygen: float, max_ox
 	oxygen_bar.max_value = max_oxygen
 	flash_bar.max_value = max_oxygen
 	flash_bar.value = flash_oxygen
-	oxygen_bar.value = current_oxygen
+	
 	
 	if is_oxygen_regen: # != MaskType.NONE
+		oxygen_bar.value = current_oxygen
 		_handle_oxygen_particle(current_oxygen, max_oxygen)
 	else:
 		oxygen_particle.emitting = false	
