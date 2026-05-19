@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var jump_force: float = 350.0
 
 ### Gravity and Direction
-@export var gravity: float = 1000.0
+@export var gravity: float = 1250.0
 @export var direction: int = 1
 
 ### Dash Setting
@@ -99,8 +99,8 @@ func turn_left() -> void:
 func turn_right() -> void:
 	_next_direction = 1
 
-func jump() -> void:
-	velocity.y = -jump_force
+#func jump() -> void:
+	#velocity.y = -jump_force
 
 func stop_move() -> void:
 	velocity.x = 0

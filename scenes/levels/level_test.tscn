@@ -3,7 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://dohtaysxdi21h" path="res://assets/sprites/envir/spritesheet_default.png" id="1_h0hot"]
 [ext_resource type="PackedScene" uid="uid://bi5f8r44l8v7e" path="res://scenes/player/player.tscn" id="2_yluh8"]
 [ext_resource type="PackedScene" uid="uid://ophrrmb07f7b" path="res://scenes/objects/toxic_zone.tscn" id="3_jp5fc"]
+[ext_resource type="PackedScene" uid="uid://bxfwohumvbatw" path="res://scenes/objects/jump_pad.tscn" id="3_ycf23"]
 [ext_resource type="PackedScene" uid="uid://dqbm53diyvkac" path="res://scenes/objects/spike.tscn" id="4_4ptlp"]
+[ext_resource type="PackedScene" uid="uid://dlgeyb04nwcim" path="res://scenes/objects/platform.tscn" id="6_uh3ll"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yluh8"]
 texture = ExtResource("1_h0hot")
@@ -1379,9 +1381,14 @@ scale = Vector2(1.4958341, 1.6082536)
 position = Vector2(211, 181)
 spike_color = "Blue"
 
+<<<<<<< HEAD
 [node name="spike3" parent="." unique_id=248591882 instance=ExtResource("4_4ptlp")]
 position = Vector2(419, 181.00002)
 scale = Vector2(1.7467537, 3.591138)
+=======
+[node name="JumpPad" parent="." unique_id=684038686 instance=ExtResource("3_ycf23")]
+position = Vector2(75, 186)
+>>>>>>> 6a106722cf2820921609200f0637e8bee904a085
 
 [node name="World" type="Node2D" parent="." unique_id=1866520884]
 
@@ -1392,5 +1399,9 @@ tile_map_data = PackedByteArray("AAAGAAwAAAAFAAEAAAAHAAwAAAAFAAEAAAAIAAwAAAAFAAE
 tile_set = SubResource("TileSet_jp5fc")
 
 [node name="Player" parent="." unique_id=65356844 instance=ExtResource("2_yluh8")]
-position = Vector2(135, 158)
+position = Vector2(81, 140)
 dash_duration = 0.2
+
+[node name="platform" parent="." unique_id=1680756759 instance=ExtResource("6_uh3ll")]
+position = Vector2(404, 197)
+platform_color = "Red"
