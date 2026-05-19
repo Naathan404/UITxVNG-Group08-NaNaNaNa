@@ -3,6 +3,8 @@ extends PlayerState
 @export var die_duration: float = 1.0
 
 func _enter() -> void:
+	AudioManager.stop_music()
+	AudioManager.play_sound("death", obj.global_position, 10.0)
 	obj.change_animation("die")
 	obj.velocity = Vector2.ZERO
 	obj.velocity.y = -200

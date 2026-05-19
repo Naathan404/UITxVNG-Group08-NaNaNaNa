@@ -1,7 +1,7 @@
 extends PlayerState
 
 @export var jump_force: float = -400
-@export var jump_cut_force: float = 0.4
+@export var jump_cut_force: float = 0.5
 
 func _enter() -> void:
 	if obj.mask_type == obj.MaskType.NONE:
@@ -11,6 +11,7 @@ func _enter() -> void:
 	else:
 		obj.change_animation("jump_blue")
 	
+	AudioManager.play_sound("jump", obj.global_position, 15.0)
 	obj.velocity.y = jump_force
 
 func _update(_delta: float):

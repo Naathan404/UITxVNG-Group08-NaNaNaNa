@@ -80,6 +80,7 @@ func _input(event: InputEvent) -> void:
 		return
 	# đổi sang mặt nạ đỏ
 	if event.is_action_pressed("mask_scroll_up"):
+		AudioManager.play_sound("mask_shift_1", global_position, 15.0)
 		if game_ui: game_ui._play_hint_bounce(true)
 		if(mask_type == MaskType.NONE):
 			_on_mask_change(MaskType.RED)
@@ -91,7 +92,7 @@ func _input(event: InputEvent) -> void:
 		
 	if event.is_action_pressed("mask_scroll_down"):
 		if game_ui: game_ui._play_hint_bounce(false)
-		
+		AudioManager.play_sound("mask_shift_2", global_position, 15.0)
 		if(mask_type == MaskType.NONE):
 			_on_mask_change(MaskType.BLUE)
 		elif(mask_type == MaskType.BLUE):
@@ -151,6 +152,7 @@ func _refill_oxygen(amount: float) -> void:
 	flash_oxygen = clamp(flash_oxygen, 0.0, max_oxygen)
 	
 	if game_ui:
+		if amount >= 25.0: game_ui.alarm_sfx_played = false
 		game_ui._update_oxygen_bar_regen(current_oxygen, flash_oxygen, max_oxygen, mask_type, is_oxygen_regen)
 	
 	var tween = create_tween()
