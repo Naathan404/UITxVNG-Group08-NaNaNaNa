@@ -22,3 +22,6 @@ func _update(_delta: float) -> void:
 			change_state(fsm.states.run)
 		else:
 			change_state(fsm.states.idle)
+			
+func _exit() -> void:
+	obj.get_node("JumpParticles").emitting = true

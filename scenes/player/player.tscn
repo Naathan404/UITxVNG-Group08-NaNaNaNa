@@ -710,6 +710,14 @@ size = Vector2(14, 20)
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.8146893, 0.61979115), -2.5671694, -2.5671694, 0, 0, Vector2(1, 0.0094558), 0.0, 0.0, 0, 0]
 point_count = 3
 
+[sub_resource type="Curve" id="Curve_cnsyf"]
+_data = [Vector2(0.00533808, 1), 0.0, 0.0, 0, 0, Vector2(0.7366548, 0.5304638), -1.7880175, -1.7880175, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_007i1"]
+offsets = PackedFloat32Array(0, 0.8048544, 1)
+colors = PackedColorArray(0.84705883, 0.88235295, 0.89411765, 1, 1.9539055, 1.9539055, 1.9539055, 0.693, 1, 1, 1, 0)
+
 [node name="Player" type="CharacterBody2D" unique_id=65356844 groups=["player"]]
 script = ExtResource("1_p47bc")
 max_oxygen = null
@@ -761,6 +769,7 @@ script = ExtResource("23_cnsyf")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2031410575]
 offset = Vector2(0, -50)
+limit_left = -100
 
 [node name="RightRay" type="RayCast2D" parent="." unique_id=1184261151]
 position = Vector2(5, 0)
@@ -800,5 +809,24 @@ initial_velocity_max = 100.0
 scale_amount_max = 2.0
 scale_amount_curve = SubResource("Curve_3j4b4")
 color = Color(1, 1, 1, 0.8)
+
+[node name="JumpParticles" type="CPUParticles2D" parent="." unique_id=403571317]
+z_index = 2
+position = Vector2(1, 13)
+emitting = false
+amount = 20
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 4.73
+direction = Vector2(0, -1)
+spread = 100.4
+gravity = Vector2(0, 150)
+initial_velocity_min = 40.0
+initial_velocity_max = 60.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_cnsyf")
+color_ramp = SubResource("Gradient_007i1")
 
 [node name="CanvasLayer" parent="." unique_id=220659911 instance=ExtResource("22_yj68g")]
