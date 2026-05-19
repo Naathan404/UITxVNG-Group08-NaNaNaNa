@@ -12,6 +12,7 @@ var flash_oxygen: float
 var is_dead: bool = false
 var is_oxygen_decreased_by_other_source: bool = false
 
+
 ### Mask
 enum MaskType { NONE, RED, BLUE }
 @export var mask_type: MaskType = MaskType.NONE
@@ -114,8 +115,27 @@ func _on_mask_change(mask: MaskType) -> bool:
 		
 	print("[Player] Đổi sang mặt nạ ", mask_type)
 	
-	if fsm and fsm.current_state:
-		fsm.current_state._enter()
+	if current_anim_name != "":
+		if current_anim_name == "idle" or current_anim_name == "idle_red" or current_anim_name == "idle_blue":
+			if mask_type == MaskType.NONE: change_animation("idle")
+			elif mask_type == MaskType.RED: change_animation("idle_red")
+			elif mask_type == MaskType.BLUE: change_animation("idle_blue")
+		elif (current_anim_name == "run" or current_anim_name == "run_red" or current_anim_name == "run_blue"):
+			if mask_type == MaskType.NONE: change_animation("run")
+			elif mask_type == MaskType.RED: change_animation("run_red")
+			elif mask_type == MaskType.BLUE: change_animation("run_blue")
+		elif (current_anim_name == "jump" or current_anim_name == "jump_red" or current_anim_name == "jump_blue"):
+			if mask_type == MaskType.NONE: change_animation("jump")
+			elif mask_type == MaskType.RED: change_animation("jump_red")
+			elif mask_type == MaskType.BLUE: change_animation("jump_blue")
+		elif (current_anim_name == "fall" or current_anim_name == "fall_red" or current_anim_name == "fall_blue"):
+			if mask_type == MaskType.NONE: change_animation("fall")
+			elif mask_type == MaskType.RED: change_animation("fall_red")
+			elif mask_type == MaskType.BLUE: change_animation("fall_blue")
+		elif (current_anim_name == "dash" or current_anim_name == "dash_red" or current_anim_name == "dash_blue"):
+			if mask_type == MaskType.NONE: change_animation("dash")
+			elif mask_type == MaskType.RED: change_animation("dash_red")
+			elif mask_type == MaskType.BLUE: change_animation("dash_blue")
 	
 	get_tree().call_group("spikes", "update_spike_state", mask_type)
 	
@@ -128,7 +148,7 @@ func _refill_oxygen(amount: float) -> void:
 	is_oxygen_regen = true
 	flash_oxygen = current_oxygen;
 	flash_oxygen += amount;
-	#flash_oxygen = clamp(flash_oxygen, 0.0, max_oxygen)
+	flash_oxygen = clamp(flash_oxygen, 0.0, max_oxygen)
 	
 	if game_ui:
 		game_ui._update_oxygen_bar_regen(current_oxygen, flash_oxygen, max_oxygen, mask_type, is_oxygen_regen)
@@ -141,13 +161,6 @@ func _refill_oxygen(amount: float) -> void:
 
 # Xử lý khi hết sạch oxy
 func _on_oxygen_ran_out() -> void:
-	print("Hết oxy! Game Over!")
-	# Tạm thời reset lại màn 
-	get_tree().reload_current_scene()
-func force_jump_state():
-# Ví dụ: Nếu bạn có một biến chứa State hiện tại hoặc hàm gọi State chuyển đổi
-# $States.change_state("")
-	fsm.change_state($States/Jump)
 	if is_dead: return
 	print("[Player] Hết oxy! Game Over!")
 	# Tạm thời reset lại màn
