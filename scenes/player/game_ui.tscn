@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://1axhrtb88p5n" path="res://assets/sprites/ui/avatar_react/none_mask.png" id="1_pnnm1"]
 [ext_resource type="Texture2D" uid="uid://bbmav0iebex4j" path="res://assets/sprites/ui/ingame_ui/ui_hint_up_button.png" id="3_hmndv"]
 [ext_resource type="Texture2D" uid="uid://btlea3bdo46r2" path="res://assets/sprites/ui/ingame_ui/ui_hint_down_button.png" id="4_p4jm6"]
-[ext_resource type="Texture2D" uid="uid://bwrcr6nggqclp" path="res://assets/sprites/ui/ingame_ui/oxygen_bar_under.png" id="5_gf7m8"]
 [ext_resource type="Texture2D" uid="uid://cff75qmf43rd1" path="res://assets/sprites/ui/ingame_ui/oxygen_bar_progress.png" id="6_kjpqb"]
 [ext_resource type="Texture2D" uid="uid://b3ncv814de8hv" path="res://assets/sprites/ui/ingame_ui/oxygen_bar_cover.png" id="7_kjpqb"]
 
@@ -99,7 +98,6 @@ value = 36.0
 fill_mode = 5
 radial_initial_angle = 180.0
 radial_fill_degrees = 180.0
-texture_under = ExtResource("5_gf7m8")
 texture_progress = ExtResource("6_kjpqb")
 tint_under = Color(0, 0.41414726, 1, 1)
 tint_progress = Color(0.46254948, 0.9804042, 1, 1)
@@ -117,8 +115,21 @@ gravity = Vector2(0, -50)
 initial_velocity_max = 20.0
 color = Color(0.4627451, 0.98039216, 1, 1)
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=416373117]
+[node name="FlashBar" type="TextureProgressBar" parent="OxygenBar" unique_id=1555316886]
 z_index = -1
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+value = 50.0
+fill_mode = 5
+radial_initial_angle = 180.0
+radial_fill_degrees = 180.0
+texture_under = ExtResource("7_kjpqb")
+texture_progress = ExtResource("6_kjpqb")
+tint_under = Color(0, 0.41568628, 1, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=416373117]
+z_index = -2
 offset_top = -3.0
 offset_right = 64.0
 offset_bottom = 61.0

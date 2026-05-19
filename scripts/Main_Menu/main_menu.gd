@@ -3,8 +3,6 @@ extends Control
 var game_play = preload("res://dummy_level.tscn")
 
 func _on_start_pressed() -> void:
-	#$fade_animation/AnimationPlayer.play_backwards("fade_in")
-	#await $fade_animation/AnimationPlayer.animation_finished
 	get_tree().change_scene_to_packed(game_play)
 
 func _on_setting_pressed() -> void:
