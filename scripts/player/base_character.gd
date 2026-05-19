@@ -27,6 +27,8 @@ var jump_buffer_timer: float = 0.0
 @onready var right_raycast: RayCast2D = $RightRay
 @export var corner_correction_speed: float = 6.0	# tốc độ đẩy ra khi trúng góc
 
+var current_anim_name: String = ""
+
 
 var fsm: FSM = null
 var current_animation = null
@@ -108,6 +110,7 @@ func stop_move() -> void:
 
 # Change the animation of the character on the next frame
 func change_animation(new_animation: String) -> void:
+	current_anim_name = new_animation
 	_next_animation = new_animation
 
 # Change the direction of the character on the last frame

@@ -58,8 +58,6 @@ func update_ui(current_oxygen: float, max_oxygen: float, mask_type: int, is_oxyg
 	oxygen_bar.tint_progress = Color(0.181, 0.956, 1.0)
 	oxygen_particle.color = Color(0.181, 0.956, 1.0)
 	
-	
-		
 	if mask_type != 0 or is_oxygen_decreased: # != MaskType.NONE
 		_handle_oxygen_particle(current_oxygen, max_oxygen)
 	else:
