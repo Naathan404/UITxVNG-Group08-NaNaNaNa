@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if is_activated: return
 	if body.has_method("_refill_oxygen"):
+		AudioManager.play_sound("oxygen", global_position, 5.0)
 		is_activated = true
 		body._refill_oxygen(25)
 		animated_sprite.hide()

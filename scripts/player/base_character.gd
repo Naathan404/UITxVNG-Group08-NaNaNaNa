@@ -17,7 +17,7 @@ var ignore_gravity: bool = false
 var can_dash: bool = true
 
 ### Buffer jump & Coyote time
-@export var coyote_time: float = 0.2      
+@export var coyote_time: float = 0.25      
 @export var jump_buffer_time: float = 0.2
 var coyote_timer: float = 0.0
 var jump_buffer_timer: float = 0.0

@@ -17,6 +17,7 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if is_activated: return
 	if body.is_in_group("player"):
+		AudioManager.play_sound("startpoint", Vector2.ZERO, 8.0)
 		is_activated = true
 		animated_sprite.play("moving")
 		await animated_sprite.animation_finished

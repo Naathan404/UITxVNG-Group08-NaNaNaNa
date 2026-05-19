@@ -16,7 +16,9 @@ class_name GameUI
 var is_oxygen_bar_blocked: bool = false
 var is_regen: bool = false
 var flash_timer: float = 0.0
-const FLASH_DELAY: float = 0.3
+const FLASH_DELAY: float = 0.5
+
+var alarm_sfx_played: bool = false
 
 const AVATAR_NONE = preload("res://assets/sprites/ui/avatar_react/none_mask.png")
 const AVATAR_RED = preload("res://assets/sprites/ui/avatar_react/mask_red.png")
@@ -68,6 +70,10 @@ func update_ui(current_oxygen: float, max_oxygen: float, mask_type: int, is_oxyg
 	### Xử lý thanh oxygen và avatar
 	# nếu oxy tuột dưới 25% thì báo đỏ
 	if current_oxygen < max_oxygen * 0.25:
+		if not alarm_sfx_played:
+			AudioManager.play_sound("alarm", Vector2.ZERO, 10.0)
+			alarm_sfx_played = true
+			alarm_sfx_played = true
 		oxygen_bar.tint_progress = Color(1.0, 0.6, 0.6)
 		oxygen_particle.color = Color(1.0, 0.6, 0.6)
 		if(mask_type == 1): # MaskType.RED
@@ -83,6 +89,9 @@ func update_ui(current_oxygen: float, max_oxygen: float, mask_type: int, is_oxyg
 	
 	#await get_tree().create_timer(0.15).timeout
 	#flash_bar.value = current_oxygen
+	
+	if not alarm_sfx_played and current_oxygen >= max_oxygen * 0.25:
+		alarm_sfx_played = false
 	
 func _update_oxygen_bar_regen(current_oxygen: float, flash_oxygen: float, max_oxygen: float, mask_type: int, is_oxygen_regen: bool) -> void:
 	is_regen = true
@@ -118,6 +127,8 @@ func _update_oxygen_bar_regen(current_oxygen: float, flash_oxygen: float, max_ox
 		oxygen_particle.color = Color(0.181, 0.956, 1.0)
 		avatar_react.position = avatar_original_position
 
+	if not alarm_sfx_played and flash_oxygen >= max_oxygen * 0.25:
+		alarm_sfx_played = false
 	pass
 		
 func _handle_oxygen_particle(current_oxygen: float, max_oxygen: float) -> void:

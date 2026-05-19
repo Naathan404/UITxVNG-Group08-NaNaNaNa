@@ -11,6 +11,7 @@ var dash_direction: int = 1
 
 
 func _enter() -> void:
+	AudioManager.play_sound("dash", obj.global_position, 10.0)
 	if obj.mask_type == obj.MaskType.NONE:
 		obj.change_animation("dash")
 	elif obj.mask_type == obj.MaskType.RED:
