@@ -14,6 +14,9 @@ class_name GameUI
 @onready var death_screen: ColorRect = $DeathScreen
 
 var is_oxygen_bar_blocked: bool = false
+var is_regen: bool = false
+var flash_timer: float = 0.0
+const FLASH_DELAY: float = 0.3
 
 const AVATAR_NONE = preload("res://assets/sprites/ui/avatar_react/none_mask.png")
 const AVATAR_RED = preload("res://assets/sprites/ui/avatar_react/mask_red.png")
@@ -29,20 +32,32 @@ var avatar_original_position: Vector2
 func _ready() -> void:
 	oxygen_particle.emitting = false
 	call_deferred("_save_original_position")
+	
+func _process(delta: float) -> void:
+	if is_regen: return 
+	if flash_bar.value > oxygen_bar.value:
+		flash_timer -= delta
+		
+		if flash_timer <= 0.0:
+			flash_bar.value = lerpf(flash_bar.value, oxygen_bar.value, delta * 10.0)
+			if (flash_bar.value - oxygen_bar.value) < 0.5:
+				flash_bar.value = oxygen_bar.value
+	else:
+		flash_bar.value = oxygen_bar.value
+		flash_timer = FLASH_DELAY
 
 func _save_original_position() -> void:
 	avatar_original_position = avatar_react.position
 
 #  Player gọi hàm này liên tục mỗi khung hình
 func update_ui(current_oxygen: float, max_oxygen: float, mask_type: int, is_oxygen_decreased: bool) -> void:
+	is_regen = false
 	oxygen_bar.max_value = max_oxygen
 	flash_bar.max_value = max_oxygen
 	oxygen_bar.value = current_oxygen
 	oxygen_bar.tint_progress = Color(0.181, 0.956, 1.0)
 	oxygen_particle.color = Color(0.181, 0.956, 1.0)
 	
-	
-		
 	if mask_type != 0 or is_oxygen_decreased: # != MaskType.NONE
 		_handle_oxygen_particle(current_oxygen, max_oxygen)
 	else:
@@ -69,6 +84,7 @@ func update_ui(current_oxygen: float, max_oxygen: float, mask_type: int, is_oxyg
 	flash_bar.value = current_oxygen
 	
 func _update_oxygen_bar_regen(current_oxygen: float, flash_oxygen: float, max_oxygen: float, mask_type: int, is_oxygen_regen: bool) -> void:
+	is_regen = true
 	oxygen_bar.max_value = max_oxygen
 	flash_bar.max_value = max_oxygen
 	flash_bar.value = flash_oxygen
