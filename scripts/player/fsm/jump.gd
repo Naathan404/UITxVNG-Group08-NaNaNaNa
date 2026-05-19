@@ -1,5 +1,8 @@
 extends PlayerState
 
+@export var jump_force: float = -400
+@export var jump_cut_force: float = 0.4
+
 func _enter() -> void:
 	if obj.mask_type == obj.MaskType.NONE:
 		obj.change_animation("jump")
@@ -7,9 +10,16 @@ func _enter() -> void:
 		obj.change_animation("jump_red")
 	else:
 		obj.change_animation("jump_blue")
+	
+	obj.velocity.y = jump_force
 
 func _update(_delta: float):
 	if control_dash(): return
+	
+	if(Input.is_action_just_released("jump")):
+		if obj.velocity.y < 0:
+			obj.velocity.y *= jump_cut_force
+	
 	# Trên không trung thì xử lý cho người chơi đi trái phải
 	var dir: float = Input.get_action_strength("right") - Input.get_action_strength("left")
 	obj.velocity.x = obj.movement_speed * dir

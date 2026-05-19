@@ -1376,14 +1376,19 @@ max_time = 10.0
 [node name="spike" parent="." unique_id=922398961 instance=ExtResource("4_4ptlp")]
 position = Vector2(0, 94)
 scale = Vector2(1.4958341, 1.6082536)
-spike_color = "Red"
 
 [node name="spike2" parent="." unique_id=1570473667 instance=ExtResource("4_4ptlp")]
 position = Vector2(211, 181)
 spike_color = "Blue"
 
+<<<<<<< HEAD
+[node name="spike3" parent="." unique_id=248591882 instance=ExtResource("4_4ptlp")]
+position = Vector2(419, 181.00002)
+scale = Vector2(1.7467537, 3.591138)
+=======
 [node name="JumpPad" parent="." unique_id=684038686 instance=ExtResource("3_ycf23")]
 position = Vector2(75, 186)
+>>>>>>> 6a106722cf2820921609200f0637e8bee904a085
 
 [node name="World" type="Node2D" parent="." unique_id=1866520884]
 

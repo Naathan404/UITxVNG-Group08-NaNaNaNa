@@ -128,7 +128,10 @@ func _refill_oxygen(amount: float) -> void:
 	is_oxygen_regen = true
 	flash_oxygen = current_oxygen;
 	flash_oxygen += amount;
-	flash_oxygen = clamp(flash_oxygen, 0.0, max_oxygen)
+	#flash_oxygen = clamp(flash_oxygen, 0.0, max_oxygen)
+	
+	if game_ui:
+		game_ui._update_oxygen_bar_regen(current_oxygen, flash_oxygen, max_oxygen, mask_type, is_oxygen_regen)
 	
 	var tween = create_tween()
 	tween.tween_property(self, "current_oxygen", flash_oxygen, 0.5)
@@ -143,7 +146,7 @@ func _on_oxygen_ran_out() -> void:
 	get_tree().reload_current_scene()
 func force_jump_state():
 # Ví dụ: Nếu bạn có một biến chứa State hiện tại hoặc hàm gọi State chuyển đổi
-# $States.change_state("Jump")
+# $States.change_state("")
 	fsm.change_state($States/Jump)
 	if is_dead: return
 	print("[Player] Hết oxy! Game Over!")
