@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dhygepi2jq0ek" path="res://scenes/objects/checkpoint.tscn" id="3_rnqs5"]
 [ext_resource type="PackedScene" uid="uid://o2swfy8nb5vw" path="res://scenes/objects/start_point.tscn" id="4_ijhar"]
 [ext_resource type="PackedScene" uid="uid://ho26j06i70e2" path="res://scenes/objects/oxygen_tank.tscn" id="5_m1u62"]
-[ext_resource type="PackedScene" path="res://scenes/objects/platform.tscn" id="6_lenjp"]
+[ext_resource type="PackedScene" uid="uid://dlgeyb04nwcim" path="res://scenes/objects/platform.tscn" id="6_lenjp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d66et"]
 texture = ExtResource("1_d66et")
