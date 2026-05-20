@@ -39,6 +39,9 @@ func _ready() -> void:
 	oxygen_particle.emitting = false
 	if player and player.has_signal("ability_unlocked"):
 		player.ability_unlocked.connect(_on_player_ability_unlocked)
+	if player.has_red_mask or player.has_blue_mask: 
+		oxygen_bar.show()
+		avatar_react.show()
 	call_deferred("_save_original_position")
 	
 func _process(delta: float) -> void:

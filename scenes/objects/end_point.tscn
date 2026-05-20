@@ -92,6 +92,9 @@ point_count = 3
 offsets = PackedFloat32Array(0.0047945203, 1)
 colors = PackedColorArray(0.8921665, 0.33890283, 0.3944329, 0.9760001, 1, 1, 1, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2akn"]
+size = Vector2(11, 126)
+
 [node name="EndPoint" type="Area2D" unique_id=1775472992]
 script = ExtResource("1_0jb0u")
 
@@ -174,5 +177,12 @@ scale_amount_max = 0.6
 scale_amount_curve = SubResource("Curve_o2akn")
 color = Color(1, 0.86716837, 0.90833163, 1)
 color_ramp = SubResource("Gradient_3rhpr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1684260684]
+
+[node name="Limit" type="CollisionShape2D" parent="StaticBody2D" unique_id=380002771]
+physics_interpolation_mode = 2
+position = Vector2(-107, -34)
+shape = SubResource("RectangleShape2D_o2akn")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

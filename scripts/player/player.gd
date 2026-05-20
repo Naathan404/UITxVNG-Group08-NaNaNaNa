@@ -1,9 +1,10 @@
 extends BaseCharacter
+class_name Player
 
 ### MASK SETTING
 @export_group("Oxygen Settings")
 @export var max_oxygen: float = 100.0
-@export var decrease_oxygen_rate: float = 5.0
+@export var decrease_oxygen_rate: float
 
 @export_group("Player Abilities")
 @export var has_red_mask: bool = false
