@@ -31,6 +31,10 @@ window/size/viewport_height=270
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[editor]
+
+movie_writer/movie_file="C:/Users/Admin/Desktop/TLIEU_HOC_TAP/Movie_Test_Game/level1_tutorial.avi"
+
 [input]
 
 left={
