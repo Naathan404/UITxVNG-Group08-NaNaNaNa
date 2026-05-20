@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://duuwbov51l0ry"]
+
+[ext_resource type="Script" uid="uid://de5cxmtrksq25" path="res://scripts/objects/unlock_item.gd" id="1_y881b"]
+[ext_resource type="Texture2D" uid="uid://de1d2r1w0i355" path="res://assets/sprites/envir/Dust Particle.png" id="2_p7654"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_da8aw"]
+
+[sub_resource type="Curve" id="Curve_5ruy5"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.69315404, 0.39891565), -2.5671694, -2.5671694, 0, 0, Vector2(1, 0.0094558), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_funb7"]
+offsets = PackedFloat32Array(0.0008912656, 1)
+colors = PackedColorArray(0.97360384, 0, 0, 0.73700005, 0.24526232, 0.67851543, 0.9187369, 0.9110001)
+
+[node name="UnlockItem" type="Area2D" unique_id=119805045]
+script = ExtResource("1_y881b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=457442834]
+shape = SubResource("CircleShape2D_da8aw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1810140495]
+
+[node name="PickUpParticle" type="CPUParticles2D" parent="." unique_id=474567558]
+show_behind_parent = true
+emitting = false
+amount = 44
+texture = ExtResource("2_p7654")
+lifetime = 0.5
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 7.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 100.0
+scale_amount_min = 0.8
+scale_amount_curve = SubResource("Curve_5ruy5")
+color = Color(1, 1, 1, 0.8)
+color_ramp = SubResource("Gradient_funb7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

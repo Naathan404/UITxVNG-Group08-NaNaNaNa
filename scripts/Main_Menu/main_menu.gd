@@ -1,6 +1,6 @@
 extends Control
 # Called when the node enters the scene tree for the first time.
-var game_play = preload("res://dummy_level.tscn")
+@export var scene_to_load_path: String
 
 @onready var title: TextureRect = $Node/Title
 
@@ -16,17 +16,15 @@ func _ready() -> void:
 	
 
 func _on_start_pressed() -> void:
-	SceneTransition._change_scene("res://dummy_level.tscn")
-	AudioManager.play_sound("click", global_position, 5.0)
+	SceneTransition._change_scene(scene_to_load_path)
+	AudioManager.play_sound("click", global_position, 10.0)
+	AudioManager.stop_music(0.5)
 
 func _on_setting_pressed() -> void:
-	AudioManager.play_sound("click", global_position, 5.0)
-
-	
-	pass # Replace with function body.
+	AudioManager.play_sound("click", global_position, 10.0)
 
 
 func _on_quit_pressed() -> void:
-	AudioManager.play_sound("click", global_position, 5.0)
+	AudioManager.play_sound("click", global_position, 10.0)
 	
 	get_tree().quit()

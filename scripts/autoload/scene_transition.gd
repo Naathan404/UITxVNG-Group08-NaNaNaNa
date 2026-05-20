@@ -28,6 +28,7 @@ func _change_scene(scene_path: String) -> void:
 	var anim = player_run_sprites.animation
 	var text = frames.get_frame_texture(anim, player_run_sprites.frame)
 	
+	AudioManager.play_sound("dash")
 	tween.tween_property(black_rect, "position:x", 0, 0.5).set_trans(Tween.TRANS_SINE)
 	tween.parallel().tween_property(player_run_sprites, "position:x", screen_size.x - text.get_size().x * 3.5, 0.5).set_trans(Tween.TRANS_SINE)
 	
@@ -40,6 +41,7 @@ func _change_scene(scene_path: String) -> void:
 	player_run_sprites.play("run") 
 	var tween_out = create_tween()
 	
+	AudioManager.play_sound("dash")
 	tween_out.tween_property(black_rect, "position:x", screen_size.x, 0.5).set_trans(Tween.TRANS_SINE)
 	tween_out.parallel().tween_property(player_run_sprites, "position:x", screen_size.x * 2, 0.5).set_trans(Tween.TRANS_SINE)
 	

@@ -1,8 +1,21 @@
 extends BaseCharacter
 
 ### MASK SETTING
+@export_group("Oxygen Settings")
 @export var max_oxygen: float = 100.0
 @export var decrease_oxygen_rate: float = 5.0
+
+@export_group("Player Abilities")
+@export var has_red_mask: bool = false
+@export var has_blue_mask: bool = false
+@export var dash_unlocked: bool = false
+var can_dash: bool = false
+
+### Mask
+enum MaskType { NONE, RED, BLUE }
+@export_group("Mask Settings")
+@export var mask_type: MaskType = MaskType.NONE
+
 var current_oxygen: float = 100.0
 var multiplier: float = 1.0
 var current_toxic_zone: String = ""
@@ -12,11 +25,10 @@ var flash_oxygen: float
 var is_dead: bool = false
 var is_oxygen_decreased_by_other_source: bool = false
 
+# signals
+signal ability_unlocked(ability_name: String)
 
-### Mask
-enum MaskType { NONE, RED, BLUE }
-@export var mask_type: MaskType = MaskType.NONE
-
+# load nodes
 @onready var game_ui: GameUI = $CanvasLayer
 @onready var camera: Camera2D =  $LevelCamera
 
@@ -58,6 +70,11 @@ func _process(delta: float) -> void:
 	else:
 		is_oxygen_decreased = true
 		
+	### nếu đang đứng trên đất thì có thể dash
+	if is_on_floor():
+		if dash_unlocked:
+			can_dash = true
+		
 	current_oxygen -= decrease_oxygen_rate * multiplier * delta
 	current_oxygen = clamp(current_oxygen, 0.0, max_oxygen)
 	if current_oxygen <= 0.0: 
@@ -71,7 +88,7 @@ func _process(delta: float) -> void:
 		
 		
 	# rơi xuống thì chết
-	if position.y > 140 and not is_dead:
+	if position.y > 130 and not is_dead:
 		print("Té chết")
 		_on_death()
 
@@ -110,8 +127,11 @@ func _input(event: InputEvent) -> void:
 		
 # Hàm đổi mặt nạ
 func _on_mask_change(mask: MaskType) -> bool:
-	
 	if mask_type == mask: return false
+	if mask == MaskType.RED and not has_red_mask: return false
+	if mask == MaskType.BLUE and not has_blue_mask: return false
+	if not has_red_mask and not has_blue_mask: return false
+	
 	mask_type = mask
 	
 	# gọi game_ui đổi texture cho avatar

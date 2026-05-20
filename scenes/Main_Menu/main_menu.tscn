@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://lxi4g2w17lwj"]
 
 [ext_resource type="Script" uid="uid://uvjvyjw06dtf" path="res://scripts/Main_Menu/main_menu.gd" id="1_b3l1k"]
-[ext_resource type="Texture2D" uid="uid://dyniik1p3i7ld" path="res://assets/sprites/ui/ingame_ui/Play.png" id="4_plafk"]
-[ext_resource type="Texture2D" uid="uid://c4horoo68gill" path="res://assets/sprites/ui/ingame_ui/Play_pressed.png" id="5_plafk"]
-[ext_resource type="Texture2D" uid="uid://de4uy3gb46h5e" path="res://assets/sprites/ui/ingame_ui/Settings.png" id="5_wl4qf"]
-[ext_resource type="Texture2D" uid="uid://f6lopygvpx8q" path="res://assets/sprites/ui/ingame_ui/Close.png" id="6_gl8cu"]
-[ext_resource type="Texture2D" uid="uid://ctans5lfc25f6" path="res://assets/sprites/ui/ingame_ui/Settings_pressed.png" id="7_byebb"]
+[ext_resource type="Texture2D" uid="uid://dyniik1p3i7ld" path="res://assets/sprites/ui/buttons/Play.png" id="4_plafk"]
+[ext_resource type="Texture2D" uid="uid://c4horoo68gill" path="res://assets/sprites/ui/buttons/Play_pressed.png" id="5_plafk"]
+[ext_resource type="Texture2D" uid="uid://de4uy3gb46h5e" path="res://assets/sprites/ui/buttons/Settings.png" id="5_wl4qf"]
+[ext_resource type="Texture2D" uid="uid://f6lopygvpx8q" path="res://assets/sprites/ui/buttons/Close.png" id="6_gl8cu"]
+[ext_resource type="Texture2D" uid="uid://ctans5lfc25f6" path="res://assets/sprites/ui/buttons/Settings_pressed.png" id="7_byebb"]
 [ext_resource type="Texture2D" uid="uid://cjrnxailgdsgu" path="res://assets/sprites/ui/title.png" id="8_gl8cu"]
-[ext_resource type="Texture2D" uid="uid://csvjtkrqjy107" path="res://assets/sprites/ui/ingame_ui/Close_pressed.png" id="9_2cm54"]
+[ext_resource type="Texture2D" uid="uid://csvjtkrqjy107" path="res://assets/sprites/ui/buttons/Close_pressed.png" id="9_2cm54"]
 [ext_resource type="Texture2D" uid="uid://bfw8pun8i5rm3" path="res://assets/sprites/ui/avatar_react/mask_blue.png" id="9_wl4qf"]
 [ext_resource type="Texture2D" uid="uid://80lo3iku1yxy" path="res://assets/sprites/ui/avatar_react/mask_red.png" id="10_plafk"]
 [ext_resource type="Texture2D" uid="uid://22p4w7iqdvqc" path="res://assets/sprites/ui/Green.png" id="11_wl4qf"]
@@ -26,6 +26,7 @@ offset_bottom = 82.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b3l1k")
+scene_to_load_path = "res://scenes/levels/level_1_tutorial.tscn"
 
 [node name="Node" type="Node" parent="." unique_id=1292359543]
 

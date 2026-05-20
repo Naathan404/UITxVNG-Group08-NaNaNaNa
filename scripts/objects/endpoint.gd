@@ -7,7 +7,7 @@ extends Node
 @onready var red_firework: CPUParticles2D = $RedFirework
 @onready var red_firework_1: CPUParticles2D = $RedFirework_1
 
-@export var next_scene: String
+@export var next_scene_path: String
 
 var is_activated: bool = false
 # Called when the node enters the scene tree for the first time.
