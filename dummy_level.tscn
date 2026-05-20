@@ -6,9 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dqbm53diyvkac" path="res://scenes/objects/spike.tscn" id="2_rnqs5"]
 [ext_resource type="PackedScene" uid="uid://dhygepi2jq0ek" path="res://scenes/objects/checkpoint.tscn" id="3_rnqs5"]
 [ext_resource type="PackedScene" uid="uid://o2swfy8nb5vw" path="res://scenes/objects/start_point.tscn" id="4_ijhar"]
-[ext_resource type="PackedScene" uid="uid://ho26j06i70e2" path="res://scenes/objects/oxygen_tank.tscn" id="5_m1u62"]
 [ext_resource type="PackedScene" uid="uid://dlgeyb04nwcim" path="res://scenes/objects/platform.tscn" id="6_lenjp"]
-[ext_resource type="PackedScene" uid="uid://bxfwohumvbatw" path="res://scenes/objects/jump_pad.tscn" id="7_v73y7"]
+[ext_resource type="PackedScene" uid="uid://c4np4v21yxhk4" path="res://scenes/objects/end_point.tscn" id="9_0wr6m"]
+[ext_resource type="PackedScene" uid="uid://khweti6e0k1a" path="res://scenes/player/level_camera.tscn" id="9_vy0ww"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d66et"]
 texture = ExtResource("1_d66et")
@@ -1405,18 +1405,13 @@ position = Vector2(470, 34)
 [node name="StartPoint" parent="World" unique_id=1018394759 instance=ExtResource("4_ijhar")]
 position = Vector2(-10, 65)
 
-[node name="OxygenTank3" parent="World" unique_id=1177612532 instance=ExtResource("5_m1u62")]
-position = Vector2(1270, 79)
-
-[node name="OxygenTank2" parent="World" unique_id=54982460 instance=ExtResource("5_m1u62")]
-position = Vector2(901, 72)
-
 [node name="platform" parent="World" unique_id=1680756759 instance=ExtResource("6_lenjp")]
 position = Vector2(1004, 104)
 move_offset = Vector2(50, 0)
 
-[node name="JumpPad" parent="World" unique_id=684038686 instance=ExtResource("7_v73y7")]
-position = Vector2(134, 123)
-jump_force = -500.0
+[node name="EndPoint" parent="World" unique_id=1775472992 instance=ExtResource("9_0wr6m")]
+position = Vector2(1376, 66)
 
 [node name="Player" parent="." unique_id=65356844 instance=ExtResource("2_iuwya")]
+
+[node name="LevelCamera" parent="Player" unique_id=158280162 instance=ExtResource("9_vy0ww")]

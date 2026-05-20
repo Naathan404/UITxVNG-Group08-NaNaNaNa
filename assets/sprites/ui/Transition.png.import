@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csaid8mxrt4y3"
-path="res://.godot/imported/Leaderboard.png-42709423bb71c4631748babfe2be13fa.ctex"
+uid="uid://brtt2kchvg0b6"
+path="res://.godot/imported/Transition.png-a14a7fc270cf2d2d0bed3a025ba06ec8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ui/buttons/Leaderboard.png"
-dest_files=["res://.godot/imported/Leaderboard.png-42709423bb71c4631748babfe2be13fa.ctex"]
+source_file="res://assets/sprites/ui/Transition.png"
+dest_files=["res://.godot/imported/Transition.png-a14a7fc270cf2d2d0bed3a025ba06ec8.ctex"]
 
 [params]
 

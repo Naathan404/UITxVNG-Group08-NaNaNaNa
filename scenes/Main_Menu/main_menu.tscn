@@ -1,37 +1,16 @@
 [gd_scene format=3 uid="uid://lxi4g2w17lwj"]
 
-[ext_resource type="Texture2D" uid="uid://bpb44vctugvk3" path="res://assets/sprites/ui/button_ui.png" id="1_1nw7i"]
 [ext_resource type="Script" uid="uid://uvjvyjw06dtf" path="res://scripts/Main_Menu/main_menu.gd" id="1_b3l1k"]
-[ext_resource type="Texture2D" uid="uid://skth0ardjynf" path="res://icon.svg" id="2_dcss6"]
-[ext_resource type="FontFile" uid="uid://jsdttnado6ve" path="res://font/King Jack Style_Shadow.ttf" id="4_dcss6"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dcss6"]
-texture = ExtResource("2_dcss6")
-modulate_color = Color(0.46618086, 0.4661808, 0.4661808, 1)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b3l1k"]
-atlas = ExtResource("1_1nw7i")
-region = Rect2(95.971176, 96.15756, 30.924713, 15.949867)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xld3r"]
-atlas = ExtResource("1_1nw7i")
-region = Rect2(127.68713, 97.423805, 31.216217, 14.110832)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dcss6"]
-atlas = ExtResource("1_1nw7i")
-region = Rect2(176.18794, 79.40732, 30.791855, 16.834793)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1nw7i"]
-atlas = ExtResource("1_1nw7i")
-region = Rect2(208.70972, 80.87811, 29.496872, 14.100937)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eecad"]
-atlas = ExtResource("1_1nw7i")
-region = Rect2(99.6489, 128.37357, 23.586449, 14.060226)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hii1o"]
-atlas = ExtResource("1_1nw7i")
-region = Rect2(131.98727, 130.28247, 23.22908, 10.899796)
+[ext_resource type="Texture2D" uid="uid://dyniik1p3i7ld" path="res://assets/sprites/ui/ingame_ui/Play.png" id="4_plafk"]
+[ext_resource type="Texture2D" uid="uid://c4horoo68gill" path="res://assets/sprites/ui/ingame_ui/Play_pressed.png" id="5_plafk"]
+[ext_resource type="Texture2D" uid="uid://de4uy3gb46h5e" path="res://assets/sprites/ui/ingame_ui/Settings.png" id="5_wl4qf"]
+[ext_resource type="Texture2D" uid="uid://f6lopygvpx8q" path="res://assets/sprites/ui/ingame_ui/Close.png" id="6_gl8cu"]
+[ext_resource type="Texture2D" uid="uid://ctans5lfc25f6" path="res://assets/sprites/ui/ingame_ui/Settings_pressed.png" id="7_byebb"]
+[ext_resource type="Texture2D" uid="uid://cjrnxailgdsgu" path="res://assets/sprites/ui/title.png" id="8_gl8cu"]
+[ext_resource type="Texture2D" uid="uid://csvjtkrqjy107" path="res://assets/sprites/ui/ingame_ui/Close_pressed.png" id="9_2cm54"]
+[ext_resource type="Texture2D" uid="uid://bfw8pun8i5rm3" path="res://assets/sprites/ui/avatar_react/mask_blue.png" id="9_wl4qf"]
+[ext_resource type="Texture2D" uid="uid://80lo3iku1yxy" path="res://assets/sprites/ui/avatar_react/mask_red.png" id="10_plafk"]
+[ext_resource type="Texture2D" uid="uid://22p4w7iqdvqc" path="res://assets/sprites/ui/Green.png" id="11_wl4qf"]
 
 [node name="main_menu" type="Control" unique_id=970508628]
 layout_mode = 3
@@ -48,83 +27,83 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b3l1k")
 
-[node name="Panel" type="Panel" parent="." unique_id=702577803]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -192.0
-offset_top = -82.5
-offset_right = 191.0
-offset_bottom = 50.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_dcss6")
+[node name="Node" type="Node" parent="." unique_id=1292359543]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1047607300]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -48.0
-offset_top = -50.5
-offset_right = 48.0
-offset_bottom = 50.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 10
+[node name="Title" type="TextureRect" parent="Node" unique_id=808049457]
+offset_left = 76.0
+offset_top = 20.0
+offset_right = 604.0
+offset_bottom = 85.0
+scale = Vector2(0.9, 0.856)
+texture = ExtResource("8_gl8cu")
 
-[node name="start" type="TextureButton" parent="VBoxContainer" unique_id=906006390]
-custom_minimum_size = Vector2(80, 40)
-layout_mode = 2
+[node name="MaskBlue" type="Sprite2D" parent="Node/Title" unique_id=827731238]
+position = Vector2(102.22222, 16.35514)
+rotation = -0.18148004
+scale = Vector2(1.3354099, 1.3998916)
+skew = 0.016984463
+texture = ExtResource("9_wl4qf")
+
+[node name="MaskRed" type="Sprite2D" parent="Node/Title" unique_id=1745003933]
+position = Vector2(257.77777, 16.35514)
+rotation = -3.0810432
+scale = Vector2(1.3335663, -1.4016477)
+skew = -0.0057635307
+texture = ExtResource("10_plafk")
+
+[node name="start" type="TextureButton" parent="Node" unique_id=906006390]
+custom_minimum_size = Vector2(60, 60)
+offset_left = 205.0
+offset_top = 123.0
+offset_right = 265.0
+offset_bottom = 183.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = SubResource("AtlasTexture_b3l1k")
-texture_pressed = SubResource("AtlasTexture_xld3r")
+texture_normal = ExtResource("4_plafk")
+texture_pressed = ExtResource("5_plafk")
+texture_hover = ExtResource("5_plafk")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="setting" type="TextureButton" parent="VBoxContainer" unique_id=320766089]
-custom_minimum_size = Vector2(80, 60)
-layout_mode = 2
+[node name="setting" type="TextureButton" parent="Node" unique_id=320766089]
+visible = false
+custom_minimum_size = Vector2(60, 60)
+offset_left = 219.0
+offset_top = 126.0
+offset_right = 279.0
+offset_bottom = 186.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = SubResource("AtlasTexture_dcss6")
-texture_pressed = SubResource("AtlasTexture_1nw7i")
+texture_normal = ExtResource("5_wl4qf")
+texture_pressed = ExtResource("7_byebb")
+texture_hover = ExtResource("7_byebb")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="quit" type="TextureButton" parent="VBoxContainer" unique_id=364277520]
-custom_minimum_size = Vector2(70, 50)
-layout_mode = 2
+[node name="quit" type="TextureButton" parent="Node" unique_id=364277520]
+custom_minimum_size = Vector2(60, 60)
+offset_left = 444.00003
+offset_top = 234.00002
+offset_right = 504.00003
+offset_bottom = 294.0
+scale = Vector2(0.6, 0.6)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = SubResource("AtlasTexture_eecad")
-texture_pressed = SubResource("AtlasTexture_hii1o")
+texture_normal = ExtResource("6_gl8cu")
+texture_pressed = ExtResource("9_2cm54")
+texture_hover = ExtResource("9_2cm54")
 ignore_texture_size = true
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="." unique_id=1171121101]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -21.0
-offset_top = -123.0
-offset_right = 19.0
-offset_bottom = -100.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_dcss6")
-theme_override_font_sizes/font_size = 25
-text = "SWAP MASKS"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=903177563]
+repeat_size = Vector2(64, 64)
+autoscroll = Vector2(20, 20)
+repeat_times = 10
 
-[connection signal="pressed" from="VBoxContainer/start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="VBoxContainer/setting" to="." method="_on_setting_pressed"]
-[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=2124058428]
+position = Vector2(45, 50.5)
+texture = ExtResource("11_wl4qf")
+
+[connection signal="pressed" from="Node/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Node/setting" to="." method="_on_setting_pressed"]
+[connection signal="pressed" from="Node/quit" to="." method="_on_quit_pressed"]

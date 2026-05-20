@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://c4np4v21yxhk4"]
+
+[ext_resource type="Script" uid="uid://cn3vl66mlcbnf" path="res://scripts/objects/endpoint.gd" id="1_0jb0u"]
+[ext_resource type="Texture2D" uid="uid://cmbpwnrk8ydhe" path="res://assets/sprites/envir/checkpoints/End (Pressed) (64x64).png" id="1_2x0m8"]
+[ext_resource type="Texture2D" uid="uid://dgacbm5fgpme5" path="res://assets/sprites/envir/checkpoints/End (Idle).png" id="2_0jb0u"]
+[ext_resource type="Texture2D" uid="uid://de1d2r1w0i355" path="res://assets/sprites/envir/Dust Particle.png" id="4_fvuuc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvuuc"]
+size = Vector2(29, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2akn"]
+atlas = ExtResource("1_2x0m8")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rhpr"]
+atlas = ExtResource("1_2x0m8")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lelx"]
+atlas = ExtResource("1_2x0m8")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddupv"]
+atlas = ExtResource("1_2x0m8")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6ewm"]
+atlas = ExtResource("1_2x0m8")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymtar"]
+atlas = ExtResource("1_2x0m8")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jwslv"]
+atlas = ExtResource("1_2x0m8")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1vc3"]
+atlas = ExtResource("1_2x0m8")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6i6fi"]
+atlas = ExtResource("2_0jb0u")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_no3jk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2akn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rhpr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lelx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddupv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6ewm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymtar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jwslv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1vc3")
+}],
+"loop": true,
+"name": &"activated",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6i6fi")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="Curve" id="Curve_o2akn"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5495495, 0.5591007), -1.4661809, -1.4661809, 0, 0, Vector2(0.98455596, 0.0022611618), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_3rhpr"]
+offsets = PackedFloat32Array(0.0047945203, 1)
+colors = PackedColorArray(0.8921665, 0.33890283, 0.3944329, 0.9760001, 1, 1, 1, 1)
+
+[node name="EndPoint" type="Area2D" unique_id=1775472992]
+script = ExtResource("1_0jb0u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=791898351]
+position = Vector2(0.5, 28)
+shape = SubResource("RectangleShape2D_fvuuc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1606140544]
+sprite_frames = SubResource("SpriteFrames_no3jk")
+animation = &"activated"
+autoplay = "idle"
+frame_progress = 0.7558236
+
+[node name="BlueFirework" type="CPUParticles2D" parent="." unique_id=381772119]
+position = Vector2(-37, 7)
+amount = 20
+texture = ExtResource("4_fvuuc")
+lifetime = 0.5
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 6.01
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 10)
+initial_velocity_max = 100.0
+scale_amount_min = 0.6
+scale_amount_max = 0.6
+scale_amount_curve = SubResource("Curve_o2akn")
+color = Color(0.7313913, 1, 1, 1)
+
+[node name="BlueFirework_1" type="CPUParticles2D" parent="." unique_id=631783605]
+position = Vector2(21, -36)
+amount = 20
+texture = ExtResource("4_fvuuc")
+lifetime = 0.5
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 6.01
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 10)
+initial_velocity_max = 100.0
+scale_amount_min = 0.6
+scale_amount_max = 0.6
+scale_amount_curve = SubResource("Curve_o2akn")
+color = Color(0.7313913, 1, 1, 1)
+
+[node name="RedFirework" type="CPUParticles2D" parent="." unique_id=1108072511]
+position = Vector2(41, 14)
+amount = 20
+texture = ExtResource("4_fvuuc")
+lifetime = 0.5
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 6.01
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 10)
+initial_velocity_max = 100.0
+scale_amount_min = 0.6
+scale_amount_max = 0.6
+scale_amount_curve = SubResource("Curve_o2akn")
+color = Color(1, 0.86716837, 0.90833163, 1)
+color_ramp = SubResource("Gradient_3rhpr")
+
+[node name="RedFirework_1" type="CPUParticles2D" parent="." unique_id=2026099189]
+position = Vector2(-23, -34)
+amount = 20
+texture = ExtResource("4_fvuuc")
+lifetime = 0.5
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 6.01
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 10)
+initial_velocity_max = 100.0
+scale_amount_min = 0.6
+scale_amount_max = 0.6
+scale_amount_curve = SubResource("Curve_o2akn")
+color = Color(1, 0.86716837, 0.90833163, 1)
+color_ramp = SubResource("Gradient_3rhpr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

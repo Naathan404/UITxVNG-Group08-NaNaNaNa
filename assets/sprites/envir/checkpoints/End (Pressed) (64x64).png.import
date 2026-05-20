@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cm3hlgt2hjy1"
-path="res://.godot/imported/Achievements.png-669fe5ce3a0277baeedcd58c49523b3b.ctex"
+uid="uid://cmbpwnrk8ydhe"
+path="res://.godot/imported/End (Pressed) (64x64).png-939f6a904bda1b2fbfff4eeaa97b75ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ui/buttons/Achievements.png"
-dest_files=["res://.godot/imported/Achievements.png-669fe5ce3a0277baeedcd58c49523b3b.ctex"]
+source_file="res://assets/sprites/envir/checkpoints/End (Pressed) (64x64).png"
+dest_files=["res://.godot/imported/End (Pressed) (64x64).png-939f6a904bda1b2fbfff4eeaa97b75ac.ctex"]
 
 [params]
 
