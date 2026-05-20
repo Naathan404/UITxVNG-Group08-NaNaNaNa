@@ -24,7 +24,7 @@ func _on_body_entered(body: Node2D) -> void:
 			"blue_mask":
 				body.has_blue_mask = true
 			"dash":
-				body.can_dash = true
+				body.dash_unlocked = true
 		sprite.hide()
 		# bắn signal
 		body.ability_unlocked.emit(unlock_type)
