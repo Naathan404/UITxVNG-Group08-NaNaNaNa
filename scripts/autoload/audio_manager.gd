@@ -12,6 +12,7 @@ const SFX_DATABASE = {
 	"oxygen": "res://assets/audio/sfx/oxygen_tank.mp3",
 	"death": "res://assets/audio/sfx/death.mp3",
 	"alarm": "res://assets/audio/sfx/alarm.wav",
+	"endpoint": "res://assets/audio/sfx/end_level.wav",
 	
 	### ui sfx
 	"click": "res://assets/audio/sfx/click.mp3",

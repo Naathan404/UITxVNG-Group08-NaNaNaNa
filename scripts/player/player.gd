@@ -70,12 +70,14 @@ func _process(delta: float) -> void:
 		
 		
 	# rơi xuống thì chết
-	if position.y > 500 and not is_dead:
+	if position.y > 360 and not is_dead:
 		print("Té chết")
 		_on_death()
 
 ### Hàm xử lý input
 func _input(event: InputEvent) -> void:
+	if is_level_completed: return
+	
 	if fsm.current_state == fsm.states.die:
 		return
 	# đổi sang mặt nạ đỏ
@@ -107,6 +109,7 @@ func _input(event: InputEvent) -> void:
 		
 # Hàm đổi mặt nạ
 func _on_mask_change(mask: MaskType) -> bool:
+	
 	if mask_type == mask: return false
 	mask_type = mask
 	
@@ -145,6 +148,8 @@ func _on_mask_change(mask: MaskType) -> bool:
 
 # Hàm hồi Oxy khi nhặt được bình
 func _refill_oxygen(amount: float) -> void:
+	if is_level_completed: return
+	
 	print("[Player] Đã hồi ", amount, " oxy!")
 	is_oxygen_regen = true
 	flash_oxygen = current_oxygen;
@@ -178,3 +183,8 @@ func _on_death() -> void:
 	if game_ui: game_ui.update_ui(current_oxygen, max_oxygen, mask_type, is_oxygen_decreased)
 	print("[Player] Người chơi đã die -> Reset màn chơi")
 	fsm.change_state(fsm.states.die)
+	
+func _complete_level() -> void:
+	_on_mask_change(MaskType.NONE)
+	change_animation("idle")
+	is_level_completed = true

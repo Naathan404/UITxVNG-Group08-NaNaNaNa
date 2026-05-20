@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://larvvjwy1qvq" path="res://assets/sprites/characters/Jump_Blue.png" id="12_ioxgp"]
 [ext_resource type="PackedScene" uid="uid://kojv1ur7jv44" path="res://scenes/player/game_ui.tscn" id="22_yj68g"]
 [ext_resource type="Script" uid="uid://bjtaj5xxefbf4" path="res://scripts/player/fsm/die.gd" id="23_cnsyf"]
+[ext_resource type="Texture2D" uid="uid://de1d2r1w0i355" path="res://assets/sprites/envir/Dust Particle.png" id="24_007i1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j4nxn"]
 atlas = ExtResource("2_je7p5")
@@ -707,11 +708,14 @@ animations = [{
 size = Vector2(14, 20)
 
 [sub_resource type="Curve" id="Curve_3j4b4"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.8146893, 0.61979115), -2.5671694, -2.5671694, 0, 0, Vector2(1, 0.0094558), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.69315404, 0.39891565), -2.5671694, -2.5671694, 0, 0, Vector2(1, 0.0094558), 0.0, 0.0, 0, 0]
 point_count = 3
 
+[sub_resource type="Gradient" id="Gradient_6cv16"]
+colors = PackedColorArray(1, 0.68967026, 0.64044714, 1, 0.73403823, 1, 1, 1)
+
 [sub_resource type="Curve" id="Curve_cnsyf"]
-_data = [Vector2(0.00533808, 1), 0.0, 0.0, 0, 0, Vector2(0.7366548, 0.5304638), -1.7880175, -1.7880175, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0.00533808, 1), 0.0, 0.0, 0, 0, Vector2(0.6845966, 0.43609613), -1.7880175, -1.7880175, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_007i1"]
@@ -781,7 +785,9 @@ target_position = Vector2(0, -12)
 
 [node name="RunParticles" type="CPUParticles2D" parent="." unique_id=1946210009]
 position = Vector2(0, 14)
+scale = Vector2(0.5, 0.5)
 amount = 10
+texture = ExtResource("24_007i1")
 lifetime = 0.5
 emission_shape = 1
 emission_sphere_radius = 2.0
@@ -797,6 +803,7 @@ show_behind_parent = true
 position = Vector2(-9, 4)
 emitting = false
 amount = 44
+texture = ExtResource("24_007i1")
 lifetime = 0.3
 one_shot = true
 explosiveness = 1.0
@@ -806,15 +813,18 @@ direction = Vector2(0, 0)
 spread = 180.0
 gravity = Vector2(0, 0)
 initial_velocity_max = 100.0
-scale_amount_max = 2.0
+scale_amount_min = 0.4
+scale_amount_max = 0.7
 scale_amount_curve = SubResource("Curve_3j4b4")
 color = Color(1, 1, 1, 0.8)
+color_ramp = SubResource("Gradient_6cv16")
 
 [node name="JumpParticles" type="CPUParticles2D" parent="." unique_id=403571317]
 z_index = 2
 position = Vector2(1, 13)
 emitting = false
 amount = 20
+texture = ExtResource("24_007i1")
 lifetime = 0.3
 one_shot = true
 explosiveness = 1.0
@@ -825,7 +835,8 @@ spread = 100.4
 gravity = Vector2(0, 150)
 initial_velocity_min = 40.0
 initial_velocity_max = 60.0
-scale_amount_max = 2.0
+scale_amount_min = 0.5
+scale_amount_max = 0.7
 scale_amount_curve = SubResource("Curve_cnsyf")
 color_ramp = SubResource("Gradient_007i1")
 
