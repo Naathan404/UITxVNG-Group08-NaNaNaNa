@@ -18,6 +18,7 @@ enum MaskType { NONE, RED, BLUE }
 @export var mask_type: MaskType = MaskType.NONE
 
 @onready var game_ui: GameUI = $CanvasLayer
+@onready var camera: Camera2D =  $LevelCamera
 
 func _ready() -> void:
 	fsm = FSM.new(self, $States, $States/Idle)
@@ -70,7 +71,7 @@ func _process(delta: float) -> void:
 		
 		
 	# rơi xuống thì chết
-	if position.y > 360 and not is_dead:
+	if position.y > 140 and not is_dead:
 		print("Té chết")
 		_on_death()
 
@@ -187,4 +188,6 @@ func _on_death() -> void:
 func _complete_level() -> void:
 	_on_mask_change(MaskType.NONE)
 	change_animation("idle")
+	if camera and camera.has_method("zoom_to"):
+		camera.zoom_to(Vector2(1.5, 1.5), 1.0)
 	is_level_completed = true

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://de1d2r1w0i355" path="res://assets/sprites/envir/Dust Particle.png" id="4_fvuuc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fvuuc"]
-size = Vector2(29, 42)
+size = Vector2(29, 8)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o2akn"]
 atlas = ExtResource("1_2x0m8")
@@ -96,14 +96,14 @@ colors = PackedColorArray(0.8921665, 0.33890283, 0.3944329, 0.9760001, 1, 1, 1, 
 script = ExtResource("1_0jb0u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=791898351]
-position = Vector2(0.5, 11)
+position = Vector2(0.5, 28)
 shape = SubResource("RectangleShape2D_fvuuc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1606140544]
 sprite_frames = SubResource("SpriteFrames_no3jk")
 animation = &"activated"
 autoplay = "idle"
-frame_progress = 0.568978
+frame_progress = 0.7558236
 
 [node name="BlueFirework" type="CPUParticles2D" parent="." unique_id=381772119]
 position = Vector2(-37, 7)

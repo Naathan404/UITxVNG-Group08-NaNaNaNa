@@ -20,7 +20,7 @@ func _on_body_entered(body: Node2D) -> void:
 		is_activated = true
 		animated_sprite.play("activated")
 		GameManager._set_checkpoint(position)
-		AudioManager.play_sound("checkpoint", global_position, 8.0)
+		AudioManager.play_sound("checkpoint", global_position, 5.0)
 		# chuyển sang anim cờ bay bay
 		await animated_sprite.animation_finished
 		animated_sprite.play("flag_ilde")
