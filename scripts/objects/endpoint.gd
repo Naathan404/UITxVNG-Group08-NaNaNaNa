@@ -6,12 +6,14 @@ extends Node
 @onready var blue_firework_1: CPUParticles2D = $BlueFirework_1
 @onready var red_firework: CPUParticles2D = $RedFirework
 @onready var red_firework_1: CPUParticles2D = $RedFirework_1
+@onready var limit: CollisionShape2D = $StaticBody2D/Limit
 
 @export var next_scene_path: String
 
 var is_activated: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	limit.set_deferred("disabled", true)
 	blue_firework.emitting = false
 	blue_firework_1.emitting = false
 	red_firework.emitting = false
@@ -28,7 +30,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if is_activated: return
 	if body.has_method("_complete_level"): 
 		is_activated = true
-		
+		limit.set_deferred("disabled", false)
 		Engine.time_scale = 0.05
 		await get_tree().create_timer(0.01 * 0.05).timeout
 		Engine.time_scale = 1.0
@@ -44,6 +46,6 @@ func _on_body_entered(body: Node2D) -> void:
 		red_firework.emitting = true
 		red_firework_1.emitting = true
 		
-		await get_tree().create_timer(3.0).timeout
-		SceneTransition._change_scene("res://dummy_level.tscn")
+		await get_tree().create_timer(2.0).timeout
+		SceneTransition._change_scene(next_scene_path)
 	pass # Replace with function body.

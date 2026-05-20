@@ -202,4 +202,4 @@ scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_svtsi")
 animation = &"idle"
 autoplay = "run"
-frame_progress = 0.27937144
+frame_progress = 0.5350185
