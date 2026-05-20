@@ -13,6 +13,9 @@ class_name GameUI
 # over render on screen
 @onready var death_screen: ColorRect = $DeathScreen
 
+@export_group("Player Ref")
+@export var player: Node2D
+
 var is_oxygen_bar_blocked: bool = false
 var is_regen: bool = false
 var flash_timer: float = 0.0
@@ -24,6 +27,7 @@ const AVATAR_NONE = preload("res://assets/sprites/ui/avatar_react/none_mask.png"
 const AVATAR_RED = preload("res://assets/sprites/ui/avatar_react/mask_red.png")
 const AVATAR_BLUE = preload("res://assets/sprites/ui/avatar_react/mask_blue.png")
 
+
 # particle settings
 @export var oxygen_bar_radius: float = 24.0
 
@@ -33,6 +37,8 @@ var avatar_original_position: Vector2
 
 func _ready() -> void:
 	oxygen_particle.emitting = false
+	if player and player.has_signal("ability_unlocked"):
+		player.ability_unlocked.connect(_on_player_ability_unlocked)
 	call_deferred("_save_original_position")
 	
 func _process(delta: float) -> void:
@@ -153,6 +159,23 @@ func _handle_hint_buttons(mask_type: int) -> void:
 	elif mask_type == 2:
 		hint_up.self_modulate = Color.WHITE
 		hint_down.self_modulate = Color.CRIMSON
+		
+	if player:
+		if not player.has_red_mask and not player.has_blue_mask:
+			# Chưa có gì thì giấu hết
+			hint_up.hide()
+			hint_down.hide()
+			
+		elif player.has_red_mask and not player.has_blue_mask:
+			if mask_type == 0:
+				hint_up.show()  
+				hint_down.hide() 
+			elif mask_type == 1:
+				hint_up.hide()   
+				hint_down.show() 
+		else:
+			hint_up.show()
+			hint_down.show()
 	pass
 
 # Hàm đổi avatar rect
@@ -192,3 +215,55 @@ func _play_hint_bounce(is_scroll_up: bool) -> void:
 	tween.parallel().tween_property(avatar_react, "scale", Vector2(1.1, 1.1), 0.1).set_trans(Tween.TRANS_SINE)
 	tween.tween_property(avatar_react, "scale", Vector2(1.0, 1.0), 0.1).set_trans(Tween.TRANS_BOUNCE)
 	pass
+
+
+#func _on_player_ability_unlocked(ability_name: String) -> void:
+	#var tween = create_tween().set_parallel(true)
+	#
+	#if ability_name == "red_mask" or ability_name == "blue_mask":
+		#oxygen_bar.show()
+		#avatar_react.show()
+		#hint_up.show() 
+		#hint_down.show()
+		#
+		#oxygen_bar.modulate.a = 0.0
+		#avatar_react.modulate.a = 0.0
+		#hint_up.modulate.a = 0.0
+		#hint_down.modulate.a = 0.0
+		#avatar_react.scale = Vector2(0.5, 0.5)
+		#
+		#tween.tween_property(oxygen_bar, "modulate:a", 1.0, 0.5)
+		#tween.tween_property(avatar_react, "modulate:a", 1.0, 0.5)
+		#tween.tween_property(hint_up, "modulate:a", 1.0, 0.5)
+		#tween.tween_property(hint_down, "modulate:a", 1.0, 0.5)
+		#
+		#tween.tween_property(avatar_react, "scale", Vector2(1.0, 1.0), 0.6).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+		#tween.tween_property(hint_down, "scale", Vector2(1.0, 1.0), 0.6).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+		
+func _on_player_ability_unlocked(ability_name: String) -> void:
+	var tween = create_tween().set_parallel(true)
+	
+	if ability_name == "red_mask":
+		# Hiện dàn UI gốc
+		oxygen_bar.show()
+		avatar_react.show()
+		
+		oxygen_bar.modulate.a = 0.0
+		avatar_react.modulate.a = 0.0
+		avatar_react.scale = Vector2(0.5, 0.5)
+		
+		tween.tween_property(oxygen_bar, "modulate:a", 1.0, 0.5)
+		tween.tween_property(avatar_react, "modulate:a", 1.0, 0.5)
+		tween.tween_property(avatar_react, "scale", Vector2(1.0, 1.0), 0.6).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+		
+		# nảy cái hint Đỏ lên 
+		hint_up.scale = Vector2(0.5, 0.5)
+		tween.tween_property(hint_up, "scale", Vector2(1.0, 1.0), 0.6).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+		
+	elif ability_name == "blue_mask":
+		hint_up.scale = Vector2(0.5, 0.5)
+		hint_down.scale = Vector2(0.5, 0.5)
+		tween.tween_property(hint_up, "scale", Vector2(1.0, 1.0), 0.6).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+		tween.tween_property(hint_down, "scale", Vector2(1.0, 1.0), 0.6).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
+	
+		

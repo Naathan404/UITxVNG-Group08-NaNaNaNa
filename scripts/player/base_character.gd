@@ -14,7 +14,7 @@ extends CharacterBody2D
 @export var dash_force: float = 600.0
 @export var dash_duration: float = 0.2
 var ignore_gravity: bool = false
-var can_dash: bool = true
+
 
 ### Buffer jump & Coyote time
 @export var coyote_time: float = 0.25      
@@ -75,10 +75,6 @@ func _update_movement(delta: float) -> void:
 	### xử lý rơi
 	if not is_on_floor() and not ignore_gravity:
 		velocity.y += gravity * delta
-	
-	### nếu đang đứng trên đất thì có thể dash
-	if is_on_floor():
-		can_dash = true
 		
 	# thực hiện chỉnh góc khi người chơi ở trên không
 	if velocity.y < 0:

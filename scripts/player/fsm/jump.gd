@@ -1,6 +1,6 @@
 extends PlayerState
 
-@export var jump_force: float = -400
+@export var jump_force: float = -350
 @export var jump_cut_force: float = 0.5
 
 

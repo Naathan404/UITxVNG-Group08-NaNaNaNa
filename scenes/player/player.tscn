@@ -827,4 +827,7 @@ scale_amount_max = 0.7
 scale_amount_curve = SubResource("Curve_cnsyf")
 color_ramp = SubResource("Gradient_007i1")
 
-[node name="CanvasLayer" parent="." unique_id=220659911 instance=ExtResource("22_yj68g")]
+[node name="CanvasLayer" parent="." unique_id=220659911 node_paths=PackedStringArray("player") instance=ExtResource("22_yj68g")]
+player = NodePath("..")
+
+[editable path="CanvasLayer"]

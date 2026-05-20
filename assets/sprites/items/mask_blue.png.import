@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctans5lfc25f6"
-path="res://.godot/imported/Settings_pressed.png-8de0e6186cdbb514294bcedb51ef74a0.ctex"
+uid="uid://djgxagvr1db6e"
+path="res://.godot/imported/mask_blue.png-44ff8a834971f07c6ec4d4848695fd2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ui/ingame_ui/Settings_pressed.png"
-dest_files=["res://.godot/imported/Settings_pressed.png-8de0e6186cdbb514294bcedb51ef74a0.ctex"]
+source_file="res://assets/sprites/items/mask_blue.png"
+dest_files=["res://.godot/imported/mask_blue.png-44ff8a834971f07c6ec4d4848695fd2e.ctex"]
 
 [params]
 

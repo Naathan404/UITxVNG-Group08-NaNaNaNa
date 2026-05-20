@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de4uy3gb46h5e"
-path="res://.godot/imported/Settings.png-e4affb00d97b4b0ac8a70b9d7b538a05.ctex"
+uid="uid://csvjtkrqjy107"
+path="res://.godot/imported/Close_pressed.png-565f40affea3c0074285d0cdb52e1ade.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ui/ingame_ui/Settings.png"
-dest_files=["res://.godot/imported/Settings.png-e4affb00d97b4b0ac8a70b9d7b538a05.ctex"]
+source_file="res://assets/sprites/ui/buttons/Close_pressed.png"
+dest_files=["res://.godot/imported/Close_pressed.png-565f40affea3c0074285d0cdb52e1ade.ctex"]
 
 [params]
 
