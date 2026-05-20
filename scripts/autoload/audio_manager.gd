@@ -15,7 +15,7 @@ const SFX_DATABASE = {
 	"endpoint": "res://assets/audio/sfx/end_level.wav",
 	
 	### ui sfx
-	"click": "res://assets/audio/sfx/click.mp3",
+	"click": "res://assets/audio/sfx/click.ogg",
 }
 
 const BGM_DATABASE = {

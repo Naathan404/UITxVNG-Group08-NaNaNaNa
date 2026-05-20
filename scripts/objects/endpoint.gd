@@ -7,7 +7,7 @@ extends Node
 @onready var red_firework: CPUParticles2D = $RedFirework
 @onready var red_firework_1: CPUParticles2D = $RedFirework_1
 
-@export var game_play = preload("res://scenes/levels/level_1_tutorial.tscn")
+@export var next_scene: String
 
 var is_activated: bool = false
 # Called when the node enters the scene tree for the first time.
@@ -36,6 +36,7 @@ func _on_body_entered(body: Node2D) -> void:
 		AudioManager.stop_music()
 		AudioManager.play_sound("endpoint", body.global_position, 5.0)
 		animated_sprite.play("activated")
+		GameManager._reset_checkpoint()
 		
 		body._complete_level()
 		blue_firework.emitting = true
@@ -44,5 +45,5 @@ func _on_body_entered(body: Node2D) -> void:
 		red_firework_1.emitting = true
 		
 		await get_tree().create_timer(3.0).timeout
-		#get_tree().change_scene_to_packed(game_play)
+		SceneTransition._change_scene("res://dummy_level.tscn")
 	pass # Replace with function body.
