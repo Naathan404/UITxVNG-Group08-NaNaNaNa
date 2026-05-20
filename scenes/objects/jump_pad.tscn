@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bxfwohumvbatw"]
 
-[ext_resource type="Script" uid="uid://bdwtisaetpgh8" path="res://scripts/player/jump_pad.gd" id="1_kabc6"]
+[ext_resource type="Script" path="res://scripts/player/jump_pad.gd" id="1_kabc6"]
 [ext_resource type="Texture2D" uid="uid://bhndim6deponx" path="res://assets/sprites/envir/JumpPad.png" id="2_ityjr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_25k7v"]
@@ -45,7 +45,7 @@ script = ExtResource("1_kabc6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1919129214]
 sprite_frames = SubResource("SpriteFrames_240ux")
-animation = &"bounce"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1823286677]
 position = Vector2(0.5, -5)
