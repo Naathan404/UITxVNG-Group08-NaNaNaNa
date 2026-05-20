@@ -13,6 +13,9 @@ class_name GameUI
 # over render on screen
 @onready var death_screen: ColorRect = $DeathScreen
 
+@onready var tutorial_screen: ColorRect = $TutorialScreen
+var waiting_for_input_action: String = ""
+
 @export_group("Player Ref")
 @export var player: Node2D
 
@@ -42,9 +45,11 @@ func _ready() -> void:
 	if player.has_red_mask or player.has_blue_mask: 
 		oxygen_bar.show()
 		avatar_react.show()
+	tutorial_screen.hide()
 	call_deferred("_save_original_position")
 	
 func _process(delta: float) -> void:
+	if Input.is_action_pressed("pause"): SceneTransition._change_scene("res://scenes/Main_Menu/main_menu.tscn")
 	if is_regen: return 
 	if flash_bar.value > oxygen_bar.value:
 		flash_timer -= delta
@@ -268,5 +273,24 @@ func _on_player_ability_unlocked(ability_name: String) -> void:
 		hint_down.scale = Vector2(0.5, 0.5)
 		tween.tween_property(hint_up, "scale", Vector2(1.0, 1.0), 0.6).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
 		tween.tween_property(hint_down, "scale", Vector2(1.0, 1.0), 0.6).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
-	
 		
+	elif ability_name == "dash":
+		get_tree().paused = true
+		tutorial_screen.show()
+		waiting_for_input_action = "dash"
+	
+func _input(event: InputEvent) -> void:
+	if waiting_for_input_action != "":
+		if event.is_action_pressed(waiting_for_input_action):
+			_close_tutorial(waiting_for_input_action)
+		
+func _close_tutorial(action_name: String) -> void:
+	waiting_for_input_action = ""
+	tutorial_screen.hide()
+	get_tree().paused = false
+	
+	await get_tree().process_frame
+	Input.action_press(action_name)
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	Input.action_release(action_name)

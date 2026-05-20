@@ -55,11 +55,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if current_toxic_zone != "":
 		if mask_type == MaskType.NONE:
-			multiplier = 3.0
+			multiplier = 5.0
 		elif (current_toxic_zone == "Red" and mask_type == MaskType.RED) or (current_toxic_zone == "Blue" and mask_type == MaskType.BLUE):
 			multiplier = 1.0
 		else:
-			multiplier = 2.0
+			multiplier = 5.0
 	else:
 		if mask_type == MaskType.NONE:
 			multiplier = 0.0
