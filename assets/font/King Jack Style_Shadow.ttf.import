@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://jsdttnado6ve"
-path="res://.godot/imported/King Jack Style_Shadow.ttf-9a39d944471d7f9959398a2ee99d1bb2.fontdata"
+path="res://.godot/imported/King Jack Style_Shadow.ttf-7ea15b9d222711d8c69eced821adca7f.fontdata"
 
 [deps]
 
-source_file="res://font/King Jack Style_Shadow.ttf"
-dest_files=["res://.godot/imported/King Jack Style_Shadow.ttf-9a39d944471d7f9959398a2ee99d1bb2.fontdata"]
+source_file="res://assets/font/King Jack Style_Shadow.ttf"
+dest_files=["res://.godot/imported/King Jack Style_Shadow.ttf-7ea15b9d222711d8c69eced821adca7f.fontdata"]
 
 [params]
 

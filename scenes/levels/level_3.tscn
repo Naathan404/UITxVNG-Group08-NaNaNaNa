@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://c4np4v21yxhk4" path="res://scenes/objects/end_point.tscn" id="5_pimnq"]
 [ext_resource type="PackedScene" uid="uid://ophrrmb07f7b" path="res://scenes/objects/toxic_zone.tscn" id="6_ftfob"]
 [ext_resource type="PackedScene" uid="uid://ho26j06i70e2" path="res://scenes/objects/oxygen_tank.tscn" id="7_fkk1g"]
-[ext_resource type="Texture2D" uid="uid://de1d2r1w0i355" path="res://assets/sprites/envir/Dust Particle.png" id="7_pimnq"]
 [ext_resource type="PackedScene" uid="uid://o2swfy8nb5vw" path="res://scenes/objects/start_point.tscn" id="7_ugcn1"]
+[ext_resource type="Texture2D" uid="uid://bhtgkq7c5hppu" path="res://assets/sprites/envir/Skull Particle.png" id="8_apo5x"]
 [ext_resource type="PackedScene" uid="uid://dhygepi2jq0ek" path="res://scenes/objects/checkpoint.tscn" id="10_n6eey"]
 [ext_resource type="PackedScene" uid="uid://duuwbov51l0ry" path="res://scenes/objects/unlock_item.tscn" id="11_qi5uv"]
 [ext_resource type="Texture2D" uid="uid://d4b84i0nlgyqg" path="res://assets/sprites/items/dash_item.png" id="12_f6egh"]
@@ -1546,7 +1546,7 @@ toxic_zone_color = "Red"
 [node name="CPUParticles2D" type="CPUParticles2D" parent="toxic_zone" unique_id=1380480473]
 position = Vector2(39.999996, 3.9000003)
 amount = 200
-texture = ExtResource("7_pimnq")
+texture = ExtResource("8_apo5x")
 lifetime = 5.0
 emission_shape = 3
 emission_rect_extents = Vector2(40, 50)
@@ -1560,14 +1560,14 @@ color_ramp = SubResource("Gradient_ugcn1")
 
 [node name="toxic_zone3" parent="." unique_id=703734831 instance=ExtResource("6_ftfob")]
 z_index = -1
-position = Vector2(1647.0001, -248.99998)
+position = Vector2(1646.0001, -250)
 scale = Vector2(3, 10)
 toxic_zone_color = "Red"
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="toxic_zone3" unique_id=1231521830]
 position = Vector2(39.999996, 3.9000003)
 amount = 200
-texture = ExtResource("7_pimnq")
+texture = ExtResource("8_apo5x")
 lifetime = 5.0
 emission_shape = 3
 emission_rect_extents = Vector2(40, 50)
@@ -1587,7 +1587,7 @@ scale = Vector2(4.5, 10)
 [node name="CPUParticles2D" type="CPUParticles2D" parent="toxic_zone2" unique_id=2107379015]
 position = Vector2(39.999996, 3.9000003)
 amount = 200
-texture = ExtResource("7_pimnq")
+texture = ExtResource("8_apo5x")
 lifetime = 5.0
 emission_shape = 3
 emission_rect_extents = Vector2(40, 50)
@@ -1607,7 +1607,7 @@ scale = Vector2(3.5, 10)
 [node name="CPUParticles2D" type="CPUParticles2D" parent="toxic_zone4" unique_id=1702814506]
 position = Vector2(39.999996, 3.9000003)
 amount = 200
-texture = ExtResource("7_pimnq")
+texture = ExtResource("8_apo5x")
 lifetime = 5.0
 emission_shape = 3
 emission_rect_extents = Vector2(40, 50)
@@ -1661,7 +1661,7 @@ position = Vector2(2045.0001, 21)
 scale = Vector2(0.75, 1)
 
 [node name="OxygenTank2" parent="." unique_id=477866890 instance=ExtResource("7_fkk1g")]
-position = Vector2(2291, -142)
+position = Vector2(1998, -21)
 rotation = 0.41015238
 
 [node name="EndPoint" parent="." unique_id=1775472992 instance=ExtResource("5_pimnq")]
