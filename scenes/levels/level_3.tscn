@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://duuwbov51l0ry" path="res://scenes/objects/unlock_item.tscn" id="11_qi5uv"]
 [ext_resource type="Texture2D" uid="uid://d4b84i0nlgyqg" path="res://assets/sprites/items/dash_item.png" id="12_f6egh"]
 [ext_resource type="PackedScene" uid="uid://dqbm53diyvkac" path="res://scenes/objects/spike.tscn" id="13_f6egh"]
+[ext_resource type="PackedScene" uid="uid://fhcmw7qk7efu" path="res://scenes/objects/key.tscn" id="15_apo5x"]
+[ext_resource type="PackedScene" uid="uid://bx06c5huqmthh" path="res://scenes/objects/door.tscn" id="16_josfm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2bnyt"]
 texture = ExtResource("1_fmg3e")
@@ -1668,6 +1670,12 @@ rotation = 0.41015238
 z_index = -1
 position = Vector2(2528, 50)
 next_scene_path = "res://scenes/levels/level_win.tscn"
+
+[node name="Key" parent="." unique_id=22324534 instance=ExtResource("15_apo5x")]
+position = Vector2(1518, 30)
+
+[node name="door" parent="." unique_id=796688353 instance=ExtResource("16_josfm")]
+position = Vector2(2477, 54)
 
 [editable path="Player"]
 [editable path="Player/CanvasLayer"]
