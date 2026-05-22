@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://8gy7c3uxlo0o"]
+
+[sub_resource type="Curve2D" id="Curve2D_fei71"]
+
+[node name="Saw" type="AnimatedSprite2D" unique_id=1370534849]
+
+[node name="Path2D" type="Path2D" parent="." unique_id=2006969459]
+curve = SubResource("Curve2D_fei71")

@@ -4,6 +4,8 @@ extends Node
 var last_checkpoint_position: Vector2 = Vector2.ZERO
 var current_lives: int
 
+signal dash_trigger
+
 func _ready() -> void:
 	current_lives = max_lives
 

@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bbmav0iebex4j" path="res://assets/sprites/ui/ingame_ui/ui_hint_up_button.png" id="3_hmndv"]
 [ext_resource type="Texture2D" uid="uid://btlea3bdo46r2" path="res://assets/sprites/ui/ingame_ui/ui_hint_down_button.png" id="4_p4jm6"]
 [ext_resource type="Texture2D" uid="uid://cff75qmf43rd1" path="res://assets/sprites/ui/ingame_ui/oxygen_bar_progress.png" id="6_kjpqb"]
+[ext_resource type="FontFile" uid="uid://o2243svlwya" path="res://assets/font/Minecraft.ttf" id="7_05yek"]
 [ext_resource type="Texture2D" uid="uid://b3ncv814de8hv" path="res://assets/sprites/ui/ingame_ui/oxygen_bar_cover.png" id="7_kjpqb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3j4b4"]
@@ -24,6 +25,12 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.8001019, 0.8001019, 0.8001019, 0)
 corner_detail = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_vsbcl"]
+font = ExtResource("7_05yek")
+font_size = 14
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=220659911]
 script = ExtResource("1_cgn3u")
@@ -156,3 +163,12 @@ offset_bottom = 59.0
 text = "Đã nhặt được Balloon: Ấn [SHIFT] để lướt"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=1364626570]
+z_index = 6
+offset_left = 34.0
+offset_top = 43.0
+offset_right = 74.0
+offset_bottom = 66.0
+text = "x3"
+label_settings = SubResource("LabelSettings_vsbcl")
