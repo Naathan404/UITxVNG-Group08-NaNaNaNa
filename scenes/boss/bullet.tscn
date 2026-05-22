@@ -9,11 +9,11 @@ size = Vector2(20, 26)
 
 [node name="Bullet" type="Area2D" unique_id=1887372702]
 script = ExtResource("1_mqu0b")
-texture_red = ExtResource("2_gxh23")
 texture_blue = ExtResource("2_mqu0b")
+texture_red = ExtResource("2_gxh23")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=916372672]
-texture = ExtResource("2_mqu0b")
+rotation = 1.5707964
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=587534862]
 shape = SubResource("RectangleShape2D_twvbm")

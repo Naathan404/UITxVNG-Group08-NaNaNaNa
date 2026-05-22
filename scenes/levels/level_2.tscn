@@ -400,8 +400,8 @@ scale = Vector2(0.75, 0.75)
 spike_color = "Blue"
 
 [node name="platform5" parent="." unique_id=2017026772 instance=ExtResource("11_r88tb")]
-position = Vector2(1503, 55)
-move_offset = Vector2(0, -80)
+position = Vector2(1512, 55)
+move_offset = Vector2(0, -140)
 
 [node name="spike7" parent="platform5" unique_id=1773234947 instance=ExtResource("3_tv7cl")]
 z_index = -1

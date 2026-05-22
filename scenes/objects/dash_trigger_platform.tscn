@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dopk84d745fdv"]
+
+[ext_resource type="Script" uid="uid://70ii6yadd27a" path="res://scripts/objects/dash_trigger_platform.gd" id="1_tf3le"]
+[ext_resource type="Texture2D" uid="uid://de1d2r1w0i355" path="res://assets/sprites/envir/Dust Particle.png" id="2_sahkp"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tf3le"]
+load_path = "res://.godot/imported/spritesheet_default.png-41c0c8d62143241c8c4ae779677aad62.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tf3le"]
+size = Vector2(58, 56)
+
+[sub_resource type="Gradient" id="Gradient_ovlp5"]
+offsets = PackedFloat32Array(0, 0.41996402, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 0.9955913, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_sahkp"]
+offsets = PackedFloat32Array(0, 0.42895684, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="DashTriggerPlatform" type="StaticBody2D" unique_id=1900752655]
+script = ExtResource("1_tf3le")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1294044121]
+texture = SubResource("CompressedTexture2D_tf3le")
+region_enabled = true
+region_rect = Rect2(258.89178, 197.77069, 57.41504, 56.124832)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1506291033]
+shape = SubResource("RectangleShape2D_tf3le")
+
+[node name="MagicDust" type="CPUParticles2D" parent="." unique_id=1433830164]
+position = Vector2(-1, 0)
+texture = ExtResource("2_sahkp")
+lifetime = 2.0
+emission_shape = 3
+emission_rect_extents = Vector2(28, 28)
+gravity = Vector2(0, -10)
+scale_amount_min = 0.5
+color_ramp = SubResource("Gradient_ovlp5")
+
+[node name="BurstDust" type="CPUParticles2D" parent="." unique_id=1113708645]
+emitting = false
+amount = 36
+texture = ExtResource("2_sahkp")
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 23.88
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 80.0
+initial_velocity_max = 120.0
+scale_amount_min = 0.4
+scale_amount_max = 0.7
+color_ramp = SubResource("Gradient_sahkp")

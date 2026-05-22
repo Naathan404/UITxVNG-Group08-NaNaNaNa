@@ -18,6 +18,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if is_activated: return
 	if body.is_in_group("player"):
 		is_activated = true
+		#if body.has_method("_refill_oxygen"): body._refill_oxygen(100)
 		animated_sprite.play("activated")
 		GameManager._set_checkpoint(position)
 		AudioManager.play_sound("checkpoint", global_position, 5.0)

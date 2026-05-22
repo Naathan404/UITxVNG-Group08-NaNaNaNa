@@ -12,6 +12,8 @@ class_name GameUI
 @onready var hint_down: TextureRect = $HintDown
 # over render on screen
 @onready var death_screen: ColorRect = $DeathScreen
+# label
+@onready var lives_count: Label = $Label
 
 @onready var tutorial_screen: ColorRect = $TutorialScreen
 var waiting_for_input_action: String = ""
@@ -46,6 +48,7 @@ func _ready() -> void:
 		oxygen_bar.show()
 		avatar_react.show()
 	tutorial_screen.hide()
+	lives_count.text = "x" + str(GameManager.current_lives)
 	call_deferred("_save_original_position")
 	
 func _process(delta: float) -> void:

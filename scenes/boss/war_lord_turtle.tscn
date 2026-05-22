@@ -14,12 +14,14 @@
 [ext_resource type="Texture2D" uid="uid://b1tgqftad3k66" path="res://assets/sprites/bosses/war_lord_turtle12.png" id="12_ejskh"]
 [ext_resource type="Texture2D" uid="uid://cut2l8u5yt50y" path="res://assets/sprites/bosses/war_lord_turtle14.png" id="13_roq83"]
 [ext_resource type="Texture2D" uid="uid://cxx26jboky527" path="res://assets/sprites/bosses/war_lord_turtle13.png" id="14_bj11e"]
-[ext_resource type="Texture2D" uid="uid://bgfwctvr70418" path="res://assets/sprites/bosses/war_lord_turtle15.png" id="15_ocwkh"]
-[ext_resource type="Texture2D" uid="uid://how1yoo4een" path="res://assets/sprites/bosses/war_lord_turtle16.png" id="16_1xqot"]
-[ext_resource type="Texture2D" uid="uid://dhcygusocpp23" path="res://assets/sprites/bosses/war_lord_turtle17.png" id="17_h230y"]
 [ext_resource type="Texture2D" uid="uid://dh8foeq84twte" path="res://assets/sprites/bosses/war_lord_turtle18.png" id="18_i02vq"]
 [ext_resource type="Texture2D" uid="uid://cjm84b2yjbrk8" path="res://assets/sprites/bosses/war_lord_turtle19.png" id="19_tug0p"]
 [ext_resource type="Texture2D" uid="uid://8lwtlo2wrvsk" path="res://assets/sprites/bosses/war_lord_turtle20.png" id="20_qi23h"]
+[ext_resource type="Script" uid="uid://c8vv4oc6vodao" path="res://scripts/boss/state_machine.gd" id="21_qerrr"]
+[ext_resource type="Script" uid="uid://bja274fjqd5t0" path="res://scripts/boss/idle.gd" id="21_qi23h"]
+[ext_resource type="Script" uid="uid://dwa36ai1nup6j" path="res://scripts/boss/attack.gd" id="23_rvsb5"]
+[ext_resource type="PackedScene" uid="uid://wae7pssjwov1" path="res://scenes/boss/bullet.tscn" id="24_3n6no"]
+[ext_resource type="Script" uid="uid://b5lpqg6hg5pok" path="res://scripts/boss/attack_2.gd" id="25_uhbyl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0cn5b"]
 animations = [{
@@ -78,15 +80,6 @@ animations = [{
 "texture": ExtResource("14_bj11e")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_ocwkh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_1xqot")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_h230y")
-}, {
-"duration": 1.0,
 "texture": ExtResource("18_i02vq")
 }],
 "loop": true,
@@ -112,6 +105,9 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_8al8k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rvsb5")
 }],
 "loop": true,
 "name": &"idle",
@@ -122,11 +118,13 @@ animations = [{
 size = Vector2(84, 71)
 
 [node name="WarLordTurtle" type="CharacterBody2D" unique_id=637277600]
+position = Vector2(149, 103)
 collision_layer = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2090711749]
+position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_0cn5b")
-animation = &"idle"
+animation = &"attack_2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1781014703]
 position = Vector2(-1, -0.5)
@@ -141,14 +139,33 @@ offset_right = 294.0
 offset_bottom = 270.0
 value = 100.0
 
-[node name="state" type="Node2D" parent="." unique_id=559691006]
+[node name="state" type="Node2D" parent="." unique_id=559691006 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("21_qerrr")
+initial_state = NodePath("idle")
 
 [node name="idle" type="Node2D" parent="state" unique_id=2018207169]
+script = ExtResource("21_qi23h")
 
 [node name="attack" type="Node2D" parent="state" unique_id=1564387040]
+script = ExtResource("23_rvsb5")
+bullet_scene = ExtResource("24_3n6no")
 
 [node name="attack2" type="Node2D" parent="state" unique_id=583361240]
+script = ExtResource("25_uhbyl")
+bullet_scene = ExtResource("24_3n6no")
 
 [node name="damaged" type="Node2D" parent="state" unique_id=761319895]
 
 [node name="die" type="Node2D" parent="state" unique_id=2044352637]
+
+[node name="ShootPoint_1" type="Marker2D" parent="." unique_id=1675318754]
+position = Vector2(1, -22)
+
+[node name="ShootPoint_2" type="Marker2D" parent="." unique_id=1153257229]
+position = Vector2(-29, -16)
+
+[node name="ShootPoint_3" type="Marker2D" parent="." unique_id=1221769436]
+position = Vector2(-29, -30)
+
+[node name="ShootPoint_4" type="Marker2D" parent="." unique_id=172495353]
+position = Vector2(27, -29)

@@ -5,6 +5,7 @@ class_name Player
 @export_group("Oxygen Settings")
 @export var max_oxygen: float = 100.0
 @export var decrease_oxygen_rate: float
+@export var dash_oxygen_cost: float = 10.0
 
 @export_group("Player Abilities")
 @export var has_red_mask: bool = false

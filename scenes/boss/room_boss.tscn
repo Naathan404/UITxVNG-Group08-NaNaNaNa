@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bdovcfs43ajwp"]
+
+[ext_resource type="PackedScene" uid="uid://bi5f8r44l8v7e" path="res://scenes/player/player.tscn" id="1_46umg"]
+[ext_resource type="PackedScene" uid="uid://oijwff1p12m1" path="res://scenes/boss/war_lord_turtle.tscn" id="2_3gvr8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_46umg"]
+size = Vector2(544.5, 31)
+
+[node name="Node2D" type="Node2D" unique_id=1696972661]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=325468014]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=894774134]
+position = Vector2(210.25, 81)
+shape = SubResource("RectangleShape2D_46umg")
+
+[node name="Player" parent="." unique_id=65356844 instance=ExtResource("1_46umg")]
+
+[node name="WarLordTurtle" parent="." unique_id=637277600 instance=ExtResource("2_3gvr8")]
+position = Vector2(410, 31)
