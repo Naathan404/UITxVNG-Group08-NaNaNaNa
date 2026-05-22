@@ -3,7 +3,7 @@ extends PlayerState
 ## ghost effect setting
 const GHOST_SCENE = preload("res://scenes/player/ghost_effect.tscn")
 @export var ghost_effect_interval: float = 0.05
-@export var oxygen_cost: float = 10.0
+#@export var oxygen_cost: float = 10.0
 var ghost_timer: float = 0.0
 
 ## dash direction, mặc định là hướng sang phải
@@ -22,7 +22,7 @@ func _enter() -> void:
 	
 	obj.get_node("DashParticles").emitting = true
 	
-	_use_oxygen(oxygen_cost)
+	_use_oxygen(obj.dash_oxygen_cost)
 		
 	obj.can_dash = false;
 	obj.ignore_gravity = true;
