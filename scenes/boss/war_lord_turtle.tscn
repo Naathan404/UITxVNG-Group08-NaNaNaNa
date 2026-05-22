@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://oijwff1p12m1"]
+
+[node name="WarLordTurtle" type="CharacterBody2D" unique_id=637277600]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=996279463]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1781014703]

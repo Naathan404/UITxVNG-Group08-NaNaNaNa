@@ -205,7 +205,18 @@ func _on_death() -> void:
 	if game_ui: game_ui.update_ui(current_oxygen, max_oxygen, mask_type, is_oxygen_decreased)
 	print("[Player] Người chơi đã die -> Reset màn chơi")
 	fsm.change_state(fsm.states.die)
+
+# trừ máu khi đạn bắn trúng
+func take_dame(damage_amount: float) -> void:
+	if is_dead or is_level_completed: return
+	current_oxygen -= damage_amount
+	current_oxygen = clamp(current_oxygen, 0.0, max_oxygen)
 	
+	if game_ui:
+		game_ui.update_ui(current_oxygen, max_oxygen, mask_type, true)
+	if current_oxygen <= 0.0:
+		_on_oxygen_ran_out()
+
 func _complete_level() -> void:
 	_on_mask_change(MaskType.NONE)
 	change_animation("idle")
