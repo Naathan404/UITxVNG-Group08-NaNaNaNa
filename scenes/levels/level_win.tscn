@@ -1500,6 +1500,7 @@ tile_set = SubResource("TileSet_vakt5")
 decrease_oxygen_rate = 0.0
 has_red_mask = true
 has_blue_mask = true
+dash_unlocked = true
 
 [node name="HintUp" parent="Player/CanvasLayer" parent_id_path=PackedInt32Array(65356844, 220659911) index="3" unique_id=764313852]
 visible = false
