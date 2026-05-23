@@ -84,6 +84,13 @@ pause={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Environment"
+2d_physics/layer_3="Red-Glass"
+2d_physics/layer_4="Blue-Glass"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
