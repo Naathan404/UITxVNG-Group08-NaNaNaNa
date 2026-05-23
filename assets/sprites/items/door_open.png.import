@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0s2oibeh6n7m"
-path="res://.godot/imported/bullet_rocket.png-66b2026376ccc668671e2088c09f0cf4.ctex"
+uid="uid://bcc2bypqd42b4"
+path="res://.godot/imported/door_open.png-a54fb74e55fb78abd825f3d08e282424.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/bosses/bullet_rocket.png"
-dest_files=["res://.godot/imported/bullet_rocket.png-66b2026376ccc668671e2088c09f0cf4.ctex"]
+source_file="res://assets/sprites/items/door_open.png"
+dest_files=["res://.godot/imported/door_open.png-a54fb74e55fb78abd825f3d08e282424.ctex"]
 
 [params]
 
