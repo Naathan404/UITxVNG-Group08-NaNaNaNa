@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bhtgkq7c5hppu" path="res://assets/sprites/envir/Skull Particle.png" id="11_qvnao"]
 [ext_resource type="PackedScene" uid="uid://dqbm53diyvkac" path="res://scenes/objects/spike.tscn" id="12_qvnao"]
 [ext_resource type="PackedScene" uid="uid://c4np4v21yxhk4" path="res://scenes/objects/end_point.tscn" id="13_hsvsk"]
+[ext_resource type="PackedScene" uid="uid://oijwff1p12m1" path="res://scenes/boss/war_lord_turtle.tscn" id="14_fcb7b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ogj6a"]
 texture = ExtResource("1_06474")
@@ -353,6 +354,9 @@ rotation = -0.38397244
 
 [node name="OxygenTank4" parent="." unique_id=1843604359 instance=ExtResource("7_5vn0v")]
 position = Vector2(2063, 4)
+
+[node name="WarLordTurtle" parent="." unique_id=637277600 instance=ExtResource("14_fcb7b")]
+position = Vector2(169, -9)
 
 [editable path="Player"]
 [editable path="Player/CanvasLayer"]

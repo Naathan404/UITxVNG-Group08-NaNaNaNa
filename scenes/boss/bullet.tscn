@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://wae7pssjwov1"]
+
+[ext_resource type="Script" uid="uid://tuh7i2jbj0pr" path="res://scripts/boss/bullet.gd" id="1_mqu0b"]
+[ext_resource type="Texture2D" uid="uid://si8g3em4wy7k" path="res://assets/sprites/bosses/bullet_rocket_red.png" id="2_gxh23"]
+[ext_resource type="Texture2D" uid="uid://5q8bqi2s3ums" path="res://assets/sprites/bosses/bullet_rocket_blue.png" id="2_mqu0b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_twvbm"]
+size = Vector2(20, 26)
+
+[node name="Bullet" type="Area2D" unique_id=1887372702]
+script = ExtResource("1_mqu0b")
+texture_blue = ExtResource("2_mqu0b")
+texture_red = ExtResource("2_gxh23")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=916372672]
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=587534862]
+shape = SubResource("RectangleShape2D_twvbm")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1870969645]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
