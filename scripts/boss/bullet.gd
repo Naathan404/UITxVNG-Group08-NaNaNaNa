@@ -9,31 +9,35 @@ extends Area2D
 @onready var screen_notifier = $VisibleOnScreenNotifier2D
 
 enum MaskType { NONE, RED, BLUE }
+var bullet_mask_type: MaskType = MaskType.NONE
 
-var accleration: Vector2 = Vector2.ZERO
+var acceleration: Vector2 = Vector2.ZERO
 var velocity: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
-	print("[bullet] đang gọi") 
 	if player:
-		print("Đang gán ảnh cho đạn...") # Dòng này sẽ hiện ở bảng Output
 		if player.mask_type == MaskType.BLUE and texture_blue:
 			sprite.texture = texture_blue
+			bullet_mask_type = MaskType.BLUE
 		elif player.mask_type == MaskType.RED and texture_red:
 			sprite.texture = texture_red
+			bullet_mask_type = MaskType.RED
 		else:
 			sprite.texture = texture_red
+			bullet_mask_type = MaskType.RED
 
 func _physics_process(delta: float) -> void:
-	if player: 
-		accleration = (player.global_position - global_position).normalized() * 700
-		velocity += accleration * delta
-		rotation = velocity.angle()
-		
-		velocity = velocity.limit_length(150)
-		
+	if player:
+		if  player.mask_type == bullet_mask_type or player.mask_type == MaskType.NONE:
+			acceleration = (player.global_position - global_position).normalized() * 700
+			velocity += acceleration * delta
+			rotation = velocity.angle()
+			
+			velocity = velocity.limit_length(150)
+		else:
+			acceleration = Vector2.ZERO
+			velocity = velocity.limit_length(150)
 		global_position += velocity * delta
-
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
