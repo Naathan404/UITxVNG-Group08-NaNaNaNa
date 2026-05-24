@@ -275,7 +275,7 @@ load_path = "res://.godot/imported/tilemap_packed.png-8fa6278ecdfe79a60d99ce1c03
 
 [node name="Level2" type="Node2D" unique_id=233770209]
 script = ExtResource("1_brxtv")
-bgm_name = "bgm_01"
+bgm_name = "bgm_03"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1827066540]
 scale = Vector2(0.25, 0.25)

@@ -13,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://bhtgkq7c5hppu" path="res://assets/sprites/envir/Skull Particle.png" id="11_qvnao"]
 [ext_resource type="PackedScene" uid="uid://dqbm53diyvkac" path="res://scenes/objects/spike.tscn" id="12_qvnao"]
 [ext_resource type="PackedScene" uid="uid://c4np4v21yxhk4" path="res://scenes/objects/end_point.tscn" id="13_hsvsk"]
-[ext_resource type="PackedScene" uid="uid://c5du3x540ott4" path="res://scenes/objects/laser.tscn" id="14_fcb7b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ogj6a"]
 texture = ExtResource("1_06474")
@@ -348,7 +347,7 @@ position = Vector2(1887, 25)
 [node name="EndPoint" parent="." unique_id=1775472992 instance=ExtResource("13_hsvsk")]
 z_index = -1
 position = Vector2(2880, -118)
-next_scene_path = "res://scenes/levels/level_win.tscn"
+next_scene_path = "res://scenes/levels/level_5.tscn"
 
 [node name="OxygenTank3" parent="." unique_id=1938378974 instance=ExtResource("7_5vn0v")]
 position = Vector2(2552, -42)
@@ -357,12 +356,5 @@ rotation = -0.38397244
 [node name="OxygenTank4" parent="." unique_id=1843604359 instance=ExtResource("7_5vn0v")]
 position = Vector2(2063, 4)
 
-[node name="Laser" parent="." unique_id=180047971 instance=ExtResource("14_fcb7b")]
-position = Vector2(164, -97)
-
-[node name="Line2D" parent="Laser" index="1" unique_id=537415831]
-width = 2.0
-
 [editable path="Player"]
 [editable path="Player/CanvasLayer"]
-[editable path="Laser"]
