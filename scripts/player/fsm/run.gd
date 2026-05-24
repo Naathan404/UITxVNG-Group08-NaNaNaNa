@@ -11,7 +11,7 @@ func _enter() -> void:
 	# run particles
 	obj.get_node("RunParticles").emitting = true
 
-func _update(delta: float):
+func _update(_delta: float):
 	if control_dash(): return
 	if control_jump(): return
 	
