@@ -6,7 +6,9 @@ var wait_time: float = 0.0
 var locked_x: float = 0.0
 
 func enter():
-	super.enter() 
+	super.enter()
+	if owner.has_node("pivot"):
+		owner.get_node("pivot").visible = false
 	timer = 0.0
 	wait_time = randf_range(1.0, 3.0)
 	
@@ -28,11 +30,13 @@ func _physics_process(delta: float) -> void:
 	
 	timer += delta
 	if timer >= wait_time:
-		var random_attack = randi_range(1, 3)
-		#transitioned.emit(self, "run")
-		if random_attack == 1:
-			transitioned.emit(self, "attack")
-		elif random_attack == 2:
-			transitioned.emit(self, "attack2")
-		elif random_attack == 3:
-			transitioned.emit(self, "run")
+		var random_attack = randi_range(1, 4)
+		transitioned.emit(self, "attack_laser")
+		#if random_attack == 1:
+		#	transitioned.emit(self, "attack")
+		#elif random_attack == 2:
+		#	transitioned.emit(self, "attack2")
+		#elif random_attack == 3:
+		#	transitioned.emit(self, "run")
+		#elif random_attack == 4:
+		#	transitioned.emit(self, "attack_laser")

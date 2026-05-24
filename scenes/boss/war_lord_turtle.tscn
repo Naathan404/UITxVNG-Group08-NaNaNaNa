@@ -24,10 +24,13 @@
 [ext_resource type="Script" uid="uid://c8vv4oc6vodao" path="res://scripts/boss/state_machine.gd" id="21_qerrr"]
 [ext_resource type="Script" uid="uid://bja274fjqd5t0" path="res://scripts/boss/idle.gd" id="21_qi23h"]
 [ext_resource type="Texture2D" uid="uid://db5xry8lwxtd" path="res://assets/sprites/bosses/war_lord/war_lord_turtle_run2.png" id="22_ejskh"]
+[ext_resource type="Texture2D" uid="uid://dbjg0b67gqyw" path="res://assets/sprites/bosses/laze_attack/Laser_sheet.png" id="23_roq83"]
 [ext_resource type="Script" uid="uid://dwa36ai1nup6j" path="res://scripts/boss/attack.gd" id="23_rvsb5"]
 [ext_resource type="PackedScene" uid="uid://wae7pssjwov1" path="res://scenes/boss/bullet.tscn" id="24_3n6no"]
+[ext_resource type="Script" uid="uid://chojswdq65syg" path="res://scripts/boss/laser_hitbox.gd" id="24_ocwkh"]
 [ext_resource type="Script" uid="uid://b5lpqg6hg5pok" path="res://scripts/boss/attack_2.gd" id="25_uhbyl"]
 [ext_resource type="Script" uid="uid://btauf4k4a2uq" path="res://scripts/boss/run.gd" id="28_ejskh"]
+[ext_resource type="Script" uid="uid://pos3jm27uqvq" path="res://scripts/boss/attack_laser.gd" id="30_bj11e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0cn5b"]
 animations = [{
@@ -59,7 +62,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("9_uhbyl")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 5.0
 }, {
@@ -140,6 +143,48 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ovoo8"]
 size = Vector2(84, 71)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bj11e"]
+size = Vector2(648, 16)
+
+[sub_resource type="Animation" id="Animation_bj11e"]
+length = 1.8750125
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.125, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1, 1.125, 1.25, 1.375, 1.5, 1.625, 1.75, 1.8750125),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 14, 0]
+}
+
+[sub_resource type="Animation" id="Animation_ocwkh"]
+resource_name = "laser"
+length = 1.8750125
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1, 1.125, 1.25, 1.375, 1.5, 1.625, 1.75, 1.8750125),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 14, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1xqot"]
+_data = {
+&"RESET": SubResource("Animation_bj11e"),
+&"laser": SubResource("Animation_ocwkh")
+}
+
 [node name="WarLordTurtle" type="CharacterBody2D" unique_id=637277600]
 collision_layer = 16
 collision_mask = 3
@@ -147,11 +192,33 @@ collision_mask = 3
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2090711749]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_0cn5b")
-animation = &"run"
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1781014703]
 position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_ovoo8")
+
+[node name="pivot" type="Node2D" parent="." unique_id=1481830977]
+position = Vector2(-22, 4)
+
+[node name="Sprite2D" type="Sprite2D" parent="pivot" unique_id=513555471]
+position = Vector2(248.00002, 15)
+scale = Vector2(2.5182962, 0.98686904)
+texture = ExtResource("23_roq83")
+vframes = 15
+frame = 1
+
+[node name="Area2D" type="Area2D" parent="pivot" unique_id=315406078]
+collision_layer = 0
+monitoring = false
+script = ExtResource("24_ocwkh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pivot/Area2D" unique_id=858834824]
+position = Vector2(304, -3)
+shape = SubResource("RectangleShape2D_bj11e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1083930555]
+libraries/ = SubResource("AnimationLibrary_1xqot")
 
 [node name="state" type="Node2D" parent="." unique_id=559691006 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("21_qerrr")
@@ -174,6 +241,9 @@ bullet_scene = ExtResource("24_3n6no")
 
 [node name="run" type="Node2D" parent="state" unique_id=395365251]
 script = ExtResource("28_ejskh")
+
+[node name="attack_laser" type="Node2D" parent="state" unique_id=562808081]
+script = ExtResource("30_bj11e")
 
 [node name="ShootPoint_1" type="Marker2D" parent="." unique_id=1675318754]
 position = Vector2(1, -22)

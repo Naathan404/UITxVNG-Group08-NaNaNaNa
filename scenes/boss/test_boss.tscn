@@ -444,7 +444,7 @@ position = Vector2(1518, 30)
 position = Vector2(2477, 54)
 
 [node name="WarLordTurtle" parent="." unique_id=637277600 instance=ExtResource("17_d5y75")]
-position = Vector2(421, -62)
+position = Vector2(308, 46)
 
 [editable path="Player"]
 [editable path="Player/CanvasLayer"]
