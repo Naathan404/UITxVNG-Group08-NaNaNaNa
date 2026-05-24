@@ -14,8 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://duuwbov51l0ry" path="res://scenes/objects/unlock_item.tscn" id="11_qi5uv"]
 [ext_resource type="Texture2D" uid="uid://d4b84i0nlgyqg" path="res://assets/sprites/items/dash_item.png" id="12_f6egh"]
 [ext_resource type="PackedScene" uid="uid://dqbm53diyvkac" path="res://scenes/objects/spike.tscn" id="13_f6egh"]
-[ext_resource type="PackedScene" uid="uid://fhcmw7qk7efu" path="res://scenes/objects/key.tscn" id="15_apo5x"]
-[ext_resource type="PackedScene" uid="uid://bx06c5huqmthh" path="res://scenes/objects/door.tscn" id="16_josfm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2bnyt"]
 texture = ExtResource("1_fmg3e")
@@ -280,7 +278,7 @@ colors = PackedColorArray(0.677051, 0, 0, 0, 1, 1, 1, 0.59000003, 1, 1, 1, 0)
 process_mode = 3
 script = ExtResource("1_ugcn1")
 left = -132
-bgm_name = "bgm_01"
+bgm_name = "bgm_02"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=843567898]
 scale = Vector2(0.25, 0.25)
