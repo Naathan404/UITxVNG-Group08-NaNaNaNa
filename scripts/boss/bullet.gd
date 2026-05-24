@@ -6,7 +6,7 @@ extends Area2D
 
 @onready var sprite = $Sprite2D
 @onready var player = get_parent().find_child("Player")
-@onready var screen_notifier = $VisibleOnScreenNotifier2D
+@onready var screen_notifier = $VisibleOnScreenEnabler2D
 
 enum MaskType { NONE, RED, BLUE }
 var bullet_mask_type: MaskType = MaskType.NONE
@@ -32,11 +32,12 @@ func _physics_process(delta: float) -> void:
 			acceleration = (player.global_position - global_position).normalized() * 700
 			velocity += acceleration * delta
 			rotation = velocity.angle()
-			
-			velocity = velocity.limit_length(150)
+			velocity = velocity.limit_length(100)
 		else:
 			acceleration = Vector2.ZERO
-			velocity = velocity.limit_length(150)
+			if velocity == Vector2.ZERO:
+				velocity = Vector2.RIGHT.rotated(rotation) * 200
+			velocity = velocity.limit_length(100)
 		global_position += velocity * delta
 
 func _on_body_entered(body: Node2D) -> void:

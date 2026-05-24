@@ -15,13 +15,19 @@
 [ext_resource type="Texture2D" uid="uid://cut2l8u5yt50y" path="res://assets/sprites/bosses/war_lord_turtle14.png" id="13_roq83"]
 [ext_resource type="Texture2D" uid="uid://cxx26jboky527" path="res://assets/sprites/bosses/war_lord_turtle13.png" id="14_bj11e"]
 [ext_resource type="Texture2D" uid="uid://dh8foeq84twte" path="res://assets/sprites/bosses/war_lord_turtle18.png" id="18_i02vq"]
+[ext_resource type="Texture2D" uid="uid://yaie42yfuo6k" path="res://assets/sprites/bosses/war_lord/war_lord_turtle_idle_2.png" id="18_uhbyl"]
+[ext_resource type="Texture2D" uid="uid://xglbv7tdutal" path="res://assets/sprites/bosses/war_lord/war_lord_turtle_idle_3.png" id="19_2w4or"]
 [ext_resource type="Texture2D" uid="uid://cjm84b2yjbrk8" path="res://assets/sprites/bosses/war_lord_turtle19.png" id="19_tug0p"]
+[ext_resource type="Texture2D" uid="uid://p0antp7ix01j" path="res://assets/sprites/bosses/war_lord/war_lord_turtle_idle_4.png" id="20_ief2x"]
 [ext_resource type="Texture2D" uid="uid://8lwtlo2wrvsk" path="res://assets/sprites/bosses/war_lord_turtle20.png" id="20_qi23h"]
+[ext_resource type="Texture2D" uid="uid://cjr53b00r3l15" path="res://assets/sprites/bosses/war_lord/war_lord_turtle_run1.png" id="21_ief2x"]
 [ext_resource type="Script" uid="uid://c8vv4oc6vodao" path="res://scripts/boss/state_machine.gd" id="21_qerrr"]
 [ext_resource type="Script" uid="uid://bja274fjqd5t0" path="res://scripts/boss/idle.gd" id="21_qi23h"]
+[ext_resource type="Texture2D" uid="uid://db5xry8lwxtd" path="res://assets/sprites/bosses/war_lord/war_lord_turtle_run2.png" id="22_ejskh"]
 [ext_resource type="Script" uid="uid://dwa36ai1nup6j" path="res://scripts/boss/attack.gd" id="23_rvsb5"]
 [ext_resource type="PackedScene" uid="uid://wae7pssjwov1" path="res://scenes/boss/bullet.tscn" id="24_3n6no"]
 [ext_resource type="Script" uid="uid://b5lpqg6hg5pok" path="res://scripts/boss/attack_2.gd" id="25_uhbyl"]
+[ext_resource type="Script" uid="uid://btauf4k4a2uq" path="res://scripts/boss/run.gd" id="28_ejskh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0cn5b"]
 animations = [{
@@ -107,10 +113,27 @@ animations = [{
 "texture": ExtResource("1_8al8k")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_rvsb5")
+"texture": ExtResource("18_uhbyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_2w4or")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ief2x")
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_ief2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ejskh")
+}],
+"loop": true,
+"name": &"run",
 "speed": 5.0
 }]
 
@@ -118,26 +141,17 @@ animations = [{
 size = Vector2(84, 71)
 
 [node name="WarLordTurtle" type="CharacterBody2D" unique_id=637277600]
-position = Vector2(149, 103)
-collision_layer = 2
+collision_layer = 16
+collision_mask = 3
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2090711749]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_0cn5b")
-animation = &"attack_2"
+animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1781014703]
 position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_ovoo8")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=95118426]
-
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1211476339]
-offset_left = 131.0
-offset_top = 238.0
-offset_right = 294.0
-offset_bottom = 270.0
-value = 100.0
 
 [node name="state" type="Node2D" parent="." unique_id=559691006 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("21_qerrr")
@@ -157,6 +171,9 @@ bullet_scene = ExtResource("24_3n6no")
 [node name="damaged" type="Node2D" parent="state" unique_id=761319895]
 
 [node name="die" type="Node2D" parent="state" unique_id=2044352637]
+
+[node name="run" type="Node2D" parent="state" unique_id=395365251]
+script = ExtResource("28_ejskh")
 
 [node name="ShootPoint_1" type="Marker2D" parent="." unique_id=1675318754]
 position = Vector2(1, -22)
