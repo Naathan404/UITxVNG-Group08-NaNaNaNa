@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c5du3x540ott4"]
+
+[ext_resource type="Script" uid="uid://bmmyv4dednqjc" path="res://scripts/objects/laser.gd" id="1_6mhsr"]
+
+[node name="Laser" type="Node2D" unique_id=180047971]
+script = ExtResource("1_6mhsr")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1020144248]
+target_position = Vector2(0, 500)
+collision_mask = 15
+
+[node name="Line2D" type="Line2D" parent="." unique_id=537415831]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=768609789]
+amount = 18
+lifetime = 0.09999999999999999
+emission_shape = 1
+emission_sphere_radius = 1.82
+spread = 180.0
+gravity = Vector2(0, 0)
+scale_amount_max = 1.5
