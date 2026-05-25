@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://oijwff1p12m1"]
 
+[ext_resource type="Script" uid="uid://bhc6j6gvxqw12" path="res://scripts/boss/war_lord_turtle.gd" id="1_1xqot"]
 [ext_resource type="Texture2D" uid="uid://wj8kudkl51ce" path="res://assets/sprites/bosses/war_lord_turtle1.png" id="1_8al8k"]
 [ext_resource type="Texture2D" uid="uid://b1cjjgg0ev870" path="res://assets/sprites/bosses/war_lord_turtle2.png" id="2_noyy4"]
 [ext_resource type="Texture2D" uid="uid://oh7dspo72doq" path="res://assets/sprites/bosses/war_lord_turtle3.png" id="3_3lk3f"]
@@ -15,13 +16,23 @@
 [ext_resource type="Texture2D" uid="uid://cut2l8u5yt50y" path="res://assets/sprites/bosses/war_lord_turtle14.png" id="13_roq83"]
 [ext_resource type="Texture2D" uid="uid://cxx26jboky527" path="res://assets/sprites/bosses/war_lord_turtle13.png" id="14_bj11e"]
 [ext_resource type="Texture2D" uid="uid://dh8foeq84twte" path="res://assets/sprites/bosses/war_lord_turtle18.png" id="18_i02vq"]
+[ext_resource type="Texture2D" uid="uid://yaie42yfuo6k" path="res://assets/sprites/bosses/war_lord/war_lord_turtle_idle_2.png" id="18_uhbyl"]
+[ext_resource type="Texture2D" uid="uid://xglbv7tdutal" path="res://assets/sprites/bosses/war_lord/war_lord_turtle_idle_3.png" id="19_2w4or"]
 [ext_resource type="Texture2D" uid="uid://cjm84b2yjbrk8" path="res://assets/sprites/bosses/war_lord_turtle19.png" id="19_tug0p"]
+[ext_resource type="Texture2D" uid="uid://p0antp7ix01j" path="res://assets/sprites/bosses/war_lord/war_lord_turtle_idle_4.png" id="20_ief2x"]
 [ext_resource type="Texture2D" uid="uid://8lwtlo2wrvsk" path="res://assets/sprites/bosses/war_lord_turtle20.png" id="20_qi23h"]
+[ext_resource type="Texture2D" uid="uid://cjr53b00r3l15" path="res://assets/sprites/bosses/war_lord/war_lord_turtle_run1.png" id="21_ief2x"]
 [ext_resource type="Script" uid="uid://c8vv4oc6vodao" path="res://scripts/boss/state_machine.gd" id="21_qerrr"]
 [ext_resource type="Script" uid="uid://bja274fjqd5t0" path="res://scripts/boss/idle.gd" id="21_qi23h"]
+[ext_resource type="Texture2D" uid="uid://db5xry8lwxtd" path="res://assets/sprites/bosses/war_lord/war_lord_turtle_run2.png" id="22_ejskh"]
+[ext_resource type="Texture2D" uid="uid://dbjg0b67gqyw" path="res://assets/sprites/bosses/laze_attack/Laser_sheet.png" id="23_roq83"]
 [ext_resource type="Script" uid="uid://dwa36ai1nup6j" path="res://scripts/boss/attack.gd" id="23_rvsb5"]
 [ext_resource type="PackedScene" uid="uid://wae7pssjwov1" path="res://scenes/boss/bullet.tscn" id="24_3n6no"]
+[ext_resource type="Script" uid="uid://chojswdq65syg" path="res://scripts/boss/laser_hitbox.gd" id="24_ocwkh"]
 [ext_resource type="Script" uid="uid://b5lpqg6hg5pok" path="res://scripts/boss/attack_2.gd" id="25_uhbyl"]
+[ext_resource type="Script" uid="uid://btauf4k4a2uq" path="res://scripts/boss/run.gd" id="28_ejskh"]
+[ext_resource type="Script" uid="uid://pos3jm27uqvq" path="res://scripts/boss/attack_laser.gd" id="30_bj11e"]
+[ext_resource type="Texture2D" uid="uid://skth0ardjynf" path="res://icon.svg" id="33_h230y"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0cn5b"]
 animations = [{
@@ -53,7 +64,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("9_uhbyl")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 5.0
 }, {
@@ -107,37 +118,122 @@ animations = [{
 "texture": ExtResource("1_8al8k")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_rvsb5")
+"texture": ExtResource("18_uhbyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_2w4or")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ief2x")
 }],
 "loop": true,
 "name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_ief2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ejskh")
+}],
+"loop": true,
+"name": &"run",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ovoo8"]
 size = Vector2(84, 71)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bj11e"]
+size = Vector2(245.86185, 5.4407625)
+
+[sub_resource type="Animation" id="Animation_bj11e"]
+length = 1.8750125
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.125, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1, 1.125, 1.25, 1.375, 1.5, 1.625, 1.75, 1.8750125),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 14, 0]
+}
+
+[sub_resource type="Animation" id="Animation_ocwkh"]
+resource_name = "laser"
+length = 1.8750125
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1, 1.125, 1.25, 1.375, 1.5, 1.625, 1.75, 1.8750125),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 14, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1xqot"]
+_data = {
+&"RESET": SubResource("Animation_bj11e"),
+&"laser": SubResource("Animation_ocwkh")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1xqot"]
+size = Vector2(84, 69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h230y"]
+size = Vector2(18, 343)
+
 [node name="WarLordTurtle" type="CharacterBody2D" unique_id=637277600]
-position = Vector2(149, 103)
-collision_layer = 2
+scale = Vector2(1.9342285, 2.0822315)
+collision_layer = 16
+collision_mask = 3
+script = ExtResource("1_1xqot")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2090711749]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_0cn5b")
-animation = &"attack_2"
+animation = &"attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1781014703]
 position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_ovoo8")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=95118426]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=776417470]
+position = Vector2(56.35322, -46.584633)
+scale = Vector2(0.13568565, 0.1290006)
+texture = ExtResource("33_h230y")
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=1211476339]
-offset_left = 131.0
-offset_top = 238.0
-offset_right = 294.0
-offset_bottom = 270.0
-value = 100.0
+[node name="pivot" type="Node2D" parent="." unique_id=1481830977]
+position = Vector2(55.836216, -47.06489)
+
+[node name="Sprite2D" type="Sprite2D" parent="pivot" unique_id=513555471]
+position = Vector2(96.96529, 7.0458407)
+scale = Vector2(0.9682293, 0.43294144)
+texture = ExtResource("23_roq83")
+vframes = 15
+frame = 1
+
+[node name="Area2D" type="Area2D" parent="pivot" unique_id=315406078]
+collision_layer = 0
+monitoring = false
+script = ExtResource("24_ocwkh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pivot/Area2D" unique_id=858834824]
+position = Vector2(118.2779, -0.31911182)
+shape = SubResource("RectangleShape2D_bj11e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1083930555]
+libraries/ = SubResource("AnimationLibrary_1xqot")
 
 [node name="state" type="Node2D" parent="." unique_id=559691006 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("21_qerrr")
@@ -158,6 +254,12 @@ bullet_scene = ExtResource("24_3n6no")
 
 [node name="die" type="Node2D" parent="state" unique_id=2044352637]
 
+[node name="run" type="Node2D" parent="state" unique_id=395365251]
+script = ExtResource("28_ejskh")
+
+[node name="attack_laser" type="Node2D" parent="state" unique_id=562808081]
+script = ExtResource("30_bj11e")
+
 [node name="ShootPoint_1" type="Marker2D" parent="." unique_id=1675318754]
 position = Vector2(1, -22)
 
@@ -169,3 +271,39 @@ position = Vector2(-29, -30)
 
 [node name="ShootPoint_4" type="Marker2D" parent="." unique_id=172495353]
 position = Vector2(27, -29)
+
+[node name="KillZone" type="Area2D" parent="." unique_id=563841031]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" unique_id=309397198]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_1xqot")
+
+[node name="EntityDestroyer" type="Area2D" parent="." unique_id=1178932404]
+collision_layer = 0
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EntityDestroyer" unique_id=698289888]
+position = Vector2(38.25815, -53.308193)
+shape = SubResource("RectangleShape2D_h230y")
+
+[node name="DebrisParticles" type="CPUParticles2D" parent="." unique_id=1118803100]
+emitting = false
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+spread = 20.0
+initial_velocity_min = 200.0
+initial_velocity_max = 300.0
+angular_velocity_min = 360.0
+angular_velocity_max = 720.0
+scale_amount_min = 8.0
+scale_amount_max = 10.0
+color = Color(0, 0, 0, 1)
+
+[node name="ScreenNotifier" type="VisibleOnScreenNotifier2D" parent="." unique_id=583848865]
+rect = Rect2(-37.224144, -33.137527, 73.93129, 66.275055)
+
+[connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]
+[connection signal="area_entered" from="EntityDestroyer" to="." method="_on_entity_destroyer_area_entered"]
+[connection signal="body_entered" from="EntityDestroyer" to="." method="_on_entity_destroyer_body_entered"]
+[connection signal="screen_entered" from="ScreenNotifier" to="." method="_on_screen_notifier_screen_entered"]

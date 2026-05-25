@@ -720,6 +720,7 @@ offsets = PackedFloat32Array(0, 0.8048544, 1)
 colors = PackedColorArray(0.84705883, 0.88235295, 0.89411765, 1, 1.9539055, 1.9539055, 1.9539055, 0.693, 1, 1, 1, 0)
 
 [node name="Player" type="CharacterBody2D" unique_id=65356844 groups=["player"]]
+collision_mask = 17
 script = ExtResource("1_p47bc")
 decrease_oxygen_rate = 10.0
 dash_force = 500.0

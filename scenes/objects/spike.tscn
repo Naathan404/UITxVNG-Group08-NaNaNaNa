@@ -7,7 +7,6 @@
 script = ExtResource("1_ctypd")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1324901480]
-modulate = Color(1, 0, 0, 1)
 scale = Vector2(0.6523437, 0.40820313)
 texture = ExtResource("2_ctypd")
 

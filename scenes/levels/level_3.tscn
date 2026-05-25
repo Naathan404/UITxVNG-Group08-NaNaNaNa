@@ -455,11 +455,6 @@ z_index = -1
 position = Vector2(2528, 50)
 next_scene_path = "res://scenes/levels/level_4.tscn"
 
-[node name="OxygenTank3" parent="." unique_id=268203142 instance=ExtResource("7_fkk1g")]
-position = Vector2(1440, 8)
-rotation = 0.46251225
-scale = Vector2(0.4, 0.4)
-
 [editable path="Player"]
 [editable path="Player/CanvasLayer"]
 [editable path="UnlockItem"]

@@ -1,18 +1,21 @@
 [gd_scene format=3 uid="uid://dlgeyb04nwcim"]
 
-[ext_resource type="Script" path="res://scripts/objects/platform.gd" id="1_8dp8w"]
-[ext_resource type="Texture2D" uid="uid://bdvgl63lt5vw7" path="res://assets/sprites/envir/tilemap_packed.png" id="1_dotdq"]
+[ext_resource type="Script" uid="uid://biholrsldelb4" path="res://scripts/objects/platform.gd" id="1_8dp8w"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dotdq"]
+load_path = "res://.godot/imported/tilemap_packed.png-8fa6278ecdfe79a60d99ce1c03ed780d.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8dp8w"]
 size = Vector2(50, 16)
 
 [node name="platform" type="AnimatableBody2D" unique_id=1680756759]
+collision_mask = 17
 script = ExtResource("1_8dp8w")
 platform_color = "Blue"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1170249163]
 modulate = Color(0, 0.5, 1, 1)
-texture = ExtResource("1_dotdq")
+texture = SubResource("CompressedTexture2D_dotdq")
 region_enabled = true
 region_rect = Rect2(19.627577, 20.147179, 50.582016, 16.107574)
 
