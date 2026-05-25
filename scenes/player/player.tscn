@@ -711,9 +711,6 @@ size = Vector2(14, 20)
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.69315404, 0.39891565), -2.5671694, -2.5671694, 0, 0, Vector2(1, 0.0094558), 0.0, 0.0, 0, 0]
 point_count = 3
 
-[sub_resource type="Gradient" id="Gradient_6cv16"]
-colors = PackedColorArray(1, 0.68967026, 0.64044714, 1, 0.73403823, 1, 1, 1)
-
 [sub_resource type="Curve" id="Curve_cnsyf"]
 _data = [Vector2(0.00533808, 1), 0.0, 0.0, 0, 0, Vector2(0.6845966, 0.43609613), -1.7880175, -1.7880175, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
@@ -804,8 +801,6 @@ initial_velocity_max = 100.0
 scale_amount_min = 0.4
 scale_amount_max = 0.7
 scale_amount_curve = SubResource("Curve_3j4b4")
-color = Color(1, 1, 1, 0.8)
-color_ramp = SubResource("Gradient_6cv16")
 
 [node name="JumpParticles" type="CPUParticles2D" parent="." unique_id=403571317]
 z_index = 2

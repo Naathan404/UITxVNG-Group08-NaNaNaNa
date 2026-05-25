@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://umc88vh8l8ap"]
+
+[ext_resource type="Script" uid="uid://df2icjjox7yjj" path="res://scripts/objects/colored_glass.gd" id="1_pl0xq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7hmb"]
+size = Vector2(121, 119)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pl0xq"]
+load_path = "res://.godot/imported/spritesheet_retina.png-217ed3b9fc4efc38d5a9cb1368e28ad9.ctex"
+
+[node name="ColoredGlass" type="StaticBody2D" unique_id=285450773]
+scale = Vector2(0.5, 0.5)
+collision_layer = 12
+script = ExtResource("1_pl0xq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=294113790]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_i7hmb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1813937159]
+modulate = Color(1.5, 0.2, 0.2, 0.8)
+texture = SubResource("CompressedTexture2D_pl0xq")
+region_enabled = true
+region_rect = Rect2(770.8861, 1028.4003, 122.57147, 121.31433)

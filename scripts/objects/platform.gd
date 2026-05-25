@@ -8,7 +8,7 @@ extends AnimatableBody2D
 @export var is_moving: bool = true
 enum MaskType {NONE, RED, BLUE}
 @export var move_offset: Vector2 = Vector2(150, 0)
-@export var speed_platform: float = 2.0
+@export var move_duration: float = 2.0
 var start_position: Vector2
 
 func _update_visual() -> void:
@@ -27,9 +27,9 @@ func start_tween() -> void:
 	var target_position = start_position + move_offset
 	
 	# Lượt đi
-	tween.tween_property(self, "global_position", target_position, speed_platform)
+	tween.tween_property(self, "global_position", target_position, move_duration)
 	# Lượt về
-	tween.tween_property(self, "global_position", start_position, speed_platform)
+	tween.tween_property(self, "global_position", start_position, move_duration)
 
 func _ready() -> void:
 	_update_visual()

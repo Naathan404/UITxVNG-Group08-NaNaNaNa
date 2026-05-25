@@ -14,6 +14,7 @@ const SFX_DATABASE = {
 	"alarm": "res://assets/audio/sfx/alarm.wav",
 	"endpoint": "res://assets/audio/sfx/end_level.wav",
 	"pickup": "res://assets/audio/sfx/pickup.mp3",
+	"door": "res://assets/audio/sfx/door.mp3",
 	
 	### ui sfx
 	"click": "res://assets/audio/sfx/click.ogg",
@@ -23,6 +24,8 @@ const BGM_DATABASE = {
 	"bgm_01": "res://assets/audio/bgm/bgm_01.mp3",
 	"bgm_02": "res://assets/audio/bgm/bgm_02.mp3",
 	"bgm_03": "res://assets/audio/bgm/bgm_03.mp3",
+	"bgm_04": "res://assets/audio/bgm/bgm_04.mp3",
+	"bgm_boss": "res://assets/audio/bgm/bgm_boss.mp3",
 	
 	### ui
 	"bgm_menu": "res://assets/audio/bgm/bgm_menu.mp3"
