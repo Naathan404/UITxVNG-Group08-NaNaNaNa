@@ -381,7 +381,7 @@ texture = ExtResource("10_3wout")
 
 [node name="Checkpoint2" parent="." unique_id=845112195 instance=ExtResource("11_fbmah")]
 z_index = -1
-position = Vector2(560, 50)
+position = Vector2(461, 50)
 
 [node name="EndPoint" parent="." unique_id=1775472992 instance=ExtResource("12_f50cq")]
 z_index = -1

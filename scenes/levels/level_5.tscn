@@ -575,6 +575,11 @@ position = Vector2(2617, -62.999985)
 scale = Vector2(0.2, 0.2)
 collision_layer = 0
 
+[node name="ColoredGlass9" parent="." unique_id=1984046931 instance=ExtResource("12_6xwso")]
+position = Vector2(2808, -62.999985)
+scale = Vector2(0.2, 0.2)
+collision_layer = 0
+
 [node name="ColoredGlass8" parent="." unique_id=796790238 instance=ExtResource("12_6xwso")]
 position = Vector2(2714, -62.999985)
 scale = Vector2(0.2, 0.2)
@@ -606,6 +611,12 @@ position = Vector2(2617, -384)
 [node name="RayCast2D" parent="Laser60" index="0" unique_id=1020144248]
 target_position = Vector2(0, 700)
 
+[node name="Laser62" parent="." unique_id=1154644056 instance=ExtResource("8_mxx4w")]
+position = Vector2(2808, -384)
+
+[node name="RayCast2D" parent="Laser62" index="0" unique_id=1020144248]
+target_position = Vector2(0, 700)
+
 [node name="Laser61" parent="." unique_id=1604135393 instance=ExtResource("8_mxx4w")]
 position = Vector2(2713, -384)
 laser_color = "Blue"
@@ -618,6 +629,9 @@ z_index = -1
 position = Vector2(2912, 64)
 next_scene_path = "res://scenes/levels/level_win.tscn"
 
+[node name="Limit" parent="EndPoint/StaticBody2D" parent_id_path=PackedInt32Array(1775472992, 1684260684) index="0" unique_id=380002771]
+position = Vector2(-87, -34)
+
 [editable path="Player"]
 [editable path="Player/CanvasLayer"]
 [editable path="Laser34"]
@@ -627,4 +641,6 @@ next_scene_path = "res://scenes/levels/level_win.tscn"
 [editable path="Checkpoint3"]
 [editable path="Laser59"]
 [editable path="Laser60"]
+[editable path="Laser62"]
 [editable path="Laser61"]
+[editable path="EndPoint"]
