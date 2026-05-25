@@ -35,8 +35,8 @@ func _physics_process(delta: float) -> void:
 			velocity = velocity.limit_length(300)
 		else:
 			acceleration = Vector2.ZERO
-			if velocity == Vector2.ZERO:
-				velocity = Vector2.RIGHT.rotated(rotation) * 200
+			#if velocity == Vector2.ZERO:
+			#	velocity = Vector2.RIGHT.rotated(rotation) * 700
 			velocity = velocity.limit_length(300)
 		global_position += velocity * delta
 
@@ -45,10 +45,8 @@ func _on_body_entered(body: Node2D) -> void:
 		if body.has_method("take_dame"):
 			if player.mask_type == bullet_mask_type or player.mask_type == MaskType.NONE:
 				body.take_dame(float(damage))
-		print("🚨 CHÍNH CÁI NGUOI CHOi ĐÃ XÓA: ", body.name)
 		queue_free()
 
 
 func _on_visible_on_screen_enabler_2d_screen_exited() -> void:
-	print("🚨 CHÍNH CÁI VISIBLE ĐÃ XÓA: ")
 	queue_free()

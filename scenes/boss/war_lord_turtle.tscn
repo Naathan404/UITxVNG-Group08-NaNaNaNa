@@ -209,12 +209,12 @@ position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_ovoo8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=776417470]
-position = Vector2(33.088127, -46.104385)
+position = Vector2(56.35322, -46.584633)
 scale = Vector2(0.13568565, 0.1290006)
 texture = ExtResource("33_h230y")
 
 [node name="pivot" type="Node2D" parent="." unique_id=1481830977]
-position = Vector2(34.12213, -44.18337)
+position = Vector2(55.836216, -47.06489)
 
 [node name="Sprite2D" type="Sprite2D" parent="pivot" unique_id=513555471]
 position = Vector2(96.96529, 7.0458407)
@@ -279,11 +279,31 @@ position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_1xqot")
 
 [node name="EntityDestroyer" type="Area2D" parent="." unique_id=1178932404]
+collision_layer = 0
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EntityDestroyer" unique_id=698289888]
-position = Vector2(71.346275, -53.308193)
+position = Vector2(38.25815, -53.308193)
 shape = SubResource("RectangleShape2D_h230y")
+
+[node name="DebrisParticles" type="CPUParticles2D" parent="." unique_id=1118803100]
+emitting = false
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+spread = 20.0
+initial_velocity_min = 200.0
+initial_velocity_max = 300.0
+angular_velocity_min = 360.0
+angular_velocity_max = 720.0
+scale_amount_min = 8.0
+scale_amount_max = 10.0
+color = Color(0, 0, 0, 1)
+
+[node name="ScreenNotifier" type="VisibleOnScreenNotifier2D" parent="." unique_id=583848865]
+rect = Rect2(-37.224144, -33.137527, 73.93129, 66.275055)
 
 [connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]
 [connection signal="area_entered" from="EntityDestroyer" to="." method="_on_entity_destroyer_area_entered"]
 [connection signal="body_entered" from="EntityDestroyer" to="." method="_on_entity_destroyer_body_entered"]
+[connection signal="screen_entered" from="ScreenNotifier" to="." method="_on_screen_notifier_screen_entered"]

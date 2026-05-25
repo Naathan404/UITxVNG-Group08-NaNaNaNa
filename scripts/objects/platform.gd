@@ -33,6 +33,7 @@ func start_tween() -> void:
 
 func _ready() -> void:
 	_update_visual()
+
 	if not Engine.is_editor_hint():
 		add_to_group("platforms")
 		if is_moving:
