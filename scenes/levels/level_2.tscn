@@ -489,11 +489,6 @@ z_index = -1
 position = Vector2(1568, -56)
 scale = Vector2(0.75, 0.75)
 
-[node name="platform10" parent="." unique_id=1612605208 instance=ExtResource("11_r88tb")]
-position = Vector2(384, -8)
-platform_color = "NONE"
-is_moving = false
-
 [editable path="Player"]
 [editable path="Player/CanvasLayer"]
 [editable path="platform6"]
