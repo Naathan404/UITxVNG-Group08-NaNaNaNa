@@ -43,11 +43,13 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		if body.has_method("take_dame"):
-			body.take_dame(float(damage))
+			if player.mask_type == bullet_mask_type or player.mask_type == MaskType.NONE:
+				body.take_dame(float(damage))
 		queue_free()
 	elif body.is_in_group("boss"):
 		if body.has_method("take_damage"):
-			body.take_damage(damage)
+			if player.mask_type == bullet_mask_type or player.mask_type == MaskType.NONE:
+				body.take_damage(damage)
 		queue_free()
 
 

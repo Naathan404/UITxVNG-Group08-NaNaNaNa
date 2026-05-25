@@ -12,7 +12,6 @@ func enter():
 		
 	var player = get_tree().get_first_node_in_group("player")
 	if player and pivot:
-		pivot.look_at(player.global_position)
 		pivot.visible = true
 
 	if laser_hitbox:
@@ -20,7 +19,8 @@ func enter():
 	animation_player.play("laser")
 	
 	await get_tree().create_timer(1.0).timeout
-	
+	if player and pivot:
+		pivot.look_at(player.global_position)
 	if laser_hitbox and pivot.visible == true:
 		laser_hitbox.set_deferred("monitoring", true)
 		

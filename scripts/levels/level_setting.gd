@@ -13,20 +13,14 @@ extends Node
 
 @onready var cam: Camera2D = $Player/LevelCamera
 @onready var player: Player = $Player
+@onready var boss_camera = $BossCamera
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	AudioManager.play_music(bgm_name, -3.0, 1.0)
 	AudioManager.set_bus_volume(AudioManager.BGM_BUS, 0.1)
-	
-	# giới hạn lại camera
-	cam.limit_left = left
-	cam.limit_right = right
-	cam.limit_top = top
-	cam.limit_bottom = bottom
-	
-	pass # Replace with function body.
-
+	if boss_camera:
+		boss_camera.make_current()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
