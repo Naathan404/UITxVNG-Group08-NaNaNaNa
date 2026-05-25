@@ -11,8 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://ho26j06i70e2" path="res://scenes/objects/oxygen_tank.tscn" id="10_tv7cl"]
 [ext_resource type="PackedScene" uid="uid://c4np4v21yxhk4" path="res://scenes/objects/end_point.tscn" id="11_lkn2k"]
 [ext_resource type="PackedScene" uid="uid://dlgeyb04nwcim" path="res://scenes/objects/platform.tscn" id="11_r88tb"]
-[ext_resource type="PackedScene" uid="uid://fhcmw7qk7efu" path="res://scenes/objects/key.tscn" id="12_brxtv"]
-[ext_resource type="PackedScene" uid="uid://bx06c5huqmthh" path="res://scenes/objects/door.tscn" id="13_tv7cl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nt80m"]
 texture = ExtResource("1_nt80m")
@@ -495,13 +493,6 @@ scale = Vector2(0.75, 0.75)
 position = Vector2(384, -8)
 platform_color = "NONE"
 is_moving = false
-
-[node name="Key" parent="." unique_id=22324534 instance=ExtResource("12_brxtv")]
-position = Vector2(64, 56)
-
-[node name="door" parent="." unique_id=796688353 instance=ExtResource("13_tv7cl")]
-position = Vector2(112, 56)
-scale = Vector2(0.9, 0.9)
 
 [editable path="Player"]
 [editable path="Player/CanvasLayer"]
