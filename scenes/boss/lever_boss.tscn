@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dqbm53diyvkac" path="res://scenes/objects/spike.tscn" id="12_eoni1"]
 [ext_resource type="PackedScene" uid="uid://sfml2a0qwly" path="res://scenes/objects/falling_platform.tscn" id="13_vsowu"]
 [ext_resource type="PackedScene" uid="uid://oijwff1p12m1" path="res://scenes/boss/war_lord_turtle.tscn" id="14_uq76i"]
+[ext_resource type="PackedScene" uid="uid://30oiacij4xpw" path="res://scenes/boss/switch_wall.tscn" id="15_mu1s8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ogj6a"]
 texture = ExtResource("4_0wt05")
@@ -255,7 +256,7 @@ position = Vector2(847, 60)
 position = Vector2(889, 61)
 
 [node name="spike12" parent="." unique_id=444701738 instance=ExtResource("12_eoni1")]
-position = Vector2(930, 61)
+position = Vector2(2183, 59)
 
 [node name="platform3" parent="." unique_id=1068218523 instance=ExtResource("9_axc5b")]
 position = Vector2(864, -3)
@@ -316,7 +317,66 @@ position = Vector2(1166, -11)
 scale = Vector2(1.1439122, 2.3792682)
 
 [node name="WarLordTurtle" parent="." unique_id=637277600 instance=ExtResource("14_uq76i")]
-position = Vector2(-82, 0)
+position = Vector2(-82, -1)
+
+[node name="switch_wall" parent="." unique_id=2070826445 instance=ExtResource("15_mu1s8")]
+position = Vector2(1708, 72)
+
+[node name="wall7" parent="." unique_id=413042033 instance=ExtResource("8_slw2c")]
+position = Vector2(2143, -42)
+scale = Vector2(3.6441627, 2.6704514)
+
+[node name="spike13" parent="." unique_id=1130782008 instance=ExtResource("12_eoni1")]
+position = Vector2(2225, 59)
+
+[node name="spike14" parent="." unique_id=2060092019 instance=ExtResource("12_eoni1")]
+position = Vector2(930, 61)
+spike_color = "Blue"
+
+[node name="wall8" parent="." unique_id=906062064 instance=ExtResource("8_slw2c")]
+position = Vector2(2423, 58.999996)
+scale = Vector2(0.7343381, 0.47167292)
+
+[node name="wall9" parent="." unique_id=557583855 instance=ExtResource("8_slw2c")]
+position = Vector2(2465.9998, 58.999996)
+scale = Vector2(0.7343381, 0.47167292)
+
+[node name="wall10" parent="." unique_id=1271962560 instance=ExtResource("8_slw2c")]
+position = Vector2(2465.9998, 32)
+scale = Vector2(0.7343381, 0.47167292)
+
+[node name="wall11" parent="." unique_id=624629219 instance=ExtResource("8_slw2c")]
+position = Vector2(2509, 58.999996)
+scale = Vector2(0.7343381, 0.47167292)
+
+[node name="wall12" parent="." unique_id=1702137716 instance=ExtResource("8_slw2c")]
+position = Vector2(2509, 31.999992)
+scale = Vector2(0.7343381, 0.47167292)
+
+[node name="wall13" parent="." unique_id=1305727815 instance=ExtResource("8_slw2c")]
+position = Vector2(2551.9998, 32)
+scale = Vector2(0.7343381, 0.47167292)
+
+[node name="wall15" parent="." unique_id=1639927232 instance=ExtResource("8_slw2c")]
+position = Vector2(2552, 3.9999962)
+scale = Vector2(0.7343381, 0.47167292)
+
+[node name="wall17" parent="." unique_id=672412849 instance=ExtResource("8_slw2c")]
+position = Vector2(2804, -49)
+scale = Vector2(3.7253726, 2.430209)
+
+[node name="OxygenTank3" parent="." unique_id=1122601783 instance=ExtResource("7_prihs")]
+position = Vector2(2558, 58)
+
+[node name="platform4" parent="." unique_id=1341713518 instance=ExtResource("9_axc5b")]
+position = Vector2(2887, 31)
+is_moving = false
+
+[node name="spike15" parent="." unique_id=103948472 instance=ExtResource("12_eoni1")]
+position = Vector2(2622, 60)
+
+[node name="spike16" parent="." unique_id=470359392 instance=ExtResource("12_eoni1")]
+position = Vector2(2664, 60)
 
 [editable path="Player"]
 [editable path="Player/CanvasLayer"]

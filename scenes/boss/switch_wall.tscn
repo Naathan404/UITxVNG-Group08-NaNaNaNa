@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://30oiacij4xpw"]
+
+[ext_resource type="Script" uid="uid://b2numtxbriwiy" path="res://scripts/boss/switch_wall.gd" id="1_hgl52"]
+[ext_resource type="Texture2D" uid="uid://dohtaysxdi21h" path="res://assets/sprites/envir/spritesheet_default.png" id="1_xo8an"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u25nt"]
+atlas = ExtResource("1_xo8an")
+region = Rect2(642.253, 322.28427, 58.705322, 58.29483)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgl52"]
+size = Vector2(56.933273, 58.27276)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eqxss"]
+size = Vector2(51, 169)
+
+[node name="switch_wall" type="Node2D" unique_id=2070826445]
+script = ExtResource("1_hgl52")
+
+[node name="wall" type="AnimatableBody2D" parent="." unique_id=1304715395]
+position = Vector2(98, -189)
+scale = Vector2(2.0199087, 2.659905)
+collision_layer = 17
+collision_mask = 17
+
+[node name="Sprite2D" type="Sprite2D" parent="wall" unique_id=439633425]
+position = Vector2(23, 42)
+texture = SubResource("AtlasTexture_u25nt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall" unique_id=2119514211]
+position = Vector2(23.020844, 42.294743)
+shape = SubResource("RectangleShape2D_hgl52")
+
+[node name="Button" type="Area2D" parent="." unique_id=665003204]
+position = Vector2(1, 63)
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button" unique_id=276097910]
+position = Vector2(86.5, -148.5)
+shape = SubResource("RectangleShape2D_eqxss")
+
+[connection signal="body_entered" from="Button" to="." method="_on_button_body_entered"]
