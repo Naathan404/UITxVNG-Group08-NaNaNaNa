@@ -275,7 +275,7 @@ load_path = "res://.godot/imported/tilemap_packed.png-8fa6278ecdfe79a60d99ce1c03
 
 [node name="Level2" type="Node2D" unique_id=233770209]
 script = ExtResource("1_brxtv")
-bgm_name = "bgm_03"
+bgm_name = "bgm_01"
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1827066540]
 scale = Vector2(0.25, 0.25)
@@ -363,6 +363,7 @@ texture = ExtResource("9_p4se4")
 z_index = -1
 position = Vector2(2130, -28)
 next_scene_path = "res://scenes/levels/level_3.tscn"
+current_level = 2
 
 [node name="OxygenTank" parent="." unique_id=1122601783 instance=ExtResource("10_tv7cl")]
 position = Vector2(409, 53)

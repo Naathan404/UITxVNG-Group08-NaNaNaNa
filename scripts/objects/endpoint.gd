@@ -9,6 +9,7 @@ extends Node
 @onready var limit: CollisionShape2D = $StaticBody2D/Limit
 
 @export var next_scene_path: String
+@export var current_level: int = 1
 
 var is_activated: bool = false
 # Called when the node enters the scene tree for the first time.
@@ -45,6 +46,9 @@ func _on_body_entered(body: Node2D) -> void:
 		blue_firework_1.emitting = true
 		red_firework.emitting = true
 		red_firework_1.emitting = true
+		
+		if GameManager.max_unlocked_level <= current_level:
+			GameManager.max_unlocked_level = current_level + 1
 		
 		await get_tree().create_timer(2.0).timeout
 		SceneTransition._change_scene(next_scene_path)

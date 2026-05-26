@@ -33,4 +33,4 @@ func _on_body_entered(body: Node2D) -> void:
 		for key in keys:
 			if key.current_state == key.State.FOLLOWING and key.target_player == body:
 				key.fly_to_door_and_unlock(self)
-				break 
+				break

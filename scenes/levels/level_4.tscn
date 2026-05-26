@@ -348,6 +348,7 @@ position = Vector2(1887, 25)
 z_index = -1
 position = Vector2(2880, -118)
 next_scene_path = "res://scenes/levels/level_5.tscn"
+current_level = 4
 
 [node name="OxygenTank3" parent="." unique_id=1938378974 instance=ExtResource("7_5vn0v")]
 position = Vector2(2552, -42)
