@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xufbp"]
 size = Vector2(0.79999995, 0.39581126)
 
-[node name="toxic_zone" type="Area2D" unique_id=1843443206]
+[node name="toxic_zone" type="Area2D" unique_id=1843443206 groups=["toxic_zones"]]
 scale = Vector2(1, 1.0105826)
 script = ExtResource("1_xufbp")
 toxic_zone_color = "Blue"
