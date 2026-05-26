@@ -22,6 +22,8 @@ func _on_start_pressed() -> void:
 
 func _on_setting_pressed() -> void:
 	AudioManager.play_sound("click", global_position, 10.0)
+	var settings = preload("res://scripts/menu/settings_menu.gd").new()
+	add_child(settings)
 
 
 func _on_quit_pressed() -> void:
