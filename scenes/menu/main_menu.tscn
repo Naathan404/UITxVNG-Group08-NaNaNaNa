@@ -67,12 +67,12 @@ ignore_texture_size = true
 stretch_mode = 5
 
 [node name="setting" type="TextureButton" parent="Node" unique_id=320766089]
-visible = false
 custom_minimum_size = Vector2(60, 60)
-offset_left = 219.0
-offset_top = 126.0
-offset_right = 279.0
-offset_bottom = 186.0
+offset_left = 3.0
+offset_top = 234.00002
+offset_right = 63.0
+offset_bottom = 294.0
+scale = Vector2(0.6, 0.6)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("7_pstia")
