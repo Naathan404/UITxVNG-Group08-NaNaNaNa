@@ -1,6 +1,6 @@
 extends Node
 
-@export var max_lives: int = 999
+@export var max_lives: int = 3
 var last_checkpoint_position: Vector2 = Vector2.ZERO
 var current_lives: int
 
