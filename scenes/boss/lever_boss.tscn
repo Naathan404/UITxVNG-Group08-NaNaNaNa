@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://d3wdx2jrus3p2"]
+[gd_scene format=4 uid="uid://bphiehsl1t00j"]
 
 [ext_resource type="Script" uid="uid://dy7qnlm4qkc4l" path="res://scripts/levels/level_setting.gd" id="1_myte2"]
 [ext_resource type="PackedScene" uid="uid://bi5f8r44l8v7e" path="res://scenes/player/player.tscn" id="2_nssbu"]
@@ -7,14 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://cviy2ughs2sde" path="res://assets/sprites/ui/Purple.png" id="6_xiljk"]
 [ext_resource type="PackedScene" uid="uid://ho26j06i70e2" path="res://scenes/objects/oxygen_tank.tscn" id="7_prihs"]
 [ext_resource type="PackedScene" uid="uid://o2swfy8nb5vw" path="res://scenes/objects/start_point.tscn" id="8_for5w"]
-[ext_resource type="PackedScene" uid="uid://bkx2l488ckt01" path="res://scenes/objects/wall.tscn" id="8_slw2c"]
+[ext_resource type="PackedScene" path="res://scenes/objects/wall.tscn" id="8_slw2c"]
 [ext_resource type="PackedScene" uid="uid://dlgeyb04nwcim" path="res://scenes/objects/platform.tscn" id="9_axc5b"]
 [ext_resource type="PackedScene" uid="uid://ophrrmb07f7b" path="res://scenes/objects/toxic_zone.tscn" id="10_en7vb"]
 [ext_resource type="Texture2D" uid="uid://bhtgkq7c5hppu" path="res://assets/sprites/envir/Skull Particle.png" id="11_g1quh"]
 [ext_resource type="PackedScene" uid="uid://dqbm53diyvkac" path="res://scenes/objects/spike.tscn" id="12_eoni1"]
 [ext_resource type="PackedScene" uid="uid://sfml2a0qwly" path="res://scenes/objects/falling_platform.tscn" id="13_vsowu"]
 [ext_resource type="PackedScene" uid="uid://oijwff1p12m1" path="res://scenes/boss/war_lord_turtle.tscn" id="14_uq76i"]
-[ext_resource type="PackedScene" uid="uid://30oiacij4xpw" path="res://scenes/boss/switch_wall.tscn" id="15_mu1s8"]
+[ext_resource type="PackedScene" path="res://scenes/boss/switch_wall.tscn" id="15_mu1s8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ogj6a"]
 texture = ExtResource("4_0wt05")

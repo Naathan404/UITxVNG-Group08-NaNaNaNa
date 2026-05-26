@@ -279,6 +279,7 @@ top = -180
 bgm_name = "bgm_04"
 
 [node name="Player" parent="." unique_id=65356844 instance=ExtResource("2_i0fhw")]
+position = Vector2(-2, 29)
 decrease_oxygen_rate = 4.0
 dash_oxygen_cost = 8.0
 has_red_mask = true
@@ -556,7 +557,7 @@ scale = Vector2(0.75, 0.75)
 spike_color = "Blue"
 
 [node name="platform4" parent="." unique_id=1117771689 instance=ExtResource("8_b6i88")]
-position = Vector2(1887, -71)
+position = Vector2(1888, -84)
 platform_color = "NONE"
 is_moving = false
 
@@ -596,13 +597,13 @@ laser_color = "Blue"
 target_position = Vector2(-500, 0)
 
 [node name="Laser17" parent="." unique_id=180047971 instance=ExtResource("14_ppjov")]
-position = Vector2(2224, -116)
+position = Vector2(2226, -116)
 
 [node name="RayCast2D" parent="Laser17" index="0" unique_id=1020144248]
 target_position = Vector2(-1000, 0)
 
 [node name="Laser18" parent="." unique_id=1793611108 instance=ExtResource("14_ppjov")]
-position = Vector2(2224, -101)
+position = Vector2(2226, -101)
 
 [node name="RayCast2D" parent="Laser18" index="0" unique_id=1020144248]
 target_position = Vector2(-1000, 0)
@@ -641,10 +642,9 @@ collision_layer = 0
 color = "Blue"
 
 [node name="ColoredGlass6" parent="." unique_id=290037394 instance=ExtResource("15_pafwe")]
-position = Vector2(1966, -108)
+position = Vector2(1968, -108)
 scale = Vector2(0.15, 0.25)
-collision_layer = 4
-is_activated = true
+collision_layer = 0
 
 [node name="ColoredGlass2" parent="." unique_id=1280379462 instance=ExtResource("15_pafwe")]
 position = Vector2(2061, -57)
@@ -666,7 +666,7 @@ current_level = 6
 z_index = 5
 position = Vector2(-2, -24)
 scale = Vector2(0.25, 0.25)
-tile_map_data = PackedByteArray("AAAKAfT/AAAAAAAAAAAOAfT/AAABAAAAAAAnAPz/AAAAAAAAAAAoAPz/AAABAAAAAAA+APj/AAAAAAAAAAA/APj/AAABAAAAAABQAPv/AAAAAAAAAABRAPv/AAABAAAAAABJAP7/AAAAAAEAAABKAP7/AAABAAEAAAAFAPr/AAAAAAEAAAAGAPr/AAABAAEAAAAYAPb/AAAAAAEAAAAZAPb/AAABAAEAAACaAPf/AAAAAAEAAACbAPf/AAABAAEAAAB+APX/AAAAAAEAAAB/APX/AAABAAEAAAD6/wYAAAAEAAkAAAD5/wYAAAAEAAkAAAAvAAQAAAAEAAkAAAAwAAUAAAAEAAkAAABSAAQAAAAEAAkAAABUAAIAAAAEAAkAAABcAAEAAAAEAAkAAABmAAUAAAAEAAkAAABnAAIAAAAEAAkAAABnAAEAAAAEAAkAAAB8AAQAAAAEAAkAAACEAAMAAAAEAAkAAACEAAQAAAAEAAkAAABCAPz/AAAEAAkAAAB2AP3/AAAEAAkAAAB1AP3/AAAEAAkAAACeAP3/AAAEAAkAAACeAPz/AAAEAAkAAACHAAEAAAAEAAkAAACIAAAAAAAEAAkAAACIAAEAAAAEAAkAAACIAP//AAAEAAkAAAAIAAMAAAAEAAkAAAAKAAQAAAAEAAkAAAAJAAQAAAAEAAkAAAA=")
+tile_map_data = PackedByteArray("AAAKAfT/AAAAAAAAAAAOAfT/AAABAAAAAAAnAPz/AAAAAAAAAAAoAPz/AAABAAAAAAA+APj/AAAAAAAAAAA/APj/AAABAAAAAABQAPv/AAAAAAAAAABRAPv/AAABAAAAAABJAP7/AAAAAAEAAABKAP7/AAABAAEAAAAFAPr/AAAAAAEAAAAGAPr/AAABAAEAAAAYAPb/AAAAAAEAAAAZAPb/AAABAAEAAACaAPf/AAAAAAEAAACbAPf/AAABAAEAAAB+APX/AAAAAAEAAAB/APX/AAABAAEAAAD6/wYAAAAEAAkAAAD5/wYAAAAEAAkAAAAvAAQAAAAEAAkAAAAwAAUAAAAEAAkAAABSAAQAAAAEAAkAAABUAAIAAAAEAAkAAABcAAEAAAAEAAkAAABmAAUAAAAEAAkAAABnAAIAAAAEAAkAAABnAAEAAAAEAAkAAAB8AAQAAAAEAAkAAACEAAMAAAAEAAkAAACEAAQAAAAEAAkAAABCAPz/AAAEAAkAAACeAP3/AAAEAAkAAACeAPz/AAAEAAkAAACHAAEAAAAEAAkAAACIAAAAAAAEAAkAAACIAAEAAAAEAAkAAACIAP//AAAEAAkAAAAIAAMAAAAEAAkAAAAKAAQAAAAEAAkAAAAJAAQAAAAEAAkAAAB2APz/AAAEAAkAAAB1APz/AAAEAAkAAAA=")
 tile_set = SubResource("TileSet_gf2l7")
 rendering_quadrant_size = 64
 collision_enabled = false
