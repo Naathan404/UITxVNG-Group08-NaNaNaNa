@@ -52,7 +52,7 @@ func _ready() -> void:
 	call_deferred("_save_original_position")
 	
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("pause"): SceneTransition._change_scene("res://scenes/Main_Menu/main_menu.tscn")
+	if Input.is_action_pressed("pause"): SceneTransition._change_scene("res://scenes/menu/main_menu.tscn")
 	if is_regen: return 
 	if flash_bar.value > oxygen_bar.value:
 		flash_timer -= delta

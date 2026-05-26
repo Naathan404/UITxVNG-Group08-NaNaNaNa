@@ -415,7 +415,7 @@ scale = Vector2(0.75, 0.75)
 spike_color = "Red"
 
 [node name="platform6" parent="." unique_id=174945169 instance=ExtResource("11_r88tb")]
-position = Vector2(1790, -31)
+position = Vector2(1791, -31)
 rotation = 1.5707964
 platform_color = "Red"
 is_moving = false
@@ -437,7 +437,7 @@ modulate = Color(1, 0, 0, 1)
 texture = SubResource("CompressedTexture2D_nt80m")
 
 [node name="platform8" parent="." unique_id=1150139927 instance=ExtResource("11_r88tb")]
-position = Vector2(1915, -31)
+position = Vector2(1916, -31)
 rotation = 1.5707964
 is_moving = false
 move_offset = Vector2(0, -80)
@@ -479,6 +479,18 @@ z_index = -1
 position = Vector2(685, 22)
 scale = Vector2(0.75, 0.75)
 spike_color = "Red"
+
+[node name="spike6" parent="." unique_id=369479350 instance=ExtResource("3_tv7cl")]
+z_index = -1
+position = Vector2(776, -5)
+scale = Vector2(0.75, 0.75)
+spike_color = "Blue"
+
+[node name="spike7" parent="." unique_id=64471284 instance=ExtResource("3_tv7cl")]
+z_index = -1
+position = Vector2(791, -5)
+scale = Vector2(0.75, 0.75)
+spike_color = "Blue"
 
 [node name="spike2" parent="." unique_id=1593200243 instance=ExtResource("3_tv7cl")]
 z_index = -1
