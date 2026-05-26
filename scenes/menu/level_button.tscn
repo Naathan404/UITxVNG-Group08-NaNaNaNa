@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cr1bq115ca7bk"]
+
+[ext_resource type="Texture2D" uid="uid://d3ks2bt5l8683" path="res://assets/sprites/ui/buttons/level_buttons/level_01.png" id="1_eobmx"]
+[ext_resource type="Texture2D" uid="uid://cthnbsmfq3iud" path="res://assets/sprites/ui/buttons/level_buttons/level_01_pressed.png" id="2_ux6qb"]
+[ext_resource type="Texture2D" uid="uid://brseo5glnv5fh" path="res://assets/sprites/ui/buttons/level_buttons/lock.png" id="3_ux6qb"]
+[ext_resource type="Script" uid="uid://cr8gwpjyc023t" path="res://scripts/menu/level_button.gd" id="4_1qfug"]
+[ext_resource type="FontFile" uid="uid://o2243svlwya" path="res://assets/font/Minecraft.ttf" id="5_pvf8j"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d6trr"]
+font = ExtResource("5_pvf8j")
+font_size = 12
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="LevelButton" type="TextureButton" unique_id=159548389]
+offset_right = 32.0
+offset_bottom = 32.0
+scale = Vector2(1.25, 1.25)
+texture_normal = ExtResource("1_eobmx")
+texture_pressed = ExtResource("1_eobmx")
+texture_hover = ExtResource("2_ux6qb")
+texture_disabled = ExtResource("1_eobmx")
+script = ExtResource("4_1qfug")
+level_scene_path = "uid://dwvpjrnq7wt7j"
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1843849875]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = ExtResource("3_ux6qb")
+
+[node name="Label" type="Label" parent="." unique_id=455736812]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 19.200003
+offset_right = 25.052671
+offset_bottom = 54.200005
+scale = Vector2(1.25, 1.25)
+text = "01
+"
+label_settings = SubResource("LabelSettings_d6trr")
+horizontal_alignment = 1
+vertical_alignment = 1

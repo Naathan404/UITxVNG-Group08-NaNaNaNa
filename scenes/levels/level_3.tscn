@@ -454,6 +454,7 @@ rotation = 0.41015238
 z_index = -1
 position = Vector2(2528, 50)
 next_scene_path = "res://scenes/levels/level_4.tscn"
+current_level = 3
 
 [editable path="Player"]
 [editable path="Player/CanvasLayer"]
