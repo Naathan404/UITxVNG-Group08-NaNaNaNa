@@ -2,10 +2,13 @@ extends State_Boss
 class_name Boss_idle
 
 @export var move_speed: float = 150.0
+@export var move_speed_current: float = 150.0
+@export var buff_move_speed: float = 250.0
 @export var attack_range: float = 150.0
 
 var locked_x: float = 0.0
 var player: Player
+var speed: float = 150.0
 
 
 func enter():
@@ -29,8 +32,11 @@ func _physics_process(delta: float) -> void:
 	if not boss.is_on_floor():
 		boss.velocity.y += boss.get_gravity().y * delta
 	if player:
-		var distance = boss.global_position.distance_to(boss.player.global_position)
-		
+		var distance = boss.global_position.distance_to(player.global_position)
+		if boss.get("is_enraged") == true:
+			move_speed = buff_move_speed
+		else:
+			move_speed = move_speed_current
 		if distance > attack_range:
 			var direction = sign(player.global_position.x - boss.global_position.x)
 			boss.velocity.x = direction * move_speed

@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var drop_distance: float = 150.0 
-@export var drop_duration: float = 1.0  
+@export var drop_duration: float = 1.0
 
 @onready var wall = $wall 
 @onready var detector = $Button
