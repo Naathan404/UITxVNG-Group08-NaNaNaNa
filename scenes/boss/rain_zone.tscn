@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://byabmqsphxe7a"]
+
+[ext_resource type="Script" uid="uid://ckxxng4liktcs" path="res://scripts/boss/rain_zone.gd" id="1_j5dkb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_erjel"]
+size = Vector2(749, 391)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_erjel"]
+blend_mode = 1
+
+[sub_resource type="Curve" id="Curve_w6w8i"]
+_limits = [0.0, 0.3, 0.0, 1.0]
+_data = [Vector2(0.0025316477, 0), 0.0, 1.6271937, 0, 0, Vector2(0.52151906, 0.3), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.6000997, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_5v8a2"]
+curve = SubResource("Curve_w6w8i")
+
+[sub_resource type="Gradient" id="Gradient_uq0hs"]
+colors = PackedColorArray(1, 1, 1, 0.078431375, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6ib8k"]
+gradient = SubResource("Gradient_uq0hs")
+
+[sub_resource type="Curve" id="Curve_erjel"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_j5dkb"]
+_limits = [0.0, 30.0, 0.0, 1.0]
+_data = [Vector2(0.0025316477, 14.983013), 0.0, 0.0, 0, 0, Vector2(0.2506329, 30), 0.0, 0.0, 0, 0, Vector2(0.99746835, 30), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_nkim1"]
+_limits = [0.0, 3.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_w6w8i"]
+curve_x = SubResource("Curve_erjel")
+curve_y = SubResource("Curve_j5dkb")
+curve_z = SubResource("Curve_nkim1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_erjel"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, -200, 0)
+emission_shape = 3
+emission_box_extents = Vector3(350, 1, 1)
+gravity = Vector3(0, 3000, 0)
+scale_min = 0.19999999
+scale_over_velocity_curve = SubResource("CurveXYZTexture_w6w8i")
+color_initial_ramp = SubResource("GradientTexture1D_6ib8k")
+alpha_curve = SubResource("CurveTexture_5v8a2")
+
+[node name="RainZone" type="Area2D" unique_id=1445160890 groups=["rain_zones"]]
+collision_layer = 17
+collision_mask = 17
+script = ExtResource("1_j5dkb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=274437901]
+position = Vector2(-11.5, -6.5)
+shape = SubResource("RectangleShape2D_erjel")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1074576388]
+material = SubResource("CanvasItemMaterial_erjel")
+amount = 2000
+lifetime = 0.5
+preprocess = 0.5
+visibility_rect = Rect2(-350, -200, 700, 400)
+process_material = SubResource("ParticleProcessMaterial_erjel")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

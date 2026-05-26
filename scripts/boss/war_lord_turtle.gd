@@ -6,6 +6,7 @@ extends CharacterBody2D
 
 var player: Node2D
 var locked_y: float = 0.0
+var is_enraged: bool = false
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
@@ -51,7 +52,10 @@ func _on_entity_destroyer_body_entered(body: Node2D) -> void:
 		
 	if body.is_in_group("toxic_zones"):
 		return
-	
+	if body.is_in_group("checkpoints"):
+		return
+	if body.is_in_group("rain_zones"):
+		return
 	activate_debris_effect(body.global_position)
 	body.queue_free()
 
@@ -65,7 +69,12 @@ func _on_entity_destroyer_area_entered(area: Area2D) -> void:
 		
 	if area.is_in_group("toxic_zones"):
 		return
-		
+	
+	if area.is_in_group("checkpoints"):
+		return
+	
+	if area.is_in_group("rain_zones"):
+		return
 	activate_debris_effect(area.global_position)
 	area.queue_free()
 
@@ -74,3 +83,11 @@ func _on_screen_notifier_screen_entered() -> void:
 	var camera = get_tree().get_first_node_in_group("camera")
 	if camera and camera.has_method("add_shake"):
 		camera.add_shake(15.0)
+
+func apply_rain_buff(active: bool) -> void:
+	print("[BOSS] đã vào vùng mưa")
+	is_enraged = active
+	if is_enraged:
+		distance_x = 10.0
+	else:
+		distance_x = 200.0

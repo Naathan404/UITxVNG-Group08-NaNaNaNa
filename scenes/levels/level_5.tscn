@@ -518,7 +518,7 @@ scale = Vector2(0.4, 0.2)
 collision_layer = 0
 
 [node name="ColoredGlass5" parent="." unique_id=653909175 instance=ExtResource("12_6xwso")]
-position = Vector2(2200, -14.000008)
+position = Vector2(2204, -14)
 scale = Vector2(0.8, 0.2)
 collision_layer = 0
 color = "Blue"
