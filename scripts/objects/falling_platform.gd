@@ -1,12 +1,12 @@
 extends AnimatableBody2D
 
-@export var fall_delay: float = 0.5 
+@export var fall_delay: float = 0.5
 @export var respawn_delay: float = 3.0 
 @export var fall_speed: float = 500.0 
 
 var is_falling: bool = false
 var original_position: Vector2
-
+var shake_power: float = 6.0
 @onready var sprite = $Sprite2D
 @onready var solid_collision = $CollisionShape2D
 @onready var detector_collision = $Area2D/CollisionShape2D
@@ -24,13 +24,17 @@ func _on_player_stepped(body: Node2D) -> void:
 	if is_falling or not body.is_in_group("player"):
 		return
 		
-	# Rung lắc viên gạch
-	var tween = create_tween()
-	tween.tween_property(sprite, "position:x", 3.0, 0.05).as_relative()
-	tween.tween_property(sprite, "position:x", -6.0, 0.05).as_relative()
-	tween.tween_property(sprite, "position:x", 3.0, 0.05).as_relative()
+	var tween = create_tween().set_loops()
+	
+	tween.tween_property(sprite, "position:x", shake_power, 0.05).as_relative()
+	tween.tween_property(sprite, "position:x", -shake_power * 2, 0.05).as_relative()
+	tween.tween_property(sprite, "position:x", shake_power, 0.05).as_relative()
 	
 	await get_tree().create_timer(fall_delay).timeout
+	
+	tween.kill()
+	
+	sprite.position.x = 0
 	fall()
 	
 func fall() -> void:

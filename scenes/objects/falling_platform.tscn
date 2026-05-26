@@ -1,13 +1,17 @@
 [gd_scene format=3 uid="uid://sfml2a0qwly"]
 
-[ext_resource type="Texture2D" uid="uid://skth0ardjynf" path="res://icon.svg" id="1_13k02"]
 [ext_resource type="Script" uid="uid://dq7pqib1ibrxu" path="res://scripts/objects/falling_platform.gd" id="1_x7iqv"]
+[ext_resource type="Texture2D" uid="uid://bdvgl63lt5vw7" path="res://assets/sprites/envir/tilemap_packed.png" id="2_x7iqv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hikfq"]
+atlas = ExtResource("2_x7iqv")
+region = Rect2(20.059155, 73.941734, 49.706448, 14.019768)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13k02"]
-size = Vector2(100, 60)
+size = Vector2(37.81093, 6.1705284)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7iqv"]
-size = Vector2(98, 2)
+size = Vector2(37.81093, 1.5426321)
 
 [node name="FallingPlatform" type="AnimatableBody2D" unique_id=1311923727]
 scale = Vector2(0.37026334, 0.3241214)
@@ -15,14 +19,13 @@ script = ExtResource("1_x7iqv")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=566877621]
 scale = Vector2(0.76953125, 0.46874997)
-texture = ExtResource("1_13k02")
+texture = SubResource("AtlasTexture_hikfq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=823617689]
-position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_13k02")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1530120304]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=511359087]
-position = Vector2(0, -27.767376)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=424606681]
+position = Vector2(0, -3.085264)
 shape = SubResource("RectangleShape2D_x7iqv")

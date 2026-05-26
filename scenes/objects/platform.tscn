@@ -9,6 +9,7 @@ load_path = "res://.godot/imported/tilemap_packed.png-8fa6278ecdfe79a60d99ce1c03
 size = Vector2(50, 16)
 
 [node name="platform" type="AnimatableBody2D" unique_id=1680756759]
+collision_layer = 17
 collision_mask = 17
 script = ExtResource("1_8dp8w")
 platform_color = "Blue"

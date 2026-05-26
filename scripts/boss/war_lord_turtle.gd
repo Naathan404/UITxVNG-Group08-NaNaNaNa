@@ -48,6 +48,10 @@ func _on_entity_destroyer_body_entered(body: Node2D) -> void:
 
 	if body.is_in_group("bullets"): 
 		return
+		
+	if body.is_in_group("toxic_zones"):
+		return
+	
 	activate_debris_effect(body.global_position)
 	body.queue_free()
 
@@ -55,8 +59,13 @@ func _on_entity_destroyer_body_entered(body: Node2D) -> void:
 func _on_entity_destroyer_area_entered(area: Area2D) -> void:
 	if area.get_parent() == self or area.is_in_group("player"):
 		return
+		
 	if area.is_in_group("bullets"):
 		return
+		
+	if area.is_in_group("toxic_zones"):
+		return
+		
 	activate_debris_effect(area.global_position)
 	area.queue_free()
 
