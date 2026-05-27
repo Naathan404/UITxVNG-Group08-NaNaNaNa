@@ -6,8 +6,9 @@
 [ext_resource type="Script" uid="uid://p3atlecrn7qg" path="res://scripts/player/camera.gd" id="4_i5513"]
 [ext_resource type="Texture2D" uid="uid://22p4w7iqdvqc" path="res://assets/sprites/ui/Green.png" id="5_03f24"]
 [ext_resource type="PackedScene" uid="uid://c4np4v21yxhk4" path="res://scenes/objects/end_point.tscn" id="6_btoo5"]
+[ext_resource type="FontFile" uid="uid://o2243svlwya" path="res://assets/font/Minecraft.ttf" id="7_0cqet"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_03f24"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1dvmc"]
 texture = ExtResource("2_1dvmc")
 texture_region_size = Vector2i(64, 64)
 2:0/0 = 0
@@ -140,9 +141,9 @@ texture_region_size = Vector2i(64, 64)
 [sub_resource type="TileSet" id="TileSet_vakt5"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_03f24")
+sources/0 = SubResource("TileSetAtlasSource_1dvmc")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0cqet"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y8ktk"]
 texture = ExtResource("2_1dvmc")
 texture_region_size = Vector2i(64, 64)
 1:4/0 = 0
@@ -259,16 +260,18 @@ texture_region_size = Vector2i(64, 64)
 1:3/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_7y3ye"]
-sources/0 = SubResource("TileSetAtlasSource_0cqet")
+sources/0 = SubResource("TileSetAtlasSource_y8ktk")
 
 [sub_resource type="LabelSettings" id="LabelSettings_1dvmc"]
+font = ExtResource("7_0cqet")
 font_size = 10
-outline_size = 1
+outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_03f24"]
+font = ExtResource("7_0cqet")
 font_size = 8
-outline_size = 1
+outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
 [node name="LevelWin" type="Node2D" unique_id=527416438]
@@ -349,7 +352,7 @@ offset_left = -143.0
 offset_top = -35.0
 offset_right = 192.0
 offset_bottom = 14.0
-text = "PRESS ESC TO BACK TO MAIN MENU"
+text = "PRESS [ESC] TO BACK TO MAIN MENU"
 label_settings = SubResource("LabelSettings_03f24")
 horizontal_alignment = 1
 vertical_alignment = 1
