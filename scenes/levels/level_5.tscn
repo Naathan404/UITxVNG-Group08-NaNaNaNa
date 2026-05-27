@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dopk84d745fdv" path="res://scenes/objects/dash_trigger_platform.tscn" id="11_dwyms"]
 [ext_resource type="PackedScene" uid="uid://umc88vh8l8ap" path="res://scenes/objects/colored_glass.tscn" id="12_6xwso"]
 [ext_resource type="Texture2D" uid="uid://b12py7gq0c0sq" path="res://assets/sprites/ui/Pink.png" id="13_5ke18"]
+[ext_resource type="PackedScene" uid="uid://p7rk5fc3u2ms" path="res://scenes/objects/hint_sign.tscn" id="14_0y7y4"]
 [ext_resource type="PackedScene" uid="uid://c4np4v21yxhk4" path="res://scenes/objects/end_point.tscn" id="14_j14br"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hldbq"]
@@ -504,23 +505,19 @@ laser_color = "Blue"
 [node name="ColoredGlass" parent="." unique_id=285450773 instance=ExtResource("12_6xwso")]
 position = Vector2(1889, 12)
 scale = Vector2(0.3, 0.2)
-collision_layer = 0
 
 [node name="ColoredGlass2" parent="." unique_id=1017639642 instance=ExtResource("12_6xwso")]
 position = Vector2(1974, -28)
 scale = Vector2(0.3, 0.2)
-collision_layer = 0
 color = "Blue"
 
 [node name="ColoredGlass3" parent="." unique_id=6430842 instance=ExtResource("12_6xwso")]
 position = Vector2(2088, -71)
 scale = Vector2(0.4, 0.2)
-collision_layer = 0
 
 [node name="ColoredGlass5" parent="." unique_id=653909175 instance=ExtResource("12_6xwso")]
 position = Vector2(2204, -14)
 scale = Vector2(0.8, 0.2)
-collision_layer = 0
 color = "Blue"
 
 [node name="spike4" parent="." unique_id=1292967157 instance=ExtResource("6_hldbq")]
@@ -561,29 +558,24 @@ target_position = Vector2(-250, 0)
 [node name="ColoredGlass4" parent="." unique_id=1670748306 instance=ExtResource("12_6xwso")]
 position = Vector2(2268, 84)
 scale = Vector2(0.2, 0.2)
-collision_layer = 0
 color = "Blue"
 
 [node name="ColoredGlass6" parent="." unique_id=1696725187 instance=ExtResource("12_6xwso")]
 position = Vector2(2523, -62.999985)
 scale = Vector2(0.2, 0.2)
-collision_layer = 0
 color = "Blue"
 
 [node name="ColoredGlass7" parent="." unique_id=610071042 instance=ExtResource("12_6xwso")]
 position = Vector2(2617, -62.999985)
 scale = Vector2(0.2, 0.2)
-collision_layer = 0
 
 [node name="ColoredGlass9" parent="." unique_id=1984046931 instance=ExtResource("12_6xwso")]
 position = Vector2(2808, -62.999985)
 scale = Vector2(0.2, 0.2)
-collision_layer = 0
 
 [node name="ColoredGlass8" parent="." unique_id=796790238 instance=ExtResource("12_6xwso")]
 position = Vector2(2714, -62.999985)
 scale = Vector2(0.2, 0.2)
-collision_layer = 0
 color = "Blue"
 
 [node name="Checkpoint3" parent="." unique_id=569946555 instance=ExtResource("9_vvoq0")]
@@ -632,6 +624,10 @@ current_level = 5
 
 [node name="Limit" parent="EndPoint/StaticBody2D" parent_id_path=PackedInt32Array(1775472992, 1684260684) index="0" unique_id=380002771]
 position = Vector2(-87, -34)
+
+[node name="HintSign" parent="." unique_id=1309172374 instance=ExtResource("14_0y7y4")]
+position = Vector2(311, -95)
+hint_text = "Masks won't protect you from lasers!"
 
 [editable path="Player"]
 [editable path="Player/CanvasLayer"]
