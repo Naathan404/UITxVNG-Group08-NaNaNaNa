@@ -29,19 +29,22 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if player:
 		if  player.mask_type == bullet_mask_type or player.mask_type == MaskType.NONE:
+			sprite.modulate.a = 1
 			acceleration = (player.global_position - global_position).normalized() * 700
 			velocity += acceleration * delta
 			rotation = velocity.angle()
 			velocity = velocity.limit_length(300)
 		else:
 			acceleration = Vector2.ZERO
-			#if velocity == Vector2.ZERO:
-			#	velocity = Vector2.RIGHT.rotated(rotation) * 700
-			velocity = velocity.limit_length(300)
+			sprite.modulate.a = 0.5
+			velocity = velocity.normalized() * 300
+			
 		global_position += velocity * delta
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
+		if sprite.modulate.a == 0.5:
+			return
 		if body.has_method("take_dame"):
 			if player.mask_type == bullet_mask_type or player.mask_type == MaskType.NONE:
 				body.take_dame(float(damage))

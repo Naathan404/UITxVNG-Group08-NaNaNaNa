@@ -18,9 +18,10 @@ func enter():
 		laser_hitbox.monitoring = false
 	animation_player.play("laser")
 	
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(0.3).timeout
 	if player and pivot:
 		pivot.look_at(player.global_position)
+	await get_tree().create_timer(0.7).timeout
 	if laser_hitbox and pivot.visible == true:
 		laser_hitbox.set_deferred("monitoring", true)
 		
