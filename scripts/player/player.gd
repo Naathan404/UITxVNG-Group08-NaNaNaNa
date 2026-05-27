@@ -200,6 +200,7 @@ func _on_oxygen_ran_out() -> void:
 # hàm gọi xử lý chuỗi sự kiện chết
 func _on_death() -> void:
 	if is_dead: return
+	get_tree().paused = false
 	# set flags
 	is_dead = true
 	multiplier = 0.0

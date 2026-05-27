@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://d3wdx2jrus3p2"]
+[gd_scene format=4 uid="uid://g87cftiw8mml"]
 
 [ext_resource type="Script" uid="uid://dy7qnlm4qkc4l" path="res://scripts/levels/level_setting.gd" id="1_k4gue"]
 [ext_resource type="PackedScene" uid="uid://bi5f8r44l8v7e" path="res://scenes/player/player.tscn" id="2_xiljk"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://oijwff1p12m1" path="res://scenes/boss/war_lord_turtle.tscn" id="14_ecgev"]
 [ext_resource type="PackedScene" uid="uid://30oiacij4xpw" path="res://scenes/boss/switch_wall.tscn" id="15_dkfrb"]
 [ext_resource type="PackedScene" uid="uid://dhygepi2jq0ek" path="res://scenes/objects/checkpoint.tscn" id="16_1tuws"]
-[ext_resource type="PackedScene" uid="uid://byabmqsphxe7a" path="res://scenes/boss/rain_zone.tscn" id="17_yy0bd"]
+[ext_resource type="PackedScene" path="res://scenes/boss/rain_zone.tscn" id="17_yy0bd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ogj6a"]
 texture = ExtResource("4_for5w")

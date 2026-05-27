@@ -7,8 +7,8 @@ extends StaticBody2D
 		color = value
 		_update_visual()
 
-@export var deactivated_alpha: float = 0.2
-@export var activated_alpha: float = 0.8
+@export var deactivated_alpha: float = 0.1
+@export var activated_alpha: float = 0.7
 @export var is_activated: bool = false:
 	set(value):
 		is_activated = value
