@@ -327,6 +327,9 @@ z_index = -1
 position = Vector2(701, 5)
 scale = Vector2(0.9, 1)
 
+[node name="CollisionShape2D" parent="door2" index="2" unique_id=107251644]
+position = Vector2(-22.055603, 2)
+
 [node name="door3" parent="." unique_id=1335518125 instance=ExtResource("6_5wshb")]
 z_index = -1
 position = Vector2(1373, -28)
@@ -632,29 +635,24 @@ position = Vector2(2072, -264)
 [node name="ColoredGlass4" parent="." unique_id=567419052 instance=ExtResource("15_pafwe")]
 position = Vector2(2033, -24)
 scale = Vector2(0.15, 0.4)
-collision_layer = 0
 color = "Blue"
 
 [node name="ColoredGlass5" parent="." unique_id=285450773 instance=ExtResource("15_pafwe")]
 position = Vector2(2152, -15)
 scale = Vector2(0.15, 0.25)
-collision_layer = 0
 color = "Blue"
 
 [node name="ColoredGlass6" parent="." unique_id=290037394 instance=ExtResource("15_pafwe")]
 position = Vector2(1968, -108)
 scale = Vector2(0.15, 0.25)
-collision_layer = 0
 
 [node name="ColoredGlass2" parent="." unique_id=1280379462 instance=ExtResource("15_pafwe")]
 position = Vector2(2061, -57)
 scale = Vector2(0.3, 0.15)
-collision_layer = 0
 
 [node name="ColoredGlass3" parent="." unique_id=1986953254 instance=ExtResource("15_pafwe")]
 position = Vector2(1832, -134)
 scale = Vector2(0.5, 0.15)
-collision_layer = 0
 
 [node name="EndPoint" parent="." unique_id=1775472992 instance=ExtResource("16_pafwe")]
 z_index = -1
@@ -673,6 +671,7 @@ collision_enabled = false
 
 [editable path="Player"]
 [editable path="Player/CanvasLayer"]
+[editable path="door2"]
 [editable path="door3"]
 [editable path="door4"]
 [editable path="Laser11"]
