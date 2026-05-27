@@ -165,6 +165,7 @@ func _on_mask_change(mask: MaskType) -> bool:
 			elif mask_type == MaskType.BLUE: change_animation("dash_blue")
 	
 	get_tree().call_group("spikes", "_update_spike_state", mask_type)
+	get_tree().call_group("jump_pads", "_update_jump_pad_state", mask_type)
 	get_tree().call_group("platforms", "update_platform_state", mask_type)
 	get_tree().call_group("colored_glass", "_update_colored_glass_state", mask_type)
 	get_tree().call_group("pressure_plates", "_update_plate_state", mask_type)
