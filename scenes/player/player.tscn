@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://kojv1ur7jv44" path="res://scenes/player/game_ui.tscn" id="22_yj68g"]
 [ext_resource type="Script" uid="uid://bjtaj5xxefbf4" path="res://scripts/player/fsm/die.gd" id="23_cnsyf"]
 [ext_resource type="Texture2D" uid="uid://de1d2r1w0i355" path="res://assets/sprites/envir/Dust Particle.png" id="24_007i1"]
+[ext_resource type="FontFile" uid="uid://o2243svlwya" path="res://assets/font/Minecraft.ttf" id="26_6cv16"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j4nxn"]
 atlas = ExtResource("2_je7p5")
@@ -719,6 +720,11 @@ point_count = 3
 offsets = PackedFloat32Array(0, 0.8048544, 1)
 colors = PackedColorArray(0.84705883, 0.88235295, 0.89411765, 1, 1.9539055, 1.9539055, 1.9539055, 0.693, 1, 1, 1, 0)
 
+[sub_resource type="LabelSettings" id="LabelSettings_007i1"]
+font = ExtResource("26_6cv16")
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
 [node name="Player" type="CharacterBody2D" unique_id=65356844 groups=["player"]]
 script = ExtResource("1_p47bc")
 decrease_oxygen_rate = 10.0
@@ -824,5 +830,11 @@ color_ramp = SubResource("Gradient_007i1")
 
 [node name="CanvasLayer" parent="." unique_id=220659911 node_paths=PackedStringArray("player") instance=ExtResource("22_yj68g")]
 player = NodePath("..")
+
+[node name="Label" parent="CanvasLayer/TutorialScreen" parent_id_path=PackedInt32Array(220659911, 391404650) index="0" unique_id=1416801650]
+offset_top = 69.0
+offset_right = 420.0
+offset_bottom = 92.0
+label_settings = SubResource("LabelSettings_007i1")
 
 [editable path="CanvasLayer"]

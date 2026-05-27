@@ -26,6 +26,9 @@ border_width_bottom = 1
 border_color = Color(0.8001019, 0.8001019, 0.8001019, 0)
 corner_detail = 1
 
+[sub_resource type="LabelSettings" id="LabelSettings_kjpqb"]
+font = ExtResource("7_05yek")
+
 [sub_resource type="LabelSettings" id="LabelSettings_vsbcl"]
 font = ExtResource("7_05yek")
 font_size = 14
@@ -160,7 +163,8 @@ offset_left = 86.0
 offset_top = 36.0
 offset_right = 402.0
 offset_bottom = 59.0
-text = "Đã nhặt được Balloon: Ấn [SHIFT] để lướt"
+text = "You collected baloon, press [SHIFT] to dash"
+label_settings = SubResource("LabelSettings_kjpqb")
 horizontal_alignment = 1
 vertical_alignment = 1
 

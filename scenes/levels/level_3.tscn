@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://duuwbov51l0ry" path="res://scenes/objects/unlock_item.tscn" id="11_qi5uv"]
 [ext_resource type="Texture2D" uid="uid://d4b84i0nlgyqg" path="res://assets/sprites/items/dash_item.png" id="12_f6egh"]
 [ext_resource type="PackedScene" uid="uid://dqbm53diyvkac" path="res://scenes/objects/spike.tscn" id="13_f6egh"]
+[ext_resource type="PackedScene" uid="uid://p7rk5fc3u2ms" path="res://scenes/objects/hint_sign.tscn" id="15_apo5x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2bnyt"]
 texture = ExtResource("1_fmg3e")
@@ -455,6 +456,15 @@ z_index = -1
 position = Vector2(2528, 50)
 next_scene_path = "res://scenes/levels/level_4.tscn"
 current_level = 3
+
+[node name="HintSign" parent="." unique_id=1309172374 instance=ExtResource("15_apo5x")]
+position = Vector2(73, 3)
+hint_text = "Match your mask color to the Toxic Zone
+to save oxygen!"
+
+[node name="HintSign2" parent="." unique_id=77924584 instance=ExtResource("15_apo5x")]
+position = Vector2(1544, -29)
+hint_text = "Dashing CONSUMES oxygen."
 
 [editable path="Player"]
 [editable path="Player/CanvasLayer"]

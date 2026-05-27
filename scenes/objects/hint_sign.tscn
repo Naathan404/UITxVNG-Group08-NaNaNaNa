@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://p7rk5fc3u2ms"]
+
+[ext_resource type="Script" uid="uid://ckf0qvvq5gb4j" path="res://scripts/objects/hint_sign.gd" id="2_ptnh4"]
+[ext_resource type="FontFile" uid="uid://o2243svlwya" path="res://assets/font/Minecraft.ttf" id="3_7ida0"]
+[ext_resource type="Texture2D" uid="uid://c181chy8k1xcx" path="res://assets/sprites/envir/hint_sign.png" id="3_st65h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ptnh4"]
+size = Vector2(33, 53)
+
+[sub_resource type="LabelSettings" id="LabelSettings_st65h"]
+font = ExtResource("3_7ida0")
+font_size = 10
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="HintSign" type="Area2D" unique_id=1309172374]
+script = ExtResource("2_ptnh4")
+hint_text = "Use W/S or Up/Down arrow keyto change mask"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=117844848]
+position = Vector2(0, 52.5)
+shape = SubResource("RectangleShape2D_ptnh4")
+
+[node name="Label" type="Label" parent="." unique_id=1946320318]
+offset_left = -106.0
+offset_top = -20.0
+offset_right = 108.0
+offset_bottom = 45.0
+text = "Use W/S or 
+Up/Down arrow key
+to change mask"
+label_settings = SubResource("LabelSettings_st65h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sign" type="Sprite2D" parent="." unique_id=893728285]
+z_index = -1
+position = Vector2(0, 64)
+texture = ExtResource("3_st65h")
+
+[connection signal="body_entered" from="." to="." method="_on_hint_sign_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_hint_sign_body_exited"]
