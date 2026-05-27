@@ -30,8 +30,7 @@ Thanh Oxy là thước đo sinh mệnh, tiêu hao liên tục và không tự h�
   * Không đeo mặt nạ: Oxy không giảm.
   * Có đeo mặt nạ: Oxy giảm với tốc độ `x1`.
 * **Khu vực độc hại (Toxic Zone):**
-  * Không đeo mặt nạ: Giảm `x3`.
-  * Đeo sai màu mặt nạ: Giảm `x2`.
+  * Không đeo mặt nạ hoặc đeo sai màu: Giảm `x5`.
   * Đeo đúng màu mặt nạ: Giảm `x1`.
 * **Hồi phục:** Nhặt các "Bình Oxy" rải rác trong màn chơi.
 
@@ -78,11 +77,11 @@ Thanh Oxy là thước đo sinh mệnh, tiêu hao liên tục và không tự h�
 * **Lives Counter:** Hiển thị số mạng sống còn lại.
 
 ### 4.3. Menu Hệ thống
-* **Main Menu:** Bao gồm các nút điều hướng cơ bản: `Play` (Bắt đầu màn đầu tiên/Tiếp tục), `Settings` (Bảng điều khiển âm lượng, đồ họa), `Quit`.
+* **Main Menu:** Bao gồm các nút điều hướng cơ bản: `Play` (Bắt đầu màn đầu tiên/Tiếp tục), `Setts` (Bảng điều ingkhiển âm lượng), `Quit`.
 
 ### 4.4. Game Juice
 Trải nghiệm nghe nhìn được đẩy mạnh qua:
 * Hiệu ứng hạt (CPUParticles) cho mỗi thao tác dash, đổi mặt nạ, điểm chạm.
-* Rung màn hình (Camera Shake) khi nhận sát thương hoặc va chạm mạnh.
+* Rung màn hình (Camera Shake) khi boss tác động lên map (Trong màn chơi boss).
 * Chuyển cảnh (Screen Transitions) mượt mà giữa các menu và màn chơi.
-* **Âm thanh & Nhạc nền:** Phong cách vui nhộn, dồn dập, tăng giảm nhịp độ theo trạng thái hiểm nghèo của Oxy.
+* **Âm thanh & Nhạc nền:** Phong cách vui nhộn, dồn dập, mang hơi hướng cổ điển `Classic` - `Respect`
