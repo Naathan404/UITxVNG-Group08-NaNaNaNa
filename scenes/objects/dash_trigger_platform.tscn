@@ -17,6 +17,8 @@ colors = PackedColorArray(1, 1, 1, 0, 1, 0.9955913, 1, 1, 1, 1, 1, 0)
 offsets = PackedFloat32Array(0, 0.42895684, 1)
 colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sahkp"]
+
 [node name="DashTriggerPlatform" type="StaticBody2D" unique_id=1900752655]
 script = ExtResource("1_tf3le")
 
@@ -55,3 +57,8 @@ initial_velocity_max = 120.0
 scale_amount_min = 0.4
 scale_amount_max = 0.7
 color_ramp = SubResource("Gradient_sahkp")
+
+[node name="CheckZone" type="Area2D" parent="." unique_id=1799167799]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckZone" unique_id=1106431177]
+shape = SubResource("RectangleShape2D_sahkp")

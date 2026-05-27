@@ -13,6 +13,7 @@ class_name Player
 @export var dash_unlocked: bool = false
 var can_dash: bool = false
 
+
 ### Mask
 enum MaskType { NONE, RED, BLUE }
 @export_group("Mask Settings")
@@ -26,6 +27,9 @@ var is_oxygen_regen: bool = false
 var flash_oxygen: float
 var is_dead: bool = false
 var is_oxygen_decreased_by_other_source: bool = false
+
+## flag check thắng level
+var is_level_completed: bool = false
 
 # signals
 signal ability_unlocked(ability_name: String)
@@ -76,11 +80,13 @@ func _process(delta: float) -> void:
 	if is_on_floor():
 		if dash_unlocked:
 			can_dash = true
-		
-	current_oxygen -= decrease_oxygen_rate * multiplier * delta
-	current_oxygen = clamp(current_oxygen, 0.0, max_oxygen)
-	if current_oxygen <= 0.0: 
-		_on_oxygen_ran_out()
+	
+	if not is_level_completed:
+		current_oxygen -= decrease_oxygen_rate * multiplier * delta
+		current_oxygen = clamp(current_oxygen, 0.0, max_oxygen)
+		if current_oxygen <= 0.0: 
+			_on_oxygen_ran_out()
+			
 	# gọi game_ui cập nhật giao diện liên tục
 	if game_ui:
 		if not is_oxygen_regen:
@@ -200,6 +206,7 @@ func _on_oxygen_ran_out() -> void:
 # hàm gọi xử lý chuỗi sự kiện chết
 func _on_death() -> void:
 	if is_dead: return
+	get_tree().paused = false
 	# set flags
 	is_dead = true
 	multiplier = 0.0

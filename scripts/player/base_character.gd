@@ -29,9 +29,6 @@ var jump_buffer_timer: float = 0.0
 
 var current_anim_name: String = ""
 
-## flag check thắng level
-var is_level_completed: bool = false
-
 
 var fsm: FSM = null
 var current_animation = null
@@ -71,7 +68,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _update_movement(delta: float) -> void:
-	#if is_level_completed: return
 	### xử lý rơi
 	if not is_on_floor() and not ignore_gravity:
 		velocity.y += gravity * delta
