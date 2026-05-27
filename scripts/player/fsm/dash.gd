@@ -22,7 +22,8 @@ func _enter() -> void:
 	
 	obj.get_node("DashParticles").emitting = true
 	
-	_use_oxygen(obj.dash_oxygen_cost)
+	if not obj.is_level_completed:
+		_use_oxygen(obj.dash_oxygen_cost)
 		
 	obj.can_dash = false;
 	obj.ignore_gravity = true;
