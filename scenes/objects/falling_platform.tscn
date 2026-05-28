@@ -18,7 +18,7 @@ scale = Vector2(0.37026334, 0.3241214)
 script = ExtResource("1_x7iqv")
 platform_color = "Blue"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=566877621]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=566877621 groups=["falling_platform"]]
 scale = Vector2(0.76953125, 0.46874997)
 texture = SubResource("AtlasTexture_hikfq")
 

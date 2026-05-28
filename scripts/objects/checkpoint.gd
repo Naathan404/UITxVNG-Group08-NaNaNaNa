@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 var is_activated: bool = false
-
+@onready var boss_node: Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	animated_sprite.play("idle")
@@ -19,6 +19,9 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		is_activated = true
 		#if body.has_method("_refill_oxygen"): body._refill_oxygen(100)
+		boss_node = get_tree().get_first_node_in_group("boss")
+		if boss_node:
+			GameManager.boss_saved_position = boss_node.global_position
 		animated_sprite.play("activated")
 		GameManager._set_checkpoint(position)
 		AudioManager.play_sound("checkpoint", global_position, 5.0)

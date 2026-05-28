@@ -146,7 +146,7 @@ animations = [{
 size = Vector2(84, 71)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bj11e"]
-size = Vector2(245.86185, 5.4407625)
+size = Vector2(246.60997, 5.4407625)
 
 [sub_resource type="Animation" id="Animation_bj11e"]
 length = 1.8750125
@@ -194,10 +194,10 @@ size = Vector2(84, 69)
 size = Vector2(85.30532, 73.95912)
 
 [node name="WarLordTurtle" type="CharacterBody2D" unique_id=637277600 groups=["boss"]]
-scale = Vector2(1.9342285, 2.0822315)
 collision_layer = 16
 collision_mask = 3
 script = ExtResource("1_1xqot")
+distance_x = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2090711749]
 position = Vector2(0, 1)
@@ -229,7 +229,7 @@ monitoring = false
 script = ExtResource("24_ocwkh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="pivot/Area2D" unique_id=858834824]
-position = Vector2(118.2779, -0.31911182)
+position = Vector2(118.65195, -0.3191185)
 shape = SubResource("RectangleShape2D_bj11e")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1083930555]

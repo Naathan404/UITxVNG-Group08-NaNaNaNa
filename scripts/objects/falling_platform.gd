@@ -65,6 +65,8 @@ func fall() -> void:
 	respawn()
 	
 func respawn() -> void:
+	if not is_instance_valid(self) or not is_instance_valid(detector_collision):
+		return
 	is_falling = false
 	global_position = original_position
 	sprite.modulate.a = 0.0 
