@@ -16,7 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://oijwff1p12m1" path="res://scenes/boss/war_lord_turtle.tscn" id="14_ecgev"]
 [ext_resource type="PackedScene" uid="uid://30oiacij4xpw" path="res://scenes/boss/switch_wall.tscn" id="15_dkfrb"]
 [ext_resource type="PackedScene" uid="uid://dhygepi2jq0ek" path="res://scenes/objects/checkpoint.tscn" id="16_1tuws"]
-[ext_resource type="PackedScene" path="res://scenes/boss/rain_zone.tscn" id="17_yy0bd"]
+[ext_resource type="PackedScene" uid="uid://byabmqsphxe7a" path="res://scenes/boss/rain_zone.tscn" id="17_yy0bd"]
+[ext_resource type="PackedScene" uid="uid://bm3biy8jgq4ah" path="res://scenes/objects/wall_update.tscn" id="18_xiljk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ogj6a"]
 texture = ExtResource("4_for5w")
@@ -161,13 +162,2217 @@ colors = PackedColorArray(0.677051, 0, 0, 0, 1, 1, 1, 0.59000003, 1, 1, 1, 0)
 offsets = PackedFloat32Array(0, 0.22370766, 1)
 colors = PackedColorArray(0.677051, 0, 0, 0, 1, 1, 1, 0.59000003, 1, 1, 1, 0)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_prihs"]
+resource_local_to_scene = true
+size = Vector2(46, 142)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_for5w"]
+texture = ExtResource("4_for5w")
+texture_region_size = Vector2i(64, 64)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_lplfy"]
+resource_local_to_scene = true
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_for5w")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xiljk"]
+resource_local_to_scene = true
+size = Vector2(46, 126)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_prihs"]
+texture = ExtResource("4_for5w")
+texture_region_size = Vector2i(64, 64)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_for5w"]
+resource_local_to_scene = true
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_prihs")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_for5w"]
+resource_local_to_scene = true
+size = Vector2(46, 126)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lplfy"]
+texture = ExtResource("4_for5w")
+texture_region_size = Vector2i(64, 64)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_en7vb"]
+resource_local_to_scene = true
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_lplfy")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lplfy"]
+resource_local_to_scene = true
+size = Vector2(78, 126)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_en7vb"]
+texture = ExtResource("4_for5w")
+texture_region_size = Vector2i(64, 64)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_g1quh"]
+resource_local_to_scene = true
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_en7vb")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_en7vb"]
+resource_local_to_scene = true
+size = Vector2(174, 78)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g1quh"]
+texture = ExtResource("4_for5w")
+texture_region_size = Vector2i(64, 64)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_eoni1"]
+resource_local_to_scene = true
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_g1quh")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1quh"]
+resource_local_to_scene = true
+size = Vector2(30, 109)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eoni1"]
+texture = ExtResource("4_for5w")
+texture_region_size = Vector2i(64, 64)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_kf7gg"]
+resource_local_to_scene = true
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_eoni1")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eoni1"]
+resource_local_to_scene = true
+size = Vector2(222, 157)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kf7gg"]
+texture = ExtResource("4_for5w")
+texture_region_size = Vector2i(64, 64)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_o2hgu"]
+resource_local_to_scene = true
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_kf7gg")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kf7gg"]
+resource_local_to_scene = true
+size = Vector2(46, 30)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o2hgu"]
+texture = ExtResource("4_for5w")
+texture_region_size = Vector2i(64, 64)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_v0lw2"]
+resource_local_to_scene = true
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_o2hgu")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o2hgu"]
+resource_local_to_scene = true
+size = Vector2(46, 30)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v0lw2"]
+texture = ExtResource("4_for5w")
+texture_region_size = Vector2i(64, 64)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_celx5"]
+resource_local_to_scene = true
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_v0lw2")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0lw2"]
+resource_local_to_scene = true
+size = Vector2(46, 30)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_celx5"]
+texture = ExtResource("4_for5w")
+texture_region_size = Vector2i(64, 64)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_yywi6"]
+resource_local_to_scene = true
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_celx5")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_celx5"]
+resource_local_to_scene = true
+size = Vector2(78, 30)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yywi6"]
+texture = ExtResource("4_for5w")
+texture_region_size = Vector2i(64, 64)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ecgev"]
+resource_local_to_scene = true
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_yywi6")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yywi6"]
+resource_local_to_scene = true
+size = Vector2(46, 15)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ecgev"]
+texture = ExtResource("4_for5w")
+texture_region_size = Vector2i(64, 64)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_dkfrb"]
+resource_local_to_scene = true
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_ecgev")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecgev"]
+resource_local_to_scene = true
+size = Vector2(94, 142)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dkfrb"]
+texture = ExtResource("4_for5w")
+texture_region_size = Vector2i(64, 64)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1tuws"]
+resource_local_to_scene = true
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_dkfrb")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dkfrb"]
+resource_local_to_scene = true
+size = Vector2(174, 77)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1tuws"]
+texture = ExtResource("4_for5w")
+texture_region_size = Vector2i(64, 64)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_yy0bd"]
+resource_local_to_scene = true
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_1tuws")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1tuws"]
+resource_local_to_scene = true
+size = Vector2(63, 108)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yy0bd"]
+texture = ExtResource("4_for5w")
+texture_region_size = Vector2i(64, 64)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_n4lic"]
+resource_local_to_scene = true
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_yy0bd")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yy0bd"]
+resource_local_to_scene = true
+size = Vector2(63, 108)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n4lic"]
+texture = ExtResource("4_for5w")
+texture_region_size = Vector2i(64, 64)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_o805c"]
+resource_local_to_scene = true
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_n4lic")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4lic"]
+resource_local_to_scene = true
+size = Vector2(63, 108)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o805c"]
+texture = ExtResource("4_for5w")
+texture_region_size = Vector2i(64, 64)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_i6sr6"]
+resource_local_to_scene = true
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_o805c")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o805c"]
+resource_local_to_scene = true
+size = Vector2(63, 126)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i6sr6"]
+texture = ExtResource("4_for5w")
+texture_region_size = Vector2i(64, 64)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_3w1il"]
+resource_local_to_scene = true
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_i6sr6")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3w1il"]
+resource_local_to_scene = true
+size = Vector2(63, 31)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tcfwl"]
+texture = ExtResource("4_for5w")
+texture_region_size = Vector2i(64, 64)
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+5:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+1:8/0 = 0
+2:8/0 = 0
+3:8/0 = 0
+4:8/0 = 0
+5:8/0 = 0
+6:8/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+0:9/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+4:9/0 = 0
+5:9/0 = 0
+6:9/0 = 0
+7:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+0:10/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+4:10/0 = 0
+5:10/0 = 0
+6:10/0 = 0
+7:10/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_2fmo2"]
+resource_local_to_scene = true
+tile_size = Vector2i(64, 64)
+sources/0 = SubResource("TileSetAtlasSource_tcfwl")
+
 [node name="Level_boss" type="Node2D" unique_id=608994964]
 script = ExtResource("1_k4gue")
 left = -120
 bgm_name = "bgm_02"
 
 [node name="Player" parent="." unique_id=65356844 instance=ExtResource("2_xiljk")]
-position = Vector2(4285.0005, -83)
+position = Vector2(4607, -68)
 scale = Vector2(1.038993, 0.9244521)
 decrease_oxygen_rate = 5.0
 dash_oxygen_cost = 8.0
@@ -211,10 +2416,6 @@ texture = ExtResource("5_lplfy")
 z_index = -1
 position = Vector2(84, 40)
 
-[node name="wall2" parent="." unique_id=479421275 instance=ExtResource("7_g1quh")]
-position = Vector2(338.00003, -50)
-scale = Vector2(0.74557084, 2.3734076)
-
 [node name="platform" parent="." unique_id=1680756759 instance=ExtResource("8_eoni1")]
 position = Vector2(445, 34)
 is_moving = false
@@ -225,15 +2426,15 @@ platform_color = "Red"
 is_moving = false
 
 [node name="spike" parent="." unique_id=922398961 instance=ExtResource("9_kf7gg")]
-position = Vector2(554, -44)
+position = Vector2(557, -28)
 rotation = 4.712389
 
 [node name="spike2" parent="." unique_id=1744064345 instance=ExtResource("9_kf7gg")]
-position = Vector2(554, -3)
+position = Vector2(557, 13)
 rotation = 4.712389
 
 [node name="spike3" parent="." unique_id=1453593238 instance=ExtResource("9_kf7gg")]
-position = Vector2(555, 37)
+position = Vector2(558, 53)
 rotation = 4.712389
 
 [node name="spike4" parent="." unique_id=1666456833 instance=ExtResource("9_kf7gg")]
@@ -266,7 +2467,7 @@ position = Vector2(889, 61)
 position = Vector2(2183, 59)
 
 [node name="platform3" parent="." unique_id=1068218523 instance=ExtResource("8_eoni1")]
-position = Vector2(866, -1)
+position = Vector2(864, -5)
 scale = Vector2(3.1822104, 1.586299)
 platform_color = "NONE"
 is_moving = false
@@ -292,28 +2493,8 @@ scale_amount_min = 0.5
 color = Color(1, 0, 0.38560182, 1)
 color_ramp = SubResource("Gradient_ckiqi")
 
-[node name="wall4" parent="." unique_id=1650398882 instance=ExtResource("7_g1quh")]
-position = Vector2(589, 2.9999962)
-scale = Vector2(0.74557084, 2.3734076)
-
-[node name="wall5" parent="." unique_id=1271079405 instance=ExtResource("7_g1quh")]
-position = Vector2(965.00006, -55.000004)
-scale = Vector2(0.7087638, 2.2750616)
-
-[node name="wall6" parent="." unique_id=707611240 instance=ExtResource("7_g1quh")]
-position = Vector2(1564, -59.000004)
-scale = Vector2(0.63537014, 2.0415223)
-
-[node name="wall" parent="." unique_id=63294272 instance=ExtResource("7_g1quh")]
-position = Vector2(1495.0001, 38)
-scale = Vector2(3, 1.2)
-
-[node name="wall3" parent="." unique_id=1310072392 instance=ExtResource("7_g1quh")]
-position = Vector2(1276, 5)
-scale = Vector2(1.5256524, 2.338449)
-
 [node name="OxygenTank2" parent="." unique_id=1175167149 instance=ExtResource("12_celx5")]
-position = Vector2(1531, -19)
+position = Vector2(1532, -26)
 
 [node name="FallingPlatform" parent="." unique_id=1311923727 instance=ExtResource("13_yywi6")]
 position = Vector2(1081, 29)
@@ -331,43 +2512,11 @@ position = Vector2(-119, 0)
 [node name="switch_wall" parent="." unique_id=2070826445 instance=ExtResource("15_dkfrb")]
 position = Vector2(1708, 72)
 
-[node name="wall7" parent="." unique_id=413042033 instance=ExtResource("7_g1quh")]
-position = Vector2(2143, -42)
-scale = Vector2(3.6441627, 2.6704514)
-
 [node name="spike13" parent="." unique_id=1130782008 instance=ExtResource("9_kf7gg")]
 position = Vector2(2225, 59)
 
 [node name="spike14" parent="." unique_id=2060092019 instance=ExtResource("9_kf7gg")]
 position = Vector2(930, 61)
-
-[node name="wall8" parent="." unique_id=906062064 instance=ExtResource("7_g1quh")]
-position = Vector2(2423, 58.999996)
-scale = Vector2(0.7343381, 0.47167292)
-
-[node name="wall9" parent="." unique_id=557583855 instance=ExtResource("7_g1quh")]
-position = Vector2(2465.9998, 58.999996)
-scale = Vector2(0.7343381, 0.47167292)
-
-[node name="wall10" parent="." unique_id=1271962560 instance=ExtResource("7_g1quh")]
-position = Vector2(2465.9998, 32)
-scale = Vector2(0.7343381, 0.47167292)
-
-[node name="wall11" parent="." unique_id=624629219 instance=ExtResource("7_g1quh")]
-position = Vector2(2509, 58.999996)
-scale = Vector2(0.7343381, 0.47167292)
-
-[node name="wall12" parent="." unique_id=1702137716 instance=ExtResource("7_g1quh")]
-position = Vector2(2509, 31.999992)
-scale = Vector2(0.7343381, 0.47167292)
-
-[node name="wall13" parent="." unique_id=1305727815 instance=ExtResource("7_g1quh")]
-position = Vector2(2551.9998, 32)
-scale = Vector2(0.7343381, 0.47167292)
-
-[node name="wall15" parent="." unique_id=1639927232 instance=ExtResource("7_g1quh")]
-position = Vector2(2552, 3.9999962)
-scale = Vector2(0.7343381, 0.47167292)
 
 [node name="platform4" parent="." unique_id=1812080101 instance=ExtResource("8_eoni1")]
 position = Vector2(2555, -56)
@@ -439,63 +2588,48 @@ color = Color(0.24648252, 0.56943375, 0.83810383, 1)
 color_ramp = SubResource("Gradient_mu1s8")
 
 [node name="spike32" parent="." unique_id=891512915 instance=ExtResource("9_kf7gg")]
-position = Vector2(2632, 60)
+position = Vector2(2626, 60)
 spike_color = "Red"
 
 [node name="spike33" parent="." unique_id=344701276 instance=ExtResource("9_kf7gg")]
-position = Vector2(2673, 60)
+position = Vector2(2667, 60)
 spike_color = "Blue"
 
 [node name="spike34" parent="." unique_id=499934244 instance=ExtResource("9_kf7gg")]
-position = Vector2(2713, 59)
+position = Vector2(2707, 59)
 spike_color = "Red"
 
 [node name="spike35" parent="." unique_id=1275873082 instance=ExtResource("9_kf7gg")]
-position = Vector2(2754, 59)
+position = Vector2(2748, 59)
 spike_color = "Blue"
 
 [node name="spike36" parent="." unique_id=687875451 instance=ExtResource("9_kf7gg")]
-position = Vector2(2797, 59)
+position = Vector2(2791, 59)
 spike_color = "Red"
 
 [node name="spike37" parent="." unique_id=830623810 instance=ExtResource("9_kf7gg")]
-position = Vector2(2838, 59)
+position = Vector2(2832, 59)
 spike_color = "Blue"
 
 [node name="spike38" parent="." unique_id=208803820 instance=ExtResource("9_kf7gg")]
-position = Vector2(2878, 59)
+position = Vector2(2872, 59)
 scale = Vector2(1.158817, 1.0428412)
 spike_color = "Red"
-
-[node name="wall18" parent="." unique_id=100673402 instance=ExtResource("7_g1quh")]
-position = Vector2(2942, 15)
-rotation = 1.5707964
-scale = Vector2(1.9623625, 1.4458423)
 
 [node name="Checkpoint" parent="." unique_id=2081086830 instance=ExtResource("16_1tuws")]
 position = Vector2(2310, 41)
 
-[node name="wall17" parent="." unique_id=1972967740 instance=ExtResource("7_g1quh")]
-position = Vector2(3635, -91)
-
-[node name="wall19" parent="." unique_id=1232516356 instance=ExtResource("7_g1quh")]
-position = Vector2(3635, -33)
-
 [node name="spike29" parent="." unique_id=1287384437 instance=ExtResource("9_kf7gg")]
-position = Vector2(3585, 61)
+position = Vector2(3588, 59)
 spike_color = "Blue"
 
 [node name="spike30" parent="." unique_id=919333171 instance=ExtResource("9_kf7gg")]
-position = Vector2(3546, 61)
+position = Vector2(3549, 59)
 spike_color = "Red"
 
 [node name="spike31" parent="." unique_id=107608795 instance=ExtResource("9_kf7gg")]
-position = Vector2(3624, 61)
+position = Vector2(3627, 59)
 spike_color = "Red"
-
-[node name="wall16" parent="." unique_id=777586046 instance=ExtResource("7_g1quh")]
-position = Vector2(3578.9995, 35)
-scale = Vector2(2.916794, 1.3303045)
 
 [node name="FallingPlatform4" parent="." unique_id=1140333329 instance=ExtResource("13_yywi6")]
 position = Vector2(2785, -32)
@@ -535,12 +2669,6 @@ position = Vector2(1, -22)
 scale = Vector2(1.202224, 1)
 spike_color = "Blue"
 
-[node name="wall20" parent="." unique_id=621660062 instance=ExtResource("7_g1quh")]
-position = Vector2(4282, 44)
-
-[node name="wall21" parent="." unique_id=727707464 instance=ExtResource("7_g1quh")]
-position = Vector2(4282, -16)
-
 [node name="switch_wall2" parent="." unique_id=1396764608 instance=ExtResource("15_dkfrb")]
 position = Vector2(4268.0005, 71)
 scale = Vector2(1.0646243, 1.2446594)
@@ -550,7 +2678,7 @@ drop_duration = 5.0
 position = Vector2(4336, 60)
 
 [node name="OxygenTank5" parent="." unique_id=1074080203 instance=ExtResource("12_celx5")]
-position = Vector2(3716, 53)
+position = Vector2(3699, 53)
 
 [node name="wall23" parent="." unique_id=1133643367 instance=ExtResource("7_g1quh")]
 position = Vector2(4589, 44)
@@ -559,25 +2687,6 @@ position = Vector2(4589, 44)
 position = Vector2(4589, 0.99999964)
 scale = Vector2(1.4760084, 1.0493875)
 spike_color = "Blue"
-
-[node name="wall24" parent="." unique_id=886287343 instance=ExtResource("7_g1quh")]
-position = Vector2(4774, -89)
-
-[node name="wall25" parent="." unique_id=1151674265 instance=ExtResource("7_g1quh")]
-position = Vector2(4774, -30)
-
-[node name="platform7" parent="." unique_id=1364948583 instance=ExtResource("8_eoni1")]
-position = Vector2(4710, 41)
-scale = Vector2(1.2595772, 0.901447)
-is_moving = false
-
-[node name="wall26" parent="." unique_id=1559787120 instance=ExtResource("7_g1quh")]
-position = Vector2(4782.9995, 41)
-scale = Vector2(0.45078868, 0.25275248)
-
-[node name="wall27" parent="." unique_id=154782923 instance=ExtResource("7_g1quh")]
-position = Vector2(4809.9995, 41.000004)
-scale = Vector2(0.45078868, 0.25275248)
 
 [node name="spike41" parent="." unique_id=812060635 instance=ExtResource("9_kf7gg")]
 position = Vector2(4649, 59.999996)
@@ -590,18 +2699,6 @@ scale = Vector2(1.4760084, 1.0493875)
 [node name="spike43" parent="." unique_id=213021833 instance=ExtResource("9_kf7gg")]
 position = Vector2(4765, 59)
 scale = Vector2(1.4760084, 1.0493875)
-
-[node name="wall28" parent="." unique_id=366817975 instance=ExtResource("7_g1quh")]
-position = Vector2(4837, 41)
-scale = Vector2(0.45078868, 0.25275248)
-
-[node name="wall29" parent="." unique_id=459794984 instance=ExtResource("7_g1quh")]
-position = Vector2(4756, 41)
-scale = Vector2(0.45078868, 0.25275248)
-
-[node name="wall30" parent="." unique_id=1533251145 instance=ExtResource("7_g1quh")]
-position = Vector2(4831, 60)
-scale = Vector2(0.6535279, 0.4226992)
 
 [node name="platform9" parent="." unique_id=30293164 instance=ExtResource("8_eoni1")]
 position = Vector2(2890.9998, 40)
@@ -648,16 +2745,244 @@ position = Vector2(4110, 58)
 position = Vector2(4151, 58)
 
 [node name="spike53" parent="." unique_id=596305771 instance=ExtResource("9_kf7gg")]
-position = Vector2(4191, 58)
+position = Vector2(4195, 58)
 scale = Vector2(1.158817, 1.0428412)
 
-[node name="wall31" parent="." unique_id=49268254 instance=ExtResource("7_g1quh")]
-position = Vector2(4716, -30)
+[node name="wall_update" parent="." unique_id=1752532369 instance=ExtResource("18_xiljk")]
+position = Vector2(336, -88)
 
-[node name="spike54" parent="." unique_id=1578418723 instance=ExtResource("9_kf7gg")]
-position = Vector2(4711, 19.999992)
-scale = Vector2(1.4760084, 1.0493875)
+[node name="CollisionShape2D" parent="wall_update" index="0" unique_id=1107257901]
+position = Vector2(8, 40)
+shape = SubResource("RectangleShape2D_prihs")
+
+[node name="TileMapLayer" parent="wall_update" index="1" unique_id=1581708450]
+tile_map_data = PackedByteArray("AAD///7/AAAFAAUAAAAAAP7/AAAFAAUAAAABAP7/AAAFAAUAAAD/////AAAFAAUAAAAAAP//AAAFAAUAAAABAP//AAAFAAUAAAABAAAAAAAFAAUAAAAAAAAAAAAFAAUAAAD//wAAAAAFAAUAAAD//wEAAAAFAAUAAAAAAAEAAAAFAAUAAAABAAEAAAAFAAUAAAABAAIAAAAFAAUAAAAAAAIAAAAFAAUAAAD//wIAAAAFAAUAAAD//wMAAAAFAAUAAAAAAAMAAAAFAAUAAAAAAAQAAAAFAAUAAAABAAQAAAAFAAUAAAABAAMAAAAFAAUAAAD//wQAAAAFAAUAAAD//wUAAAAFAAUAAAAAAAUAAAAFAAUAAAABAAUAAAAFAAUAAAABAAYAAAAFAAUAAAAAAAYAAAAFAAUAAAD//wYAAAAFAAUAAAA=")
+tile_set = SubResource("TileSet_lplfy")
+
+[node name="wall_update2" parent="." unique_id=1263505340 instance=ExtResource("18_xiljk")]
+position = Vector2(586, -38)
+
+[node name="CollisionShape2D" parent="wall_update2" index="0" unique_id=1107257901]
+position = Vector2(8, 48)
+shape = SubResource("RectangleShape2D_xiljk")
+
+[node name="TileMapLayer" parent="wall_update2" index="1" unique_id=1581708450]
+tile_map_data = PackedByteArray("AAD/////AAAFAAUAAAAAAP//AAAFAAUAAAABAP//AAAFAAUAAAABAAAAAAAFAAUAAAAAAAAAAAAFAAUAAAD//wAAAAAFAAUAAAD//wEAAAAFAAUAAAAAAAEAAAAFAAUAAAABAAEAAAAFAAUAAAABAAIAAAAFAAUAAAAAAAIAAAAFAAUAAAD//wIAAAAFAAUAAAD//wMAAAAFAAUAAAAAAAMAAAAFAAUAAAAAAAQAAAAFAAUAAAABAAQAAAAFAAUAAAABAAMAAAAFAAUAAAD//wQAAAAFAAUAAAD//wUAAAAFAAUAAAAAAAUAAAAFAAUAAAABAAUAAAAFAAUAAAABAAYAAAAFAAUAAAAAAAYAAAAFAAUAAAD//wYAAAAFAAUAAAA=")
+tile_set = SubResource("TileSet_for5w")
+
+[node name="wall_update3" parent="." unique_id=595699623 instance=ExtResource("18_xiljk")]
+position = Vector2(960, -104)
+
+[node name="CollisionShape2D" parent="wall_update3" index="0" unique_id=1107257901]
+position = Vector2(8, 48)
+shape = SubResource("RectangleShape2D_for5w")
+
+[node name="TileMapLayer" parent="wall_update3" index="1" unique_id=1581708450]
+tile_map_data = PackedByteArray("AAD/////AAAFAAUAAAAAAP//AAAFAAUAAAABAP//AAAFAAUAAAABAAAAAAAFAAUAAAAAAAAAAAAFAAUAAAD//wAAAAAFAAUAAAD//wEAAAAFAAUAAAAAAAEAAAAFAAUAAAABAAEAAAAFAAUAAAABAAIAAAAFAAUAAAAAAAIAAAAFAAUAAAD//wIAAAAFAAUAAAD//wMAAAAFAAUAAAAAAAMAAAAFAAUAAAAAAAQAAAAFAAUAAAABAAQAAAAFAAUAAAABAAMAAAAFAAUAAAD//wQAAAAFAAUAAAD//wUAAAAFAAUAAAAAAAUAAAAFAAUAAAABAAUAAAAFAAUAAAABAAYAAAAFAAUAAAAAAAYAAAAFAAUAAAD//wYAAAAFAAUAAAA=")
+tile_set = SubResource("TileSet_en7vb")
+
+[node name="wall_update4" parent="." unique_id=601690842 instance=ExtResource("18_xiljk")]
+position = Vector2(1248, -39)
+
+[node name="CollisionShape2D" parent="wall_update4" index="0" unique_id=1107257901]
+position = Vector2(24, 48)
+shape = SubResource("RectangleShape2D_lplfy")
+
+[node name="TileMapLayer" parent="wall_update4" index="1" unique_id=1581708450]
+tile_map_data = PackedByteArray("AAD/////AAAFAAUAAAAAAP//AAAFAAUAAAABAP//AAAFAAUAAAABAAAAAAAFAAUAAAAAAAAAAAAFAAUAAAD//wAAAAAFAAUAAAD//wEAAAAFAAUAAAAAAAEAAAAFAAUAAAABAAEAAAAFAAUAAAABAAIAAAAFAAUAAAAAAAIAAAAFAAUAAAD//wIAAAAFAAUAAAD//wMAAAAFAAUAAAAAAAMAAAAFAAUAAAAAAAQAAAAFAAUAAAABAAQAAAAFAAUAAAABAAMAAAAFAAUAAAD//wQAAAAFAAUAAAD//wUAAAAFAAUAAAAAAAUAAAAFAAUAAAABAAUAAAAFAAUAAAABAAYAAAAFAAUAAAAAAAYAAAAFAAUAAAD//wYAAAAFAAUAAAACAP//AAAFAAUAAAADAP//AAAFAAUAAAADAAAAAAAFAAUAAAADAAEAAAAFAAUAAAADAAIAAAAFAAUAAAACAAEAAAAFAAUAAAACAAAAAAAFAAUAAAACAAIAAAAFAAUAAAACAAMAAAAFAAUAAAADAAMAAAAFAAUAAAADAAQAAAAFAAUAAAACAAQAAAAFAAUAAAACAAUAAAAFAAUAAAACAAYAAAAFAAUAAAADAAYAAAAFAAUAAAADAAUAAAAFAAUAAAA=")
+tile_set = SubResource("TileSet_g1quh")
+
+[node name="wall_update5" parent="." unique_id=92793171 instance=ExtResource("18_xiljk")]
+position = Vector2(1424, -39)
+
+[node name="CollisionShape2D" parent="wall_update5" index="0" unique_id=1107257901]
+position = Vector2(72, 72)
+shape = SubResource("RectangleShape2D_en7vb")
+
+[node name="TileMapLayer" parent="wall_update5" index="1" unique_id=1581708450]
+tile_map_data = PackedByteArray("AAD//wYAAAAEAAUAAAAAAAYAAAAEAAUAAAABAAYAAAAEAAUAAAACAAYAAAAEAAUAAAADAAYAAAAEAAUAAAAEAAYAAAAEAAUAAAAFAAYAAAAEAAUAAAAGAAYAAAAEAAUAAAAHAAYAAAAEAAUAAAAIAAYAAAAEAAUAAAAJAAYAAAAEAAUAAAAJAAUAAAAEAAUAAAAIAAUAAAAEAAUAAAAHAAUAAAAEAAUAAAAGAAUAAAAEAAUAAAAFAAUAAAAEAAUAAAAEAAUAAAAEAAUAAAADAAUAAAAEAAUAAAACAAUAAAAEAAUAAAABAAUAAAAEAAUAAAAAAAUAAAAEAAUAAAD//wUAAAAEAAUAAAD//wQAAAAEAAUAAAAAAAQAAAAEAAUAAAABAAQAAAAEAAUAAAACAAQAAAAEAAUAAAADAAQAAAAEAAUAAAAEAAQAAAAEAAUAAAAFAAQAAAAEAAUAAAAGAAQAAAAEAAUAAAAHAAQAAAAEAAUAAAAIAAQAAAAEAAUAAAAJAAQAAAAEAAUAAAAJAAMAAAAEAAUAAAAIAAMAAAAEAAUAAAAHAAMAAAAEAAUAAAAGAAMAAAAEAAUAAAAFAAMAAAAEAAUAAAAEAAMAAAAEAAUAAAADAAMAAAAEAAUAAAACAAMAAAAEAAUAAAABAAMAAAAEAAUAAAAAAAMAAAAEAAUAAAD//wMAAAAEAAUAAAD//wIAAAAEAAUAAAAAAAIAAAAEAAUAAAABAAIAAAAEAAUAAAACAAIAAAAEAAUAAAADAAIAAAAEAAUAAAAEAAIAAAAEAAUAAAAFAAIAAAAEAAUAAAAGAAIAAAAEAAUAAAAHAAIAAAAEAAUAAAAIAAIAAAAEAAUAAAAJAAIAAAAEAAUAAAA=")
+tile_set = SubResource("TileSet_eoni1")
+
+[node name="wall_update6" parent="." unique_id=1344208267 instance=ExtResource("18_xiljk")]
+position = Vector2(1568, -119)
+
+[node name="CollisionShape2D" parent="wall_update6" index="0" unique_id=1107257901]
+position = Vector2(0, 56.5)
+shape = SubResource("RectangleShape2D_g1quh")
+
+[node name="TileMapLayer" parent="wall_update6" index="1" unique_id=1581708450]
+tile_map_data = PackedByteArray("AAD//wEAAAAFAAUAAAAAAAEAAAAFAAUAAAAAAAIAAAAFAAUAAAD//wIAAAAFAAUAAAD//wMAAAAFAAUAAAAAAAMAAAAFAAUAAAAAAAQAAAAFAAUAAAD//wQAAAAFAAUAAAD//wUAAAAFAAUAAAAAAAUAAAAFAAUAAAAAAAYAAAAFAAUAAAD//wYAAAAFAAUAAAD//wAAAAAFAAUAAAAAAAAAAAAFAAUAAAA=")
+tile_set = SubResource("TileSet_kf7gg")
+
+[node name="wall_update7" parent="." unique_id=2089279451 instance=ExtResource("18_xiljk")]
+position = Vector2(2049, -152)
+
+[node name="CollisionShape2D" parent="wall_update7" index="0" unique_id=1107257901]
+position = Vector2(96, 111.5)
+shape = SubResource("RectangleShape2D_eoni1")
+
+[node name="TileMapLayer" parent="wall_update7" index="1" unique_id=1581708450]
+tile_map_data = PackedByteArray("AAABAAIAAAAFAAUAAAAAAAIAAAAFAAUAAAD//wIAAAAFAAUAAAD//wMAAAAFAAUAAAAAAAMAAAAFAAUAAAAAAAQAAAAFAAUAAAABAAQAAAAFAAUAAAABAAMAAAAFAAUAAAD//wQAAAAFAAUAAAD//wYAAAAFAAUAAAAAAAYAAAAFAAUAAAABAAYAAAAFAAUAAAACAAYAAAAFAAUAAAADAAYAAAAFAAUAAAAEAAYAAAAFAAUAAAAFAAYAAAAFAAUAAAAGAAYAAAAFAAUAAAAHAAYAAAAFAAUAAAAIAAYAAAAFAAUAAAAJAAYAAAAFAAUAAAAJAAUAAAAFAAUAAAAIAAUAAAAFAAUAAAAHAAUAAAAFAAUAAAAGAAUAAAAFAAUAAAAFAAUAAAAFAAUAAAAEAAUAAAAFAAUAAAADAAUAAAAFAAUAAAACAAUAAAAFAAUAAAABAAUAAAAFAAUAAAAAAAUAAAAFAAUAAAD//wUAAAAFAAUAAAACAAQAAAAFAAUAAAADAAQAAAAFAAUAAAAEAAQAAAAFAAUAAAAFAAQAAAAFAAUAAAAGAAQAAAAFAAUAAAAHAAQAAAAFAAUAAAAIAAQAAAAFAAUAAAAJAAQAAAAFAAUAAAAJAAMAAAAFAAUAAAAIAAMAAAAFAAUAAAAHAAMAAAAFAAUAAAAGAAMAAAAFAAUAAAAFAAMAAAAFAAUAAAAEAAMAAAAFAAUAAAADAAMAAAAFAAUAAAACAAMAAAAFAAUAAAACAAIAAAAFAAUAAAADAAIAAAAFAAUAAAAEAAIAAAAFAAUAAAAFAAIAAAAFAAUAAAAGAAIAAAAFAAUAAAAHAAIAAAAFAAUAAAAIAAIAAAAFAAUAAAAJAAIAAAAFAAUAAAAKAAIAAAAFAAUAAAALAAIAAAAFAAUAAAAMAAIAAAAFAAUAAAAMAAMAAAAFAAUAAAALAAMAAAAFAAUAAAAKAAMAAAAFAAUAAAAKAAQAAAAFAAUAAAALAAQAAAAFAAUAAAAMAAQAAAAFAAUAAAAMAAUAAAAFAAUAAAALAAUAAAAFAAUAAAAKAAUAAAAFAAUAAAAKAAYAAAAFAAUAAAALAAYAAAAFAAUAAAAMAAYAAAAFAAUAAAD//wcAAAAFAAUAAAAAAAcAAAAFAAUAAAABAAcAAAAFAAUAAAACAAcAAAAFAAUAAAADAAcAAAAFAAUAAAAEAAcAAAAFAAUAAAAFAAcAAAAFAAUAAAAGAAcAAAAFAAUAAAAHAAcAAAAFAAUAAAAIAAcAAAAFAAUAAAAJAAcAAAAFAAUAAAAKAAcAAAAFAAUAAAALAAcAAAAFAAUAAAAMAAcAAAAFAAUAAAAMAAgAAAAFAAUAAAALAAgAAAAFAAUAAAAKAAgAAAAFAAUAAAAJAAgAAAAFAAUAAAAIAAgAAAAFAAUAAAAHAAgAAAAFAAUAAAAGAAgAAAAFAAUAAAAFAAgAAAAFAAUAAAAEAAgAAAAFAAUAAAADAAgAAAAFAAUAAAACAAgAAAAFAAUAAAABAAgAAAAFAAUAAAAAAAgAAAAFAAUAAAAAAAkAAAAFAAUAAAD//wkAAAAFAAUAAAD//wgAAAAFAAUAAAABAAkAAAAFAAUAAAACAAkAAAAFAAUAAAADAAkAAAAFAAUAAAAEAAkAAAAFAAUAAAAFAAkAAAAFAAUAAAAGAAkAAAAFAAUAAAAHAAkAAAAFAAUAAAAIAAkAAAAFAAUAAAAJAAkAAAAFAAUAAAAKAAkAAAAFAAUAAAALAAkAAAAFAAUAAAAMAAkAAAAFAAUAAAAMAAoAAAAFAAUAAAALAAoAAAAFAAUAAAAKAAoAAAAFAAUAAAAJAAoAAAAFAAUAAAAIAAoAAAAFAAUAAAAHAAoAAAAFAAUAAAAGAAoAAAAFAAUAAAAFAAoAAAAFAAUAAAAEAAoAAAAFAAUAAAADAAoAAAAFAAUAAAACAAoAAAAFAAUAAAABAAoAAAAFAAUAAAAAAAoAAAAFAAUAAAD//woAAAAFAAUAAAD//wsAAAAFAAUAAAAAAAsAAAAFAAUAAAABAAsAAAAFAAUAAAACAAsAAAAFAAUAAAADAAsAAAAFAAUAAAAEAAsAAAAFAAUAAAAFAAsAAAAFAAUAAAAGAAsAAAAFAAUAAAAHAAsAAAAFAAUAAAAIAAsAAAAFAAUAAAAJAAsAAAAFAAUAAAAKAAsAAAAFAAUAAAALAAsAAAAFAAUAAAAMAAsAAAAFAAUAAAA=")
+tile_set = SubResource("TileSet_o2hgu")
+
+[node name="wall_update8" parent="." unique_id=466158367 instance=ExtResource("18_xiljk")]
+position = Vector2(2416, -39)
+
+[node name="CollisionShape2D" parent="wall_update8" index="0" unique_id=1107257901]
+position = Vector2(8, 96)
+shape = SubResource("RectangleShape2D_kf7gg")
+
+[node name="TileMapLayer" parent="wall_update8" index="1" unique_id=1581708450]
+tile_map_data = PackedByteArray("AAD//wUAAAAFAAUAAAAAAAUAAAAFAAUAAAABAAUAAAAFAAUAAAABAAYAAAAFAAUAAAAAAAYAAAAFAAUAAAD//wYAAAAFAAUAAAA=")
+tile_set = SubResource("TileSet_v0lw2")
+
+[node name="wall_update9" parent="." unique_id=1994848029 instance=ExtResource("18_xiljk")]
+position = Vector2(2464, -39)
+
+[node name="CollisionShape2D" parent="wall_update9" index="0" unique_id=1107257901]
+position = Vector2(8, 96)
+shape = SubResource("RectangleShape2D_o2hgu")
+
+[node name="TileMapLayer" parent="wall_update9" index="1" unique_id=1581708450]
+tile_map_data = PackedByteArray("AAD//wUAAAAFAAUAAAAAAAUAAAAFAAUAAAABAAUAAAAFAAUAAAABAAYAAAAFAAUAAAAAAAYAAAAFAAUAAAD//wYAAAAFAAUAAAA=")
+tile_set = SubResource("TileSet_celx5")
+
+[node name="wall_update10" parent="." unique_id=1632554118 instance=ExtResource("18_xiljk")]
+position = Vector2(2464, -71)
+
+[node name="CollisionShape2D" parent="wall_update10" index="0" unique_id=1107257901]
+position = Vector2(8, 96)
+shape = SubResource("RectangleShape2D_v0lw2")
+
+[node name="TileMapLayer" parent="wall_update10" index="1" unique_id=1581708450]
+tile_map_data = PackedByteArray("AAD//wUAAAAFAAUAAAAAAAUAAAAFAAUAAAABAAUAAAAFAAUAAAABAAYAAAAFAAUAAAAAAAYAAAAFAAUAAAD//wYAAAAFAAUAAAA=")
+tile_set = SubResource("TileSet_yywi6")
+
+[node name="wall_update11" parent="." unique_id=2024932327 instance=ExtResource("18_xiljk")]
+position = Vector2(2512, -71)
+
+[node name="CollisionShape2D" parent="wall_update11" index="0" unique_id=1107257901]
+position = Vector2(24, 96)
+shape = SubResource("RectangleShape2D_celx5")
+
+[node name="TileMapLayer" parent="wall_update11" index="1" unique_id=1581708450]
+tile_map_data = PackedByteArray("AAD//wUAAAAFAAUAAAAAAAUAAAAFAAUAAAABAAUAAAAFAAUAAAABAAYAAAAFAAUAAAAAAAYAAAAFAAUAAAD//wYAAAAFAAUAAAACAAUAAAAFAAUAAAACAAYAAAAFAAUAAAADAAYAAAAFAAUAAAADAAUAAAAFAAUAAAA=")
+tile_set = SubResource("TileSet_ecgev")
+
+[node name="wall_update12" parent="." unique_id=597731825 instance=ExtResource("18_xiljk")]
+position = Vector2(2544, -103)
+
+[node name="CollisionShape2D" parent="wall_update12" index="0" unique_id=1107257901]
+position = Vector2(8, 103.5)
+shape = SubResource("RectangleShape2D_yywi6")
+
+[node name="TileMapLayer" parent="wall_update12" index="1" unique_id=1581708450]
+tile_map_data = PackedByteArray("AAABAAYAAAAFAAUAAAAAAAYAAAAFAAUAAAD//wYAAAAFAAUAAAA=")
+tile_set = SubResource("TileSet_dkfrb")
+
+[node name="wall_update13" parent="." unique_id=924618225 instance=ExtResource("18_xiljk")]
+position = Vector2(2910, -39)
+
+[node name="CollisionShape2D" parent="wall_update13" index="0" unique_id=1107257901]
+position = Vector2(32, 40)
+shape = SubResource("RectangleShape2D_ecgev")
+
+[node name="TileMapLayer" parent="wall_update13" index="1" unique_id=1581708450]
+tile_map_data = PackedByteArray("AAABAAIAAAAFAAUAAAAAAAIAAAAFAAUAAAD//wIAAAAFAAUAAAD//wMAAAAFAAUAAAAAAAMAAAAFAAUAAAAAAAQAAAAFAAUAAAABAAQAAAAFAAUAAAABAAMAAAAFAAUAAAD//wQAAAAFAAUAAAD//wYAAAAFAAUAAAAAAAYAAAAFAAUAAAABAAYAAAAFAAUAAAACAAYAAAAFAAUAAAADAAYAAAAFAAUAAAADAAUAAAAFAAUAAAACAAUAAAAFAAUAAAABAAUAAAAFAAUAAAAAAAUAAAAFAAUAAAD//wUAAAAFAAUAAAACAAQAAAAFAAUAAAADAAQAAAAFAAUAAAADAAMAAAAFAAUAAAACAAMAAAAFAAUAAAACAAIAAAAFAAUAAAADAAIAAAAFAAUAAAAEAAYAAAAFAAUAAAAEAAUAAAAFAAUAAAAEAAQAAAAFAAUAAAAEAAMAAAAFAAUAAAAEAAIAAAAFAAUAAAAEAAEAAAAFAAUAAAADAAEAAAAFAAUAAAACAAEAAAAFAAUAAAABAAEAAAAFAAUAAAAAAAEAAAAFAAUAAAD//wEAAAAFAAUAAAD//wAAAAAFAAUAAAAAAAAAAAAFAAUAAAABAAAAAAAFAAUAAAACAAAAAAAFAAUAAAADAAAAAAAFAAUAAAAEAAAAAAAFAAUAAAAEAP//AAAFAAUAAAADAP//AAAFAAUAAAACAP//AAAFAAUAAAABAP//AAAFAAUAAAAAAP//AAAFAAUAAAD/////AAAFAAUAAAD///7/AAAFAAUAAAAAAP7/AAAFAAUAAAABAP7/AAAFAAUAAAACAP7/AAAFAAUAAAADAP7/AAAFAAUAAAAEAP7/AAAFAAUAAAA=")
+tile_set = SubResource("TileSet_1tuws")
+
+[node name="spike55" parent="." unique_id=1720366500 instance=ExtResource("9_kf7gg")]
+position = Vector2(2785, -53)
+spike_color = "Blue"
+
+[node name="spike56" parent="." unique_id=260941250 instance=ExtResource("9_kf7gg")]
+position = Vector2(2915, -84)
 spike_color = "Red"
+
+[node name="wall_update14" parent="." unique_id=1168076362 instance=ExtResource("18_xiljk")]
+position = Vector2(3505, -40)
+
+[node name="CollisionShape2D" parent="wall_update14" index="0" unique_id=1107257901]
+position = Vector2(72, 72.5)
+shape = SubResource("RectangleShape2D_dkfrb")
+
+[node name="TileMapLayer" parent="wall_update14" index="1" unique_id=1581708450]
+tile_map_data = PackedByteArray("AAABAAIAAAAFAAUAAAAAAAIAAAAFAAUAAAD//wIAAAAFAAUAAAD//wMAAAAFAAUAAAAAAAMAAAAFAAUAAAAAAAQAAAAFAAUAAAABAAQAAAAFAAUAAAABAAMAAAAFAAUAAAD//wQAAAAFAAUAAAD//wYAAAAFAAUAAAAAAAYAAAAFAAUAAAABAAYAAAAFAAUAAAACAAYAAAAFAAUAAAADAAYAAAAFAAUAAAADAAUAAAAFAAUAAAACAAUAAAAFAAUAAAABAAUAAAAFAAUAAAAAAAUAAAAFAAUAAAD//wUAAAAFAAUAAAACAAQAAAAFAAUAAAADAAQAAAAFAAUAAAADAAMAAAAFAAUAAAACAAMAAAAFAAUAAAACAAIAAAAFAAUAAAADAAIAAAAFAAUAAAAEAAYAAAAFAAUAAAAEAAUAAAAFAAUAAAAEAAQAAAAFAAUAAAAEAAMAAAAFAAUAAAAEAAIAAAAFAAUAAAAFAAIAAAAFAAUAAAAGAAIAAAAFAAUAAAAHAAIAAAAFAAUAAAAIAAIAAAAFAAUAAAAJAAIAAAAFAAUAAAAJAAMAAAAFAAUAAAAIAAMAAAAFAAUAAAAHAAMAAAAFAAUAAAAGAAMAAAAFAAUAAAAFAAMAAAAFAAUAAAAFAAQAAAAFAAUAAAAGAAQAAAAFAAUAAAAHAAQAAAAFAAUAAAAIAAQAAAAFAAUAAAAJAAQAAAAFAAUAAAAJAAUAAAAFAAUAAAAIAAUAAAAFAAUAAAAHAAUAAAAFAAUAAAAGAAUAAAAFAAUAAAAFAAUAAAAFAAUAAAAFAAYAAAAFAAUAAAAGAAYAAAAFAAUAAAAHAAYAAAAFAAUAAAAIAAYAAAAFAAUAAAAJAAYAAAAFAAUAAAA=")
+tile_set = SubResource("TileSet_yy0bd")
+
+[node name="wall_update15" parent="." unique_id=280290109 instance=ExtResource("18_xiljk")]
+position = Vector2(3505, -152)
+
+[node name="CollisionShape2D" parent="wall_update15" index="0" unique_id=1107257901]
+position = Vector2(127.5, 88)
+shape = SubResource("RectangleShape2D_1tuws")
+
+[node name="TileMapLayer" parent="wall_update15" index="1" unique_id=1581708450]
+tile_map_data = PackedByteArray("AAAHAAIAAAAFAAUAAAAIAAIAAAAFAAUAAAAJAAIAAAAFAAUAAAAJAAMAAAAFAAUAAAAIAAMAAAAFAAUAAAAHAAMAAAAFAAUAAAAHAAQAAAAFAAUAAAAIAAQAAAAFAAUAAAAJAAQAAAAFAAUAAAAJAAUAAAAFAAUAAAAIAAUAAAAFAAUAAAAHAAUAAAAFAAUAAAAGAAUAAAAFAAUAAAAGAAYAAAAFAAUAAAAHAAYAAAAFAAUAAAAIAAYAAAAFAAUAAAAJAAYAAAAFAAUAAAAGAAQAAAAFAAUAAAAGAAMAAAAFAAUAAAAGAAIAAAAFAAUAAAAGAAcAAAAFAAUAAAAHAAcAAAAFAAUAAAAIAAcAAAAFAAUAAAAJAAcAAAAFAAUAAAAJAAgAAAAFAAUAAAAIAAgAAAAFAAUAAAAHAAgAAAAFAAUAAAAGAAgAAAAFAAUAAAA=")
+tile_set = SubResource("TileSet_n4lic")
+
+[node name="wall_update16" parent="." unique_id=25928258 instance=ExtResource("18_xiljk")]
+position = Vector2(4145, -72)
+
+[node name="CollisionShape2D" parent="wall_update16" index="0" unique_id=1107257901]
+position = Vector2(127.5, 88)
+shape = SubResource("RectangleShape2D_yy0bd")
+
+[node name="TileMapLayer" parent="wall_update16" index="1" unique_id=1581708450]
+tile_map_data = PackedByteArray("AAAHAAIAAAAFAAUAAAAIAAIAAAAFAAUAAAAJAAIAAAAFAAUAAAAJAAMAAAAFAAUAAAAIAAMAAAAFAAUAAAAHAAMAAAAFAAUAAAAHAAQAAAAFAAUAAAAIAAQAAAAFAAUAAAAJAAQAAAAFAAUAAAAJAAUAAAAFAAUAAAAIAAUAAAAFAAUAAAAHAAUAAAAFAAUAAAAGAAUAAAAFAAUAAAAGAAYAAAAFAAUAAAAHAAYAAAAFAAUAAAAIAAYAAAAFAAUAAAAJAAYAAAAFAAUAAAAGAAQAAAAFAAUAAAAGAAMAAAAFAAUAAAAGAAIAAAAFAAUAAAAGAAcAAAAFAAUAAAAHAAcAAAAFAAUAAAAIAAcAAAAFAAUAAAAJAAcAAAAFAAUAAAAJAAgAAAAFAAUAAAAIAAgAAAAFAAUAAAAHAAgAAAAFAAUAAAAGAAgAAAAFAAUAAAA=")
+tile_set = SubResource("TileSet_o805c")
+
+[node name="wall_update17" parent="." unique_id=1677613910 instance=ExtResource("18_xiljk")]
+position = Vector2(4464, -72)
+
+[node name="CollisionShape2D" parent="wall_update17" index="0" unique_id=1107257901]
+position = Vector2(127.5, 88)
+shape = SubResource("RectangleShape2D_n4lic")
+
+[node name="TileMapLayer" parent="wall_update17" index="1" unique_id=1581708450]
+tile_map_data = PackedByteArray("AAAHAAIAAAAFAAUAAAAIAAIAAAAFAAUAAAAJAAIAAAAFAAUAAAAJAAMAAAAFAAUAAAAIAAMAAAAFAAUAAAAHAAMAAAAFAAUAAAAHAAQAAAAFAAUAAAAIAAQAAAAFAAUAAAAJAAQAAAAFAAUAAAAJAAUAAAAFAAUAAAAIAAUAAAAFAAUAAAAHAAUAAAAFAAUAAAAGAAUAAAAFAAUAAAAGAAYAAAAFAAUAAAAHAAYAAAAFAAUAAAAIAAYAAAAFAAUAAAAJAAYAAAAFAAUAAAAGAAQAAAAFAAUAAAAGAAMAAAAFAAUAAAAGAAIAAAAFAAUAAAAGAAcAAAAFAAUAAAAHAAcAAAAFAAUAAAAIAAcAAAAFAAUAAAAJAAcAAAAFAAUAAAAJAAgAAAAFAAUAAAAIAAgAAAAFAAUAAAAHAAgAAAAFAAUAAAAGAAgAAAAFAAUAAAA=")
+tile_set = SubResource("TileSet_i6sr6")
+
+[node name="wall_update18" parent="." unique_id=1808605177 instance=ExtResource("18_xiljk")]
+position = Vector2(4704, -152)
+
+[node name="CollisionShape2D" parent="wall_update18" index="0" unique_id=1107257901]
+position = Vector2(127.5, 97)
+shape = SubResource("RectangleShape2D_o805c")
+
+[node name="TileMapLayer" parent="wall_update18" index="1" unique_id=1581708450]
+tile_map_data = PackedByteArray("AAAHAAIAAAAFAAUAAAAIAAIAAAAFAAUAAAAJAAIAAAAFAAUAAAAJAAMAAAAFAAUAAAAIAAMAAAAFAAUAAAAHAAMAAAAFAAUAAAAHAAQAAAAFAAUAAAAIAAQAAAAFAAUAAAAJAAQAAAAFAAUAAAAJAAUAAAAFAAUAAAAIAAUAAAAFAAUAAAAHAAUAAAAFAAUAAAAGAAUAAAAFAAUAAAAGAAYAAAAFAAUAAAAHAAYAAAAFAAUAAAAIAAYAAAAFAAUAAAAJAAYAAAAFAAUAAAAGAAQAAAAFAAUAAAAGAAMAAAAFAAUAAAAGAAIAAAAFAAUAAAAGAAcAAAAFAAUAAAAHAAcAAAAFAAUAAAAIAAcAAAAFAAUAAAAJAAcAAAAFAAUAAAAJAAgAAAAFAAUAAAAIAAgAAAAFAAUAAAAHAAgAAAAFAAUAAAAGAAgAAAAFAAUAAAAGAAkAAAAFAAUAAAAHAAkAAAAFAAUAAAAIAAkAAAAFAAUAAAAJAAkAAAAFAAUAAAA=")
+tile_set = SubResource("TileSet_3w1il")
+
+[node name="wall_update20" parent="." unique_id=1288605194 instance=ExtResource("18_xiljk")]
+position = Vector2(4704, -88)
+
+[node name="CollisionShape2D" parent="wall_update20" index="0" unique_id=1107257901]
+position = Vector2(127.5, 144.5)
+shape = SubResource("RectangleShape2D_3w1il")
+
+[node name="TileMapLayer" parent="wall_update20" index="1" unique_id=1581708450]
+tile_map_data = PackedByteArray("AAAJAAgAAAAFAAUAAAAIAAgAAAAFAAUAAAAHAAgAAAAFAAUAAAAGAAgAAAAFAAUAAAAGAAkAAAAFAAUAAAAHAAkAAAAFAAUAAAAIAAkAAAAFAAUAAAAJAAkAAAAFAAUAAAA=")
+tile_set = SubResource("TileSet_2fmo2")
 
 [editable path="Player"]
 [editable path="Player/CanvasLayer"]
+[editable path="wall_update"]
+[editable path="wall_update2"]
+[editable path="wall_update3"]
+[editable path="wall_update4"]
+[editable path="wall_update5"]
+[editable path="wall_update6"]
+[editable path="wall_update7"]
+[editable path="wall_update8"]
+[editable path="wall_update9"]
+[editable path="wall_update10"]
+[editable path="wall_update11"]
+[editable path="wall_update12"]
+[editable path="wall_update13"]
+[editable path="wall_update14"]
+[editable path="wall_update15"]
+[editable path="wall_update16"]
+[editable path="wall_update17"]
+[editable path="wall_update18"]
+[editable path="wall_update20"]
