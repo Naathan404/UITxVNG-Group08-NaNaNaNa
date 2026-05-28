@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://kojv1ur7jv44" path="res://scenes/player/game_ui.tscn" id="22_yj68g"]
 [ext_resource type="Script" uid="uid://bjtaj5xxefbf4" path="res://scripts/player/fsm/die.gd" id="23_cnsyf"]
 [ext_resource type="Texture2D" uid="uid://de1d2r1w0i355" path="res://assets/sprites/envir/Dust Particle.png" id="24_007i1"]
-[ext_resource type="FontFile" uid="uid://o2243svlwya" path="res://assets/font/Minecraft.ttf" id="26_6cv16"]
+[ext_resource type="FontFile" uid="uid://cfk3mha4yfo7o" path="res://assets/font/PixelGame-R9AZe.otf" id="26_6cv16"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j4nxn"]
 atlas = ExtResource("2_je7p5")
@@ -832,9 +832,10 @@ color_ramp = SubResource("Gradient_007i1")
 player = NodePath("..")
 
 [node name="Label" parent="CanvasLayer/TutorialScreen" parent_id_path=PackedInt32Array(220659911, 391404650) index="0" unique_id=1416801650]
-offset_top = 69.0
-offset_right = 420.0
-offset_bottom = 92.0
+offset_left = 91.0
+offset_top = 38.0
+offset_right = 425.0
+offset_bottom = 61.0
 label_settings = SubResource("LabelSettings_007i1")
 
 [editable path="CanvasLayer"]
