@@ -167,7 +167,7 @@ left = -120
 bgm_name = "bgm_02"
 
 [node name="Player" parent="." unique_id=65356844 instance=ExtResource("2_xiljk")]
-position = Vector2(4260, -72)
+position = Vector2(4285.0005, -83)
 scale = Vector2(1.038993, 0.9244521)
 decrease_oxygen_rate = 5.0
 dash_oxygen_cost = 8.0
@@ -494,8 +494,8 @@ position = Vector2(3624, 61)
 spike_color = "Red"
 
 [node name="wall16" parent="." unique_id=777586046 instance=ExtResource("7_g1quh")]
-position = Vector2(3595, 35)
-scale = Vector2(2.3892848, 1.3303045)
+position = Vector2(3578.9995, 35)
+scale = Vector2(2.916794, 1.3303045)
 
 [node name="FallingPlatform4" parent="." unique_id=1140333329 instance=ExtResource("13_yywi6")]
 position = Vector2(2785, -32)
@@ -567,9 +567,8 @@ position = Vector2(4774, -89)
 position = Vector2(4774, -30)
 
 [node name="platform7" parent="." unique_id=1364948583 instance=ExtResource("8_eoni1")]
-position = Vector2(4712, 21)
+position = Vector2(4710, 41)
 scale = Vector2(1.2595772, 0.901447)
-platform_color = "Red"
 is_moving = false
 
 [node name="wall26" parent="." unique_id=1559787120 instance=ExtResource("7_g1quh")]
@@ -603,6 +602,62 @@ scale = Vector2(0.45078868, 0.25275248)
 [node name="wall30" parent="." unique_id=1533251145 instance=ExtResource("7_g1quh")]
 position = Vector2(4831, 60)
 scale = Vector2(0.6535279, 0.4226992)
+
+[node name="platform9" parent="." unique_id=30293164 instance=ExtResource("8_eoni1")]
+position = Vector2(2890.9998, 40)
+scale = Vector2(0.33290565, 0.68062186)
+is_moving = false
+
+[node name="platform10" parent="." unique_id=528194367 instance=ExtResource("8_eoni1")]
+position = Vector2(2890, 6)
+scale = Vector2(0.33290565, 0.68062186)
+platform_color = "Red"
+is_moving = false
+
+[node name="platform11" parent="." unique_id=421156757 instance=ExtResource("8_eoni1")]
+position = Vector2(2889.9998, -25)
+scale = Vector2(0.33290565, 0.68062186)
+is_moving = false
+
+[node name="spike44" parent="." unique_id=558086960 instance=ExtResource("9_kf7gg")]
+position = Vector2(3818, 59)
+
+[node name="spike45" parent="." unique_id=1967511910 instance=ExtResource("9_kf7gg")]
+position = Vector2(3859, 59)
+
+[node name="spike46" parent="." unique_id=721043115 instance=ExtResource("9_kf7gg")]
+position = Vector2(3899, 58)
+
+[node name="spike47" parent="." unique_id=1648580835 instance=ExtResource("9_kf7gg")]
+position = Vector2(3940, 58)
+
+[node name="spike48" parent="." unique_id=1199110533 instance=ExtResource("9_kf7gg")]
+position = Vector2(3983, 58)
+
+[node name="spike49" parent="." unique_id=675166796 instance=ExtResource("9_kf7gg")]
+position = Vector2(4024, 58)
+
+[node name="spike50" parent="." unique_id=2003896938 instance=ExtResource("9_kf7gg")]
+position = Vector2(4064, 58)
+scale = Vector2(1.158817, 1.0428412)
+
+[node name="spike51" parent="." unique_id=1312308576 instance=ExtResource("9_kf7gg")]
+position = Vector2(4110, 58)
+
+[node name="spike52" parent="." unique_id=1439496336 instance=ExtResource("9_kf7gg")]
+position = Vector2(4151, 58)
+
+[node name="spike53" parent="." unique_id=596305771 instance=ExtResource("9_kf7gg")]
+position = Vector2(4191, 58)
+scale = Vector2(1.158817, 1.0428412)
+
+[node name="wall31" parent="." unique_id=49268254 instance=ExtResource("7_g1quh")]
+position = Vector2(4716, -30)
+
+[node name="spike54" parent="." unique_id=1578418723 instance=ExtResource("9_kf7gg")]
+position = Vector2(4711, 19.999992)
+scale = Vector2(1.4760084, 1.0493875)
+spike_color = "Red"
 
 [editable path="Player"]
 [editable path="Player/CanvasLayer"]
