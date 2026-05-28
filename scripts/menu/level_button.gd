@@ -24,6 +24,7 @@ func setup_lock_state(max_unlocked_level: int) -> void:
 func _on_pressed() -> void:
 	print("Đang tải màn chơi số: ", level_number)
 	AudioManager.play_sound("click", global_position, 10.0)
+	GameManager._reset_checkpoint()	
 	
 	if level_scene_path != "":
 		SceneTransition._change_scene(level_scene_path)

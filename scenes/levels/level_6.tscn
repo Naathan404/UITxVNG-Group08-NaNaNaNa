@@ -479,7 +479,7 @@ rotation = 0.50265485
 scale = Vector2(0.35, 0.35)
 
 [node name="DashTriggerPlatform2" parent="." unique_id=2122355748 instance=ExtResource("10_m5qie")]
-position = Vector2(927, 35)
+position = Vector2(926, 35)
 scale = Vector2(0.5, 0.5)
 hidden_start_state = false
 

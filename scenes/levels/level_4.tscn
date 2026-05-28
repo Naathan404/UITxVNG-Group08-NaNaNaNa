@@ -160,7 +160,7 @@ left = -120
 bgm_name = "bgm_02"
 
 [node name="Player" parent="." unique_id=65356844 instance=ExtResource("1_ogj6a")]
-position = Vector2(42, -7)
+position = Vector2(-6, -1)
 decrease_oxygen_rate = 5.0
 dash_oxygen_cost = 8.0
 has_red_mask = true
@@ -199,6 +199,7 @@ scale = Vector2(0.55, 0.55)
 hidden_start_state = false
 
 [node name="DashTriggerPlatform6" parent="." unique_id=1750152910 instance=ExtResource("2_vmkp1")]
+z_index = -1
 position = Vector2(1071, 16)
 scale = Vector2(0.5, 1)
 

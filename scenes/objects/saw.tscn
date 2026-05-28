@@ -5,8 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://23jomty2qm7s" path="res://assets/sprites/envir/Off.png" id="2_5cuac"]
 
 [sub_resource type="Curve2D" id="Curve2D_fei71"]
+resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 137, -49, 0, 0, 0, 0, 138, 21, 0, 0, 0, 0, 138, -42)
 }
 point_count = 3
 
@@ -93,6 +94,7 @@ radius = 16.03122
 curve = SubResource("Curve2D_fei71")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=526231060]
+position = Vector2(137, -49)
 rotates = false
 cubic_interp = false
 
