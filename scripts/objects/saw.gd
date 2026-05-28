@@ -37,8 +37,8 @@ func _process(delta: float) -> void:
 		sprite.rotation += 15.0 * delta
 
 func update_mask_state(player_mask: int) -> void:
-	if (saw_color == "Red" and player_mask == MaskType.RED) or \
-	   (saw_color == "Blue" and player_mask == MaskType.BLUE):
+	if (saw_color == "Red" and player_mask == MaskType.BLUE) or \
+	   (saw_color == "Blue" and player_mask == MaskType.RED):
 		is_active = false
 		sprite.modulate.a = 0.2
 		speed = move_speed * 0.5
