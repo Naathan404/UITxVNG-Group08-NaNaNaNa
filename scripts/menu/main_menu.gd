@@ -30,3 +30,8 @@ func _on_quit_pressed() -> void:
 	AudioManager.play_sound("click", global_position, 10.0)
 	
 	get_tree().quit()
+
+
+func _on_credit_pressed() -> void:
+	AudioManager.play_sound("click", global_position, 10.0)
+	SceneTransition._change_scene("res://scenes/menu/credit_scene.tscn")

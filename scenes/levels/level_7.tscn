@@ -268,110 +268,68 @@ texture_region_size = Vector2i(64, 64)
 [sub_resource type="TileSet" id="TileSet_ivh0c"]
 sources/0 = SubResource("TileSetAtlasSource_q0wsq")
 
-[sub_resource type="Curve2D" id="Curve2D_u1w5x"]
+[sub_resource type="Curve2D" id="Curve2D_ymk4h"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 138, -42, 0, 0, 0, 0, 138, 20, 0, 0, 0, 0, 138, -42)
 }
 point_count = 3
 
-[sub_resource type="Curve2D" id="Curve2D_posk4"]
+[sub_resource type="Curve2D" id="Curve2D_st48t"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 138, -35, 0, 0, 0, 0, 138, 19, 0, 0, 0, 0, 138, -35)
 }
 point_count = 3
 
-[sub_resource type="Curve2D" id="Curve2D_sjq8i"]
+[sub_resource type="Curve2D" id="Curve2D_dfn7m"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 138, -56, 0, 0, 0, 0, 138, 17, 0, 0, 0, 0, 138, -56)
 }
 point_count = 3
 
-[sub_resource type="Curve2D" id="Curve2D_q0wsq"]
+[sub_resource type="Curve2D" id="Curve2D_8rm7r"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 138, -42)
 }
 point_count = 1
 
-[sub_resource type="Curve2D" id="Curve2D_ivh0c"]
+[sub_resource type="Curve2D" id="Curve2D_c64tk"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 137, -49)
 }
 point_count = 1
 
-[sub_resource type="Curve2D" id="Curve2D_wreli"]
+[sub_resource type="Curve2D" id="Curve2D_bntht"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 142, -49)
 }
 point_count = 1
 
-[sub_resource type="Curve2D" id="Curve2D_ymk4h"]
-resource_local_to_scene = true
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 137, -49)
-}
-point_count = 1
-
-[sub_resource type="Curve2D" id="Curve2D_st48t"]
-resource_local_to_scene = true
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 137, -49)
-}
-point_count = 1
-
-[sub_resource type="Curve2D" id="Curve2D_dfn7m"]
-resource_local_to_scene = true
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 137, -49)
-}
-point_count = 1
-
-[sub_resource type="Curve2D" id="Curve2D_8rm7r"]
-resource_local_to_scene = true
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 137, -49)
-}
-point_count = 1
-
-[sub_resource type="Curve2D" id="Curve2D_c64tk"]
-resource_local_to_scene = true
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 95, -18, 0, 0, 0, 0, 179, -18, 0, 0, 0, 0, 95, -18)
-}
-point_count = 3
-
-[sub_resource type="Curve2D" id="Curve2D_bntht"]
-resource_local_to_scene = true
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 125, -56)
-}
-point_count = 1
-
 [sub_resource type="Curve2D" id="Curve2D_7co51"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 138, -41, 0, 0, 0, 0, 355, -41, 0, 0, 0, 0, 138, -41)
+"points": PackedVector2Array(0, 0, 0, 0, 137, -49)
 }
-point_count = 3
+point_count = 1
 
 [sub_resource type="Curve2D" id="Curve2D_rctaj"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 156, -27, 0, 0, 0, 0, 157, -74, 0, 0, 0, 0, 187, -74, 0, 0, 0, 0, 188, -27, 0, 0, 0, 0, 188, -27, 0, 0, 0, 0, 187, -74, 0, 0, 0, 0, 157, -74, 0, 0, 0, 0, 156, -27)
+"points": PackedVector2Array(0, 0, 0, 0, 137, -49)
 }
-point_count = 8
+point_count = 1
 
 [sub_resource type="Curve2D" id="Curve2D_d07tw"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 156, -27, 0, 0, 0, 0, 157, -74, 0, 0, 0, 0, 187, -74, 0, 0, 0, 0, 188, -27, 0, 0, 0, 0, 188, -27, 0, 0, 0, 0, 187, -74, 0, 0, 0, 0, 157, -74, 0, 0, 0, 0, 156, -27)
+"points": PackedVector2Array(0, 0, 0, 0, 137, -49)
 }
-point_count = 8
+point_count = 1
 
 [sub_resource type="Curve2D" id="Curve2D_aqqx4"]
 resource_local_to_scene = true
@@ -383,37 +341,37 @@ point_count = 1
 [sub_resource type="Curve2D" id="Curve2D_g13ha"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 137, -49)
+"points": PackedVector2Array(0, 0, 0, 0, 95, -18, 0, 0, 0, 0, 179, -18, 0, 0, 0, 0, 95, -18)
 }
-point_count = 1
+point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_nonn3"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 137, -57, 0, 0, 0, 0, 138, 21, 0, 0, 0, 0, 228, 22, 0, 0, 0, 0, 228, -57, 0, 0, 0, 0, 137, -57)
+"points": PackedVector2Array(0, 0, 0, 0, 125, -56)
 }
-point_count = 5
+point_count = 1
 
 [sub_resource type="Curve2D" id="Curve2D_r4aal"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 137, -57, 0, 0, 0, 0, 138, 21, 0, 0, 0, 0, 228, 22, 0, 0, 0, 0, 228, -57, 0, 0, 0, 0, 137, -57)
+"points": PackedVector2Array(0, 0, 0, 0, 138, -41, 0, 0, 0, 0, 355, -41, 0, 0, 0, 0, 138, -41)
 }
-point_count = 5
+point_count = 3
 
 [sub_resource type="Curve2D" id="Curve2D_4g1j1"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 137, -49, 0, 0, 0, 0, 290, -49, 0, 0, 0, 0, 137, -49)
+"points": PackedVector2Array(0, 0, 0, 0, 156, -27, 0, 0, 0, 0, 157, -74, 0, 0, 0, 0, 187, -74, 0, 0, 0, 0, 188, -27, 0, 0, 0, 0, 188, -27, 0, 0, 0, 0, 187, -74, 0, 0, 0, 0, 157, -74, 0, 0, 0, 0, 156, -27)
 }
-point_count = 3
+point_count = 8
 
 [sub_resource type="Curve2D" id="Curve2D_64ngv"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 137, -49)
+"points": PackedVector2Array(0, 0, 0, 0, 156, -27, 0, 0, 0, 0, 157, -74, 0, 0, 0, 0, 187, -74, 0, 0, 0, 0, 188, -27, 0, 0, 0, 0, 188, -27, 0, 0, 0, 0, 187, -74, 0, 0, 0, 0, 157, -74, 0, 0, 0, 0, 156, -27)
 }
-point_count = 1
+point_count = 8
 
 [sub_resource type="Curve2D" id="Curve2D_qybhm"]
 resource_local_to_scene = true
@@ -425,25 +383,67 @@ point_count = 1
 [sub_resource type="Curve2D" id="Curve2D_j8v86"]
 resource_local_to_scene = true
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 240, -35, 0, 0, 0, 0, 241, -87, 0, 0, 0, 0, 143, -88, 0, 0, 0, 0, 143, -36, 0, 0, 0, 0, 143, -88, 0, 0, 0, 0, 241, -87, 0, 0, 0, 0, 240, -35)
+"points": PackedVector2Array(0, 0, 0, 0, 137, -49)
 }
-point_count = 7
+point_count = 1
 
 [sub_resource type="Curve2D" id="Curve2D_4xx2j"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 137, -57, 0, 0, 0, 0, 138, 21, 0, 0, 0, 0, 228, 22, 0, 0, 0, 0, 228, -57, 0, 0, 0, 0, 137, -57)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_gyp50"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 137, -57, 0, 0, 0, 0, 138, 21, 0, 0, 0, 0, 228, 22, 0, 0, 0, 0, 228, -57, 0, 0, 0, 0, 137, -57)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_ejkkn"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 137, -49, 0, 0, 0, 0, 290, -49, 0, 0, 0, 0, 137, -49)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_rt60r"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 137, -49)
 }
 point_count = 1
 
-[sub_resource type="Curve2D" id="Curve2D_gyp50"]
+[sub_resource type="Curve2D" id="Curve2D_qx2c0"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 137, -49)
+}
+point_count = 1
+
+[sub_resource type="Curve2D" id="Curve2D_2nv2l"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 240, -35, 0, 0, 0, 0, 241, -87, 0, 0, 0, 0, 143, -88, 0, 0, 0, 0, 143, -36, 0, 0, 0, 0, 143, -88, 0, 0, 0, 0, 241, -87, 0, 0, 0, 0, 240, -35)
+}
+point_count = 7
+
+[sub_resource type="Curve2D" id="Curve2D_4qlpv"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 137, -49)
+}
+point_count = 1
+
+[sub_resource type="Curve2D" id="Curve2D_3bjve"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 137, -49, 0, 0, 0, 0, 808, -48, 0, 0, 0, 0, 137, -49)
 }
 point_count = 3
 
-[sub_resource type="Curve2D" id="Curve2D_ejkkn"]
+[sub_resource type="Curve2D" id="Curve2D_48u08"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 137, -49)
@@ -507,7 +507,7 @@ position = Vector2(-11, 50)
 
 [node name="Saw" parent="." unique_id=1345684800 instance=ExtResource("7_u1w5x")]
 position = Vector2(36, 42)
-curve = SubResource("Curve2D_u1w5x")
+curve = SubResource("Curve2D_ymk4h")
 
 [node name="PathFollow2D" parent="Saw" index="0" unique_id=526231060]
 position = Vector2(138, -42)
@@ -517,7 +517,7 @@ move_speed = 50.0
 
 [node name="Saw2" parent="." unique_id=1372480736 instance=ExtResource("7_u1w5x")]
 position = Vector2(182, -9)
-curve = SubResource("Curve2D_posk4")
+curve = SubResource("Curve2D_st48t")
 
 [node name="PathFollow2D" parent="Saw2" index="0" unique_id=526231060]
 position = Vector2(138, -35)
@@ -527,14 +527,14 @@ move_speed = 75.0
 
 [node name="Saw3" parent="." unique_id=569154639 instance=ExtResource("7_u1w5x")]
 position = Vector2(290, 42)
-curve = SubResource("Curve2D_sjq8i")
+curve = SubResource("Curve2D_dfn7m")
 
 [node name="PathFollow2D" parent="Saw3" index="0" unique_id=526231060]
 position = Vector2(138, -56)
 
 [node name="Saw4" parent="." unique_id=1991020563 instance=ExtResource("7_u1w5x")]
 position = Vector2(375, 60)
-curve = SubResource("Curve2D_q0wsq")
+curve = SubResource("Curve2D_8rm7r")
 
 [node name="PathFollow2D" parent="Saw4" index="0" unique_id=526231060]
 position = Vector2(138, -42)
@@ -544,14 +544,14 @@ move_speed = 150.0
 
 [node name="Saw5" parent="." unique_id=470957275 instance=ExtResource("7_u1w5x")]
 position = Vector2(445, 126)
-curve = SubResource("Curve2D_ivh0c")
+curve = SubResource("Curve2D_c64tk")
 
 [node name="Area2D" parent="Saw5/PathFollow2D" parent_id_path=PackedInt32Array(470957275, 526231060) index="0" unique_id=635576952]
 move_speed = 150.0
 
 [node name="Saw6" parent="." unique_id=754511984 instance=ExtResource("7_u1w5x")]
 position = Vector2(506, 76)
-curve = SubResource("Curve2D_wreli")
+curve = SubResource("Curve2D_bntht")
 
 [node name="Area2D" parent="Saw6/PathFollow2D" parent_id_path=PackedInt32Array(754511984, 526231060) index="0" unique_id=635576952]
 move_speed = 150.0
@@ -572,7 +572,7 @@ scale = Vector2(0.75, 0.75)
 
 [node name="Saw7" parent="." unique_id=1282709695 instance=ExtResource("7_u1w5x")]
 position = Vector2(790, 62)
-curve = SubResource("Curve2D_ymk4h")
+curve = SubResource("Curve2D_7co51")
 
 [node name="Area2D" parent="Saw7/PathFollow2D" parent_id_path=PackedInt32Array(1282709695, 526231060) index="0" unique_id=635576952]
 saw_color = "Red"
@@ -580,7 +580,7 @@ move_speed = 150.0
 
 [node name="Saw8" parent="." unique_id=1412159669 instance=ExtResource("7_u1w5x")]
 position = Vector2(790, 23)
-curve = SubResource("Curve2D_st48t")
+curve = SubResource("Curve2D_rctaj")
 
 [node name="Area2D" parent="Saw8/PathFollow2D" parent_id_path=PackedInt32Array(1412159669, 526231060) index="0" unique_id=635576952]
 saw_color = "Red"
@@ -588,7 +588,7 @@ move_speed = 150.0
 
 [node name="Saw9" parent="." unique_id=1838397294 instance=ExtResource("7_u1w5x")]
 position = Vector2(905, 77)
-curve = SubResource("Curve2D_dfn7m")
+curve = SubResource("Curve2D_d07tw")
 
 [node name="Area2D" parent="Saw9/PathFollow2D" parent_id_path=PackedInt32Array(1838397294, 526231060) index="0" unique_id=635576952]
 position = Vector2(-1, -1)
@@ -597,7 +597,7 @@ move_speed = 150.0
 
 [node name="Saw10" parent="." unique_id=1214370029 instance=ExtResource("7_u1w5x")]
 position = Vector2(905, 38)
-curve = SubResource("Curve2D_8rm7r")
+curve = SubResource("Curve2D_aqqx4")
 
 [node name="Area2D" parent="Saw10/PathFollow2D" parent_id_path=PackedInt32Array(1214370029, 526231060) index="0" unique_id=635576952]
 position = Vector2(-1, -1)
@@ -606,14 +606,14 @@ move_speed = 150.0
 
 [node name="Saw11" parent="Saw10" unique_id=966792372 instance=ExtResource("7_u1w5x")]
 position = Vector2(154, 38)
-curve = SubResource("Curve2D_c64tk")
+curve = SubResource("Curve2D_g13ha")
 
 [node name="PathFollow2D" parent="Saw10/Saw11" index="0" unique_id=526231060]
 position = Vector2(95, -18)
 
 [node name="Saw11" parent="." unique_id=1194450578 instance=ExtResource("7_u1w5x")]
 position = Vector2(1063, 78)
-curve = SubResource("Curve2D_bntht")
+curve = SubResource("Curve2D_nonn3")
 
 [node name="PathFollow2D" parent="Saw11" index="0" unique_id=526231060]
 position = Vector2(132, -57)
@@ -624,7 +624,7 @@ saw_color = "Red"
 
 [node name="Saw12" parent="." unique_id=1307039403 instance=ExtResource("7_u1w5x")]
 position = Vector2(1272, 49)
-curve = SubResource("Curve2D_7co51")
+curve = SubResource("Curve2D_r4aal")
 
 [node name="PathFollow2D" parent="Saw12" index="0" unique_id=526231060]
 position = Vector2(138, -41)
@@ -639,7 +639,7 @@ position = Vector2(1696, 1)
 [node name="Saw13" parent="." unique_id=2000963920 instance=ExtResource("7_u1w5x")]
 z_index = 1
 position = Vector2(1636, 59)
-curve = SubResource("Curve2D_rctaj")
+curve = SubResource("Curve2D_4g1j1")
 
 [node name="PathFollow2D" parent="Saw13" index="0" unique_id=526231060]
 position = Vector2(156, -27)
@@ -650,7 +650,7 @@ move_speed = 50.0
 [node name="Saw14" parent="." unique_id=2103371493 instance=ExtResource("7_u1w5x")]
 z_index = 1
 position = Vector2(1748, 59)
-curve = SubResource("Curve2D_d07tw")
+curve = SubResource("Curve2D_64ngv")
 
 [node name="PathFollow2D" parent="Saw14" index="0" unique_id=526231060]
 position = Vector2(156, -27)
@@ -675,28 +675,28 @@ scale = Vector2(0.75, 0.75)
 
 [node name="Saw15" parent="." unique_id=823098346 instance=ExtResource("7_u1w5x")]
 position = Vector2(1830, -1)
-curve = SubResource("Curve2D_aqqx4")
+curve = SubResource("Curve2D_qybhm")
 
 [node name="Area2D" parent="Saw15/PathFollow2D" parent_id_path=PackedInt32Array(823098346, 526231060) index="0" unique_id=635576952]
 move_speed = 160.0
 
 [node name="Saw16" parent="." unique_id=1963626257 instance=ExtResource("7_u1w5x")]
 position = Vector2(1231, 44)
-curve = SubResource("Curve2D_g13ha")
+curve = SubResource("Curve2D_j8v86")
 
 [node name="Area2D" parent="Saw16/PathFollow2D" parent_id_path=PackedInt32Array(1963626257, 526231060) index="0" unique_id=635576952]
 saw_color = "Blue"
 
 [node name="Saw17" parent="." unique_id=544366629 instance=ExtResource("7_u1w5x")]
 position = Vector2(1903, 11)
-curve = SubResource("Curve2D_nonn3")
+curve = SubResource("Curve2D_4xx2j")
 
 [node name="PathFollow2D" parent="Saw17" index="0" unique_id=526231060]
 position = Vector2(137, -57)
 
 [node name="Saw18" parent="." unique_id=1003516368 instance=ExtResource("7_u1w5x")]
 position = Vector2(1970, -28)
-curve = SubResource("Curve2D_r4aal")
+curve = SubResource("Curve2D_gyp50")
 
 [node name="PathFollow2D" parent="Saw18" index="0" unique_id=526231060]
 position = Vector2(137, -57)
@@ -719,29 +719,29 @@ position = Vector2(2287, -95)
 
 [node name="Saw19" parent="." unique_id=1090123184 instance=ExtResource("7_u1w5x")]
 position = Vector2(2240, -40)
-curve = SubResource("Curve2D_4g1j1")
+curve = SubResource("Curve2D_ejkkn")
 
 [node name="Saw20" parent="." unique_id=1521737332 instance=ExtResource("7_u1w5x")]
 position = Vector2(2335, -20)
-curve = SubResource("Curve2D_64ngv")
+curve = SubResource("Curve2D_rt60r")
 
 [node name="Area2D" parent="Saw20/PathFollow2D" parent_id_path=PackedInt32Array(1521737332, 526231060) index="0" unique_id=635576952]
 saw_color = "Red"
 
 [node name="Saw21" parent="." unique_id=1307995492 instance=ExtResource("7_u1w5x")]
 position = Vector2(2457, -32)
-curve = SubResource("Curve2D_qybhm")
+curve = SubResource("Curve2D_qx2c0")
 
 [node name="Area2D" parent="Saw21/PathFollow2D" parent_id_path=PackedInt32Array(1307995492, 526231060) index="0" unique_id=635576952]
 saw_color = "Blue"
 
 [node name="Saw22" parent="." unique_id=1513865435 instance=ExtResource("7_u1w5x")]
 position = Vector2(2417, -41)
-curve = SubResource("Curve2D_j8v86")
+curve = SubResource("Curve2D_2nv2l")
 
 [node name="Saw23" parent="." unique_id=821776180 instance=ExtResource("7_u1w5x")]
 position = Vector2(2497, -90)
-curve = SubResource("Curve2D_4xx2j")
+curve = SubResource("Curve2D_4qlpv")
 
 [node name="PathFollow2D" parent="Saw23" index="0" unique_id=526231060]
 position = Vector2(136, -18)
@@ -757,7 +757,7 @@ scale = Vector2(0.4, 0.4)
 
 [node name="Saw24" parent="." unique_id=1656405943 instance=ExtResource("7_u1w5x")]
 position = Vector2(2581, -80)
-curve = SubResource("Curve2D_gyp50")
+curve = SubResource("Curve2D_3bjve")
 
 [node name="Area2D" parent="Saw24/PathFollow2D" parent_id_path=PackedInt32Array(1656405943, 526231060) index="0" unique_id=635576952]
 move_speed = 300.0
@@ -778,7 +778,7 @@ position = Vector2(-0.5559082, 0)
 
 [node name="Saw25" parent="." unique_id=1747629927 instance=ExtResource("7_u1w5x")]
 position = Vector2(2734, -49)
-curve = SubResource("Curve2D_ejkkn")
+curve = SubResource("Curve2D_48u08")
 
 [node name="PathFollow2D" parent="Saw25" index="0" unique_id=526231060]
 position = Vector2(137, -31)
@@ -794,7 +794,7 @@ scale = Vector2(0.4, 0.4)
 [node name="EndPoint" parent="." unique_id=1775472992 instance=ExtResource("13_ymk4h")]
 z_index = -1
 position = Vector2(3520, -111)
-next_scene_path = "res://scenes/levels/lever_boss.tscn"
+next_scene_path = "res://scenes/levels/level_boss.tscn"
 current_level = 7
 
 [node name="Limit" parent="EndPoint/StaticBody2D" parent_id_path=PackedInt32Array(1775472992, 1684260684) index="0" unique_id=380002771]

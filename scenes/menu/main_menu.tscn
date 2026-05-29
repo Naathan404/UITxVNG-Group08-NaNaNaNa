@@ -8,8 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://c4horoo68gill" path="res://assets/sprites/ui/buttons/Play_pressed.png" id="6_gdhp0"]
 [ext_resource type="Texture2D" uid="uid://de4uy3gb46h5e" path="res://assets/sprites/ui/buttons/Settings.png" id="7_pstia"]
 [ext_resource type="Texture2D" uid="uid://ctans5lfc25f6" path="res://assets/sprites/ui/buttons/Settings_pressed.png" id="8_41tvm"]
+[ext_resource type="Texture2D" uid="uid://csaid8mxrt4y3" path="res://assets/sprites/ui/buttons/Leaderboard.png" id="9_p1nwe"]
 [ext_resource type="Texture2D" uid="uid://f6lopygvpx8q" path="res://assets/sprites/ui/buttons/Close.png" id="9_vxdmp"]
 [ext_resource type="Texture2D" uid="uid://csvjtkrqjy107" path="res://assets/sprites/ui/buttons/Close_pressed.png" id="10_3h20m"]
+[ext_resource type="Texture2D" uid="uid://cr0gcyy0an1ab" path="res://assets/sprites/ui/buttons/Leaderboard_pressed.png" id="10_prbor"]
 [ext_resource type="Texture2D" uid="uid://22p4w7iqdvqc" path="res://assets/sprites/ui/Green.png" id="11_uaj4g"]
 
 [node name="MainMenu" type="Control" unique_id=970508628]
@@ -81,6 +83,22 @@ texture_hover = ExtResource("8_41tvm")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="credit" type="TextureButton" parent="Node" unique_id=471290104]
+visible = false
+custom_minimum_size = Vector2(60, 60)
+offset_left = 39.0
+offset_top = 234.00002
+offset_right = 99.0
+offset_bottom = 294.0
+scale = Vector2(0.6, 0.6)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("9_p1nwe")
+texture_pressed = ExtResource("9_p1nwe")
+texture_hover = ExtResource("10_prbor")
+ignore_texture_size = true
+stretch_mode = 5
+
 [node name="quit" type="TextureButton" parent="Node" unique_id=364277520]
 custom_minimum_size = Vector2(60, 60)
 offset_left = 444.00003
@@ -108,4 +126,5 @@ texture = ExtResource("11_uaj4g")
 
 [connection signal="pressed" from="Node/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Node/setting" to="." method="_on_setting_pressed"]
+[connection signal="pressed" from="Node/credit" to="." method="_on_credit_pressed"]
 [connection signal="pressed" from="Node/quit" to="." method="_on_quit_pressed"]

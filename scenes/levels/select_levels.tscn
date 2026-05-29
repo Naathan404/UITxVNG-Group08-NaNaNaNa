@@ -16,12 +16,12 @@
 [ext_resource type="Texture2D" uid="uid://ch5kxtvvsr21o" path="res://assets/sprites/ui/buttons/level_buttons/level_05_pressed.png" id="14_i4hxn"]
 [ext_resource type="Texture2D" uid="uid://c6xg5ua2oycv0" path="res://assets/sprites/ui/buttons/level_buttons/level_06.png" id="15_3blsm"]
 [ext_resource type="Texture2D" uid="uid://bxu32yp404nca" path="res://assets/sprites/ui/buttons/level_buttons/level_06_pressed.png" id="16_kfotc"]
-[ext_resource type="Texture2D" uid="uid://f6lopygvpx8q" path="res://assets/sprites/ui/buttons/Close.png" id="17_2iusx"]
 [ext_resource type="Texture2D" uid="uid://83vsf3kstktq" path="res://assets/sprites/ui/buttons/level_buttons/level_07.png" id="17_i6tar"]
-[ext_resource type="Texture2D" uid="uid://csvjtkrqjy107" path="res://assets/sprites/ui/buttons/Close_pressed.png" id="18_bno64"]
 [ext_resource type="Texture2D" uid="uid://c1cbye2ixkx1l" path="res://assets/sprites/ui/buttons/level_buttons/level_07_pressed.png" id="18_swsvs"]
 [ext_resource type="Texture2D" uid="uid://c3mbrtgb3e7gl" path="res://assets/sprites/ui/buttons/level_buttons/level_08.png" id="19_a1fpx"]
 [ext_resource type="Texture2D" uid="uid://copuwuda0vlya" path="res://assets/sprites/ui/buttons/level_buttons/level_08_pressed.png" id="20_jeil1"]
+[ext_resource type="Texture2D" uid="uid://b4jhnbh88d1qh" path="res://assets/sprites/ui/buttons/Back.png" id="21_a1fpx"]
+[ext_resource type="Texture2D" uid="uid://du4h0hicdsasg" path="res://assets/sprites/ui/buttons/Back_pressed.png" id="22_jeil1"]
 
 [node name="SelectLevels" type="Control" unique_id=1742714468]
 layout_mode = 3
@@ -141,7 +141,7 @@ texture_pressed = ExtResource("19_a1fpx")
 texture_hover = ExtResource("20_jeil1")
 texture_disabled = ExtResource("19_a1fpx")
 level_number = 8
-level_scene_path = "uid://bivba6tg2g374"
+level_scene_path = "uid://g87cftiw8mml"
 
 [node name="Close" type="TextureButton" parent="." unique_id=43184919]
 custom_minimum_size = Vector2(60, 60)
@@ -153,9 +153,9 @@ offset_bottom = 293.0
 scale = Vector2(0.6, 0.6)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("17_2iusx")
-texture_pressed = ExtResource("17_2iusx")
-texture_hover = ExtResource("18_bno64")
+texture_normal = ExtResource("21_a1fpx")
+texture_pressed = ExtResource("21_a1fpx")
+texture_hover = ExtResource("22_jeil1")
 ignore_texture_size = true
 stretch_mode = 5
 
