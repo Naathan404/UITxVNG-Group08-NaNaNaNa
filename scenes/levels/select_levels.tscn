@@ -25,17 +25,25 @@
 
 [node name="SelectLevels" type="Control" unique_id=1742714468]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_01w57")
 scene_to_load_path = "res://scenes/menu/main_menu.tscn"
 
 [node name="Title" type="TextureRect" parent="." unique_id=2067663575]
 z_index = 1
-layout_mode = 0
-offset_left = 76.0
-offset_top = 20.0
-offset_right = 604.0
-offset_bottom = 85.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -171.0
+offset_top = 17.0
+offset_right = 357.0
+offset_bottom = 82.0
+grow_horizontal = 2
 scale = Vector2(0.9, 0.856)
 texture = ExtResource("1_ndpu2")
 
@@ -67,11 +75,18 @@ position = Vector2(45, 50.5)
 texture = ExtResource("5_3blsm")
 
 [node name="GridContainer" type="GridContainer" parent="." unique_id=2128538510]
-layout_mode = 0
-offset_left = 114.00001
-offset_top = 92.00001
-offset_right = 290.0
-offset_bottom = 180.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -49.0
+offset_right = 47.0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(1.5, 1.5)
 theme_override_constants/h_separation = 16
 theme_override_constants/v_separation = 24
@@ -145,11 +160,18 @@ level_scene_path = "uid://g87cftiw8mml"
 
 [node name="Close" type="TextureButton" parent="." unique_id=43184919]
 custom_minimum_size = Vector2(60, 60)
-layout_mode = 0
-offset_left = 443.00003
-offset_top = 233.00002
-offset_right = 503.00003
-offset_bottom = 293.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -39.99997
+offset_top = -39.999985
+offset_right = 20.00003
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 0
 scale = Vector2(0.6, 0.6)
 size_flags_horizontal = 4
 size_flags_vertical = 4
