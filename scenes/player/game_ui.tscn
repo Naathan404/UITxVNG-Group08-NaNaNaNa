@@ -71,47 +71,34 @@ color = Color(1, 1, 1, 0)
 
 [node name="AvatarReact" type="TextureRect" parent="." unique_id=18979545]
 z_index = 5
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -244.0
-offset_top = -126.0
-offset_right = -184.0
-offset_bottom = -66.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -2.0
+offset_top = 8.0
+offset_right = 58.0
+offset_bottom = 68.0
 pivot_offset = Vector2(32, 32)
 texture = ExtResource("1_pnnm1")
 
 [node name="HintUp" type="TextureRect" parent="." unique_id=764313852]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -233.0
-offset_top = -141.0
-offset_right = -193.0
-offset_bottom = -101.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = 8.0
+offset_top = -6.0
+offset_right = 48.0
+offset_bottom = 34.0
 pivot_offset = Vector2(20, 20)
 texture = ExtResource("3_hmndv")
 
 [node name="HintDown" type="TextureRect" parent="." unique_id=1660936313]
-offset_left = 7.0
-offset_top = 43.0
-offset_right = 47.0
-offset_bottom = 83.0
+offset_left = 8.0
+offset_top = 42.0
+offset_right = 48.0
+offset_bottom = 82.0
 pivot_offset = Vector2(20, 20)
 texture = ExtResource("4_p4jm6")
 
 [node name="OxygenBar" type="TextureProgressBar" parent="." unique_id=1848913179]
-offset_top = -3.0000005
-offset_right = 64.0
-offset_bottom = 61.0
+offset_left = 3.0
+offset_top = -4.0
+offset_right = 67.0
+offset_bottom = 60.0
 scale = Vector2(1.3, 1.3)
 step = 0.01
 value = 36.0
@@ -151,9 +138,10 @@ tint_under = Color(0, 0.41568628, 1, 1)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=416373117]
 z_index = -2
-offset_top = -3.0
-offset_right = 64.0
-offset_bottom = 61.0
+offset_left = 3.0
+offset_top = -3.9999995
+offset_right = 67.0
+offset_bottom = 60.0
 scale = Vector2(1.3, 1.3)
 texture = ExtResource("7_kjpqb")
 
@@ -187,10 +175,14 @@ text = "x3"
 label_settings = SubResource("LabelSettings_vsbcl")
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=505397288]
-offset_left = 458.0
-offset_top = 2.0
-offset_right = 498.0
-offset_bottom = 42.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -23.0
+offset_top = 1.0
+offset_right = 17.0
+offset_bottom = 41.0
+grow_horizontal = 0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_vsbcl")
 
