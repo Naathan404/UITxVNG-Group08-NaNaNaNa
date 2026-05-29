@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://c6eaw3d3flish"]
+
+[ext_resource type="Script" uid="uid://bewpotdlonq7v" path="res://scripts/menu/credit_scene.gd" id="1_2ik4v"]
+[ext_resource type="Texture2D" uid="uid://b4jhnbh88d1qh" path="res://assets/sprites/ui/buttons/Back.png" id="2_thne8"]
+[ext_resource type="Texture2D" uid="uid://du4h0hicdsasg" path="res://assets/sprites/ui/buttons/Back_pressed.png" id="3_r7hb6"]
+[ext_resource type="Texture2D" uid="uid://22p4w7iqdvqc" path="res://assets/sprites/ui/Green.png" id="4_r7hb6"]
+
+[node name="CreditScene" type="Control" unique_id=1169833921]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_2ik4v")
+
+[node name="Close" type="TextureButton" parent="." unique_id=448890466]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_left = 443.00003
+offset_top = 233.00002
+offset_right = 503.00003
+offset_bottom = 293.0
+scale = Vector2(0.6, 0.6)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_thne8")
+texture_pressed = ExtResource("2_thne8")
+texture_hover = ExtResource("3_r7hb6")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1213512362]
+scroll_offset = Vector2(109, 95.5)
+repeat_size = Vector2(64, 64)
+autoscroll = Vector2(20, 20)
+repeat_times = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1784447784]
+position = Vector2(45, 50.5)
+texture = ExtResource("4_r7hb6")
+
+[connection signal="pressed" from="Close" to="." method="_on_close_pressed"]

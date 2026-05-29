@@ -28,11 +28,11 @@
 [ext_resource type="Texture2D" uid="uid://dbjg0b67gqyw" path="res://assets/sprites/bosses/laze_attack/Laser_sheet.png" id="23_roq83"]
 [ext_resource type="Script" uid="uid://dwa36ai1nup6j" path="res://scripts/boss/attack.gd" id="23_rvsb5"]
 [ext_resource type="PackedScene" uid="uid://wae7pssjwov1" path="res://scenes/boss/bullet.tscn" id="24_3n6no"]
+[ext_resource type="Texture2D" uid="uid://bhtgkq7c5hppu" path="res://assets/sprites/envir/Skull Particle.png" id="24_h230y"]
 [ext_resource type="Script" uid="uid://chojswdq65syg" path="res://scripts/boss/laser_hitbox.gd" id="24_ocwkh"]
 [ext_resource type="Script" uid="uid://b5lpqg6hg5pok" path="res://scripts/boss/attack_2.gd" id="25_uhbyl"]
 [ext_resource type="Script" uid="uid://btauf4k4a2uq" path="res://scripts/boss/run.gd" id="28_ejskh"]
 [ext_resource type="Script" uid="uid://pos3jm27uqvq" path="res://scripts/boss/attack_laser.gd" id="30_bj11e"]
-[ext_resource type="Texture2D" uid="uid://skth0ardjynf" path="res://icon.svg" id="33_h230y"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0cn5b"]
 animations = [{
@@ -209,9 +209,9 @@ position = Vector2(-1, -0.5)
 shape = SubResource("RectangleShape2D_ovoo8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=776417470]
-position = Vector2(56.353218, -35.05854)
-scale = Vector2(0.13568565, 0.1290006)
-texture = ExtResource("33_h230y")
+position = Vector2(58, -36)
+scale = Vector2(1.67873, 1.5960215)
+texture = ExtResource("24_h230y")
 
 [node name="pivot" type="Node2D" parent="." unique_id=1481830977]
 position = Vector2(55.319214, -33.61778)
