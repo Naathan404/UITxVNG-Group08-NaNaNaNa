@@ -2748,7 +2748,14 @@ sources/0 = SubResource("TileSetAtlasSource_2fmo2")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_60gsq"]
 resource_local_to_scene = true
-size = Vector2(25.5, 189)
+size = Vector2(50.5, 189)
+
+[sub_resource type="Curve2D" id="Curve2D_bis03"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 137, -49, 0, 0, 0, 0, 137.45459, 47, 0, 0, 0, 0, 138, -42)
+}
+point_count = 3
 
 [node name="Level_boss" type="Node2D" unique_id=608994964]
 script = ExtResource("1_k4gue")
@@ -2756,7 +2763,6 @@ left = -120
 bgm_name = "bgm_boss"
 
 [node name="Player" parent="." unique_id=65356844 instance=ExtResource("2_xiljk")]
-position = Vector2(2549.0002, -38)
 scale = Vector2(1.038993, 0.9244521)
 decrease_oxygen_rate = 5.0
 dash_oxygen_cost = 8.0
@@ -3383,7 +3389,7 @@ tile_map_data = PackedByteArray("AAD///3/AAAFAAUAADD///7/AAAFAAUAADAAAP7/AAAFAAU
 tile_set = SubResource("TileSet_hv6ga")
 
 [node name="CollisionShape2D" parent="switch_wall_update2/Button" parent_id_path=PackedInt32Array(821559518, 478348999) index="0" unique_id=171299351]
-position = Vector2(-43.25, 30.5)
+position = Vector2(-55.75, 30.5)
 shape = SubResource("RectangleShape2D_60gsq")
 
 [node name="Checkpoint2" parent="." unique_id=348567675 instance=ExtResource("16_1tuws")]
@@ -3401,6 +3407,18 @@ position = Vector2(4499, 34)
 [node name="RainZone" parent="." unique_id=1445160890 instance=ExtResource("17_yy0bd")]
 position = Vector2(4316, -20)
 scale = Vector2(1.5461159, 0.4804133)
+
+[node name="spike15" parent="." unique_id=1950152311 instance=ExtResource("9_kf7gg")]
+position = Vector2(920.99994, -37)
+scale = Vector2(1.0927421, 1)
+
+[node name="Saw5" parent="." unique_id=1345684800 instance=ExtResource("19_prihs")]
+position = Vector2(4192, -50)
+scale = Vector2(1.0694444, 1)
+curve = SubResource("Curve2D_bis03")
+
+[node name="spike57" parent="." unique_id=793134046 instance=ExtResource("9_kf7gg")]
+position = Vector2(3581, -21)
 
 [editable path="Player"]
 [editable path="Player/CanvasLayer"]
