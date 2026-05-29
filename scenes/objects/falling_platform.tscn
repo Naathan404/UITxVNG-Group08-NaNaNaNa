@@ -15,10 +15,11 @@ size = Vector2(37.81093, 1.5426321)
 
 [node name="FallingPlatform" type="AnimatableBody2D" unique_id=1311923727]
 scale = Vector2(0.37026334, 0.3241214)
+collision_layer = 32
 script = ExtResource("1_x7iqv")
 platform_color = "Blue"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=566877621 groups=["falling_platform"]]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=566877621]
 scale = Vector2(0.76953125, 0.46874997)
 texture = SubResource("AtlasTexture_hikfq")
 

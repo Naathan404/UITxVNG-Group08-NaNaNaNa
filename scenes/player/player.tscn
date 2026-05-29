@@ -726,6 +726,7 @@ outline_color = Color(0, 0, 0, 1)
 size = Vector2(14, 20)
 
 [node name="Player" type="CharacterBody2D" unique_id=65356844 groups=["player"]]
+collision_mask = 33
 script = ExtResource("1_p47bc")
 decrease_oxygen_rate = 10.0
 dash_force = 500.0
