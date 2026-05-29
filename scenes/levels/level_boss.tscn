@@ -2750,7 +2750,7 @@ sources/0 = SubResource("TileSetAtlasSource_2fmo2")
 resource_local_to_scene = true
 size = Vector2(50.5, 189)
 
-[sub_resource type="Curve2D" id="Curve2D_bis03"]
+[sub_resource type="Curve2D" id="Curve2D_we854"]
 resource_local_to_scene = true
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 137, -49, 0, 0, 0, 0, 137.45459, 47, 0, 0, 0, 0, 138, -42)
@@ -3393,6 +3393,7 @@ position = Vector2(-55.75, 30.5)
 shape = SubResource("RectangleShape2D_60gsq")
 
 [node name="Checkpoint2" parent="." unique_id=348567675 instance=ExtResource("16_1tuws")]
+z_index = -1
 position = Vector2(3515, -39)
 
 [node name="OxygenTank6" parent="." unique_id=133130819 instance=ExtResource("12_celx5")]
@@ -3409,16 +3410,14 @@ position = Vector2(4316, -20)
 scale = Vector2(1.5461159, 0.4804133)
 
 [node name="spike15" parent="." unique_id=1950152311 instance=ExtResource("9_kf7gg")]
-position = Vector2(920.99994, -37)
+z_index = -1
+position = Vector2(942.99994, -36)
 scale = Vector2(1.0927421, 1)
 
 [node name="Saw5" parent="." unique_id=1345684800 instance=ExtResource("19_prihs")]
 position = Vector2(4192, -50)
 scale = Vector2(1.0694444, 1)
-curve = SubResource("Curve2D_bis03")
-
-[node name="spike57" parent="." unique_id=793134046 instance=ExtResource("9_kf7gg")]
-position = Vector2(3581, -21)
+curve = SubResource("Curve2D_we854")
 
 [editable path="Player"]
 [editable path="Player/CanvasLayer"]
