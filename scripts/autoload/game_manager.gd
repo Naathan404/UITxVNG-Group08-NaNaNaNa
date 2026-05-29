@@ -5,6 +5,7 @@ var last_checkpoint_position: Vector2 = Vector2.ZERO
 var current_lives: int
 
 var max_unlocked_level: int = 1
+var boss_saved_position = null
 
 signal dash_trigger
 

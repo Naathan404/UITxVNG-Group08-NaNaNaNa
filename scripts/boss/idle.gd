@@ -43,9 +43,11 @@ func _physics_process(delta: float) -> void:
 			
 		else:
 			boss.velocity.x = move_toward(boss.velocity.x, 0, move_speed)
-			
+			if player.is_level_completed:
+				return
 			var attack_skills = ["attack", "attack2", "attack_laser"]
 			var random_skill = attack_skills.pick_random()
+			#random_skill = attack_skills[2]
 			
 			transitioned.emit(self, random_skill)
 			

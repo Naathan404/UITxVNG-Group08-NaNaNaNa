@@ -11,6 +11,8 @@ var is_enraged: bool = false
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 	var destroyer = $EntityDestroyer
+	if GameManager.boss_saved_position != null:
+		global_position = GameManager.boss_saved_position
 	
 
 func _physics_process(delta: float) -> void:
@@ -41,6 +43,9 @@ func activate_debris_effect(target_pos: Vector2) -> void:
 		debris_particles.emitting = true
 
 func _on_entity_destroyer_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player"):
+		if body.has_method("take_dame"):
+			body.take_dame(100)
 	if body == self or body.is_in_group("player"):
 		return
 		
@@ -61,7 +66,10 @@ func _on_entity_destroyer_body_entered(body: Node2D) -> void:
 
 
 func _on_entity_destroyer_area_entered(area: Area2D) -> void:
-	if area.get_parent() == self or area.is_in_group("player"):
+	if area.is_in_group("player"):
+		if area.has_method("take_dame"):
+			area.take_dame(100)
+	if area.get_parent() == self:
 		return
 		
 	if area.is_in_group("bullets"):
@@ -82,7 +90,7 @@ func _on_entity_destroyer_area_entered(area: Area2D) -> void:
 func _on_screen_notifier_screen_entered() -> void:
 	var camera = get_tree().get_first_node_in_group("camera")
 	if camera and camera.has_method("add_shake"):
-		camera.add_shake(15.0)
+		camera.add_shake(5.0)
 
 func apply_rain_buff(active: bool) -> void:
 	print("[BOSS] đã vào vùng mưa")

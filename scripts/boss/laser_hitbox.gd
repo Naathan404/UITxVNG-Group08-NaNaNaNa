@@ -15,4 +15,5 @@ func _physics_process(delta: float) -> void:
 		for body in bodies:
 			if body.is_in_group("player") and body.has_method("take_dame"):
 				body.take_dame(damage)
+				#body._use_oxygen(damage)
 				time_since_last_hit = 0.0

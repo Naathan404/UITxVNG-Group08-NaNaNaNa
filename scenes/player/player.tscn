@@ -705,9 +705,6 @@ animations = [{
 "speed": 20.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p47bc"]
-size = Vector2(14, 20)
-
 [sub_resource type="Curve" id="Curve_3j4b4"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.69315404, 0.39891565), -2.5671694, -2.5671694, 0, 0, Vector2(1, 0.0094558), 0.0, 0.0, 0, 0]
 point_count = 3
@@ -725,6 +722,9 @@ font = ExtResource("26_6cv16")
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p47bc"]
+size = Vector2(14, 20)
+
 [node name="Player" type="CharacterBody2D" unique_id=65356844 groups=["player"]]
 script = ExtResource("1_p47bc")
 decrease_oxygen_rate = 10.0
@@ -740,10 +740,6 @@ animation = &"die"
 autoplay = "idle"
 frame = 6
 frame_progress = 1.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1145219900]
-position = Vector2(0, 5)
-shape = SubResource("RectangleShape2D_p47bc")
 
 [node name="States" type="Node" parent="." unique_id=598055427]
 
@@ -837,5 +833,10 @@ offset_top = 38.0
 offset_right = 425.0
 offset_bottom = 61.0
 label_settings = SubResource("LabelSettings_007i1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1145219900]
+z_index = 2
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_p47bc")
 
 [editable path="CanvasLayer"]
