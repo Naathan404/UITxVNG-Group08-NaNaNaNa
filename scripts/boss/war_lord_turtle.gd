@@ -21,8 +21,13 @@ func _physics_process(delta: float) -> void:
 			var camera = get_tree().get_first_node_in_group("camera")
 			if camera and camera.has_method("add_shake"):
 				camera.add_shake(2.5)
-				
+			
 	if player:
+		if player.is_level_completed:
+			velocity = Vector2.ZERO
+			$AnimatedSprite2D.pause()
+			process_mode = Node.PROCESS_MODE_DISABLED
+			return
 		var direction_to_player = player.global_position.x - global_position.x
 		var sprite = $AnimatedSprite2D
 	
