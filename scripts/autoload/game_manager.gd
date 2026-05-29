@@ -5,7 +5,7 @@ var last_checkpoint_position: Vector2 = Vector2.ZERO
 var current_lives: int
 
 var max_unlocked_level: int = 1
-var boss_saved_position = null
+var boss_saved_position: Vector2 = Vector2.ZERO - Vector2(300, 0);
 
 signal dash_trigger
 
@@ -21,5 +21,6 @@ func _set_checkpoint(new_checkpoint: Vector2) -> bool:
 func _reset_checkpoint() -> void:
 	current_lives = max_lives
 	last_checkpoint_position = Vector2.ZERO
+	boss_saved_position = Vector2.ZERO - Vector2(200, 0);
 	print("[GameManager] Reset màn chơi -> Còn " + str(current_lives) + " mạng")
 	
