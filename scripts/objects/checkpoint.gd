@@ -21,7 +21,7 @@ func _on_body_entered(body: Node2D) -> void:
 		#if body.has_method("_refill_oxygen"): body._refill_oxygen(100)
 		boss_node = get_tree().get_first_node_in_group("boss")
 		if boss_node:
-			GameManager.boss_saved_position = boss_node.global_position
+			GameManager.boss_saved_position = position - Vector2(200, 0);
 		animated_sprite.play("activated")
 		GameManager._set_checkpoint(position)
 		AudioManager.play_sound("checkpoint", global_position, 5.0)
